@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="Login" FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Label Text="Username or email: " FontSize="Medium" Padding="10"/>
+                <Entry Text="" x:Name="UsernameEntry" Placeholder="Enter you username or your email address." HorizontalOptions="StartAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Label Text="Password:" FontSize="Medium" Padding="10"/>
+                <Entry Text="" x:Name="PasswordEntry" Placeholder="Enter your password." HorizontalOptions="StartAndExpand" IsPassword="True"/>
+            </StackLayout>
+            <Button Text="Login" Clicked="LoginButtonClicked"></Button>
+
+            <Button Text="Register instead" Clicked="RegisterButtonClicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

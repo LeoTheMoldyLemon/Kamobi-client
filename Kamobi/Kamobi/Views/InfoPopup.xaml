@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+           Size="300,300"
+           x:Class="Kamobi.Views.InfoPopup">
+    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+        <Label x:Name="description" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <Button x:Name="dismissButton" Clicked="dismissButton_Clicked" VerticalOptions="End" HorizontalOptions="EndAndExpand"/>
+    </StackLayout>
+</xct:Popup>
