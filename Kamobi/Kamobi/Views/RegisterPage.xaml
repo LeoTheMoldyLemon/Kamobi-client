@@ -13,7 +13,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                 <Label Text="Email: " FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="EmailEntry" Placeholder="Enter your email address." HorizontalOptions="StartAndExpand"/>
+                <Entry Text="" x:Name="EmailEntry" Placeholder="Enter your email address." HorizontalOptions="StartAndExpand" Keyboard="Email"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                 <Label Text="Password:" FontSize="Medium" Padding="10"/>

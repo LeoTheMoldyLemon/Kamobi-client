@@ -22,6 +22,8 @@ namespace Kamobi.Views
         public EmailConfirmPage()
         {
             InitializeComponent();
+            string infotext = infoText.Text;
+            infoText.Text = infotext.Replace("{email}", UserInfo.email);
         }
 
         private async void ConfirmButtonClicked(object sender, EventArgs e)

@@ -28,9 +28,17 @@
             <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
+    
     <TabBar>
-        <ShellContent Title="Home" Icon="icon_about.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Route="LoadingPage" ContentTemplate="{DataTemplate local:LoadingPage}" />
+    </TabBar>
+    
+    
+    <TabBar>
+        <ShellContent Title="Home" Icon="home.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
+        <ShellContent Title="Party" Icon="kamoparty.png" Route="PartyCreatePage" ContentTemplate="{DataTemplate local:PartyCreatePage}" />
+        <ShellContent Title="Search" Icon="search.png" Route="SearchPage" ContentTemplate="{DataTemplate local:SearchPage}" />
+        <ShellContent Title="Profile" Icon="user_profile.png" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
     </TabBar>
 
     <!--

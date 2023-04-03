@@ -7,13 +7,13 @@
             <Label Text="Login" FontSize="Large"
                 VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand" />
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Label Text="Username or email: " FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="UsernameEntry" Placeholder="Enter you username or your email address." HorizontalOptions="StartAndExpand"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <Label Text="Username or email: " FontSize="Medium" MinimumWidthRequest="180" Padding="20,0,0,0"/>
+                <Entry Text="" x:Name="UsernameEntry" Margin="20,0,0,0" Placeholder="Enter your username or email address." HorizontalOptions="StartAndExpand"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Label Text="Password:" FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="PasswordEntry" Placeholder="Enter your password." HorizontalOptions="StartAndExpand" IsPassword="True"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <Label Text="Password:" FontSize="Medium" Padding="20,0,0,0"/>
+                <Entry Text="" x:Name="PasswordEntry" Margin="20,0,0,0" Placeholder="Enter your password." HorizontalOptions="StartAndExpand" IsPassword="True"/>
             </StackLayout>
             <Button Text="Login" Clicked="LoginButtonClicked"></Button>
 
