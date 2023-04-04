@@ -7,7 +7,10 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#f75858</Color>
+            <Color x:Key="AlmostWhite">white</Color>
+            <Color x:Key="Dark">Black</Color>
+            
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
@@ -27,13 +30,41 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            
+            <Style x:Key="Text" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Dark}"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="Margin" Value="15"/>
+            </Style>
+            
+            <Style x:Key="Title" TargetType="Label" BasedOn="{StaticResource Text}">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="DarkGray"></Setter>
             </Style>
+            
             <Style TargetType="Entry">
-                <Setter Property="TextColor" Value="DarkGray"></Setter>
-                <Setter Property="PlaceholderColor" Value="Gray"></Setter>
+                <Setter Property="TextColor" Value="Gray"></Setter>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource AlmostWhite}"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="Margin" Value="15,15,0,0"/>
             </Style>
+
+            <Style x:Key="BasicButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource AlmostWhite}"/>
+                <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

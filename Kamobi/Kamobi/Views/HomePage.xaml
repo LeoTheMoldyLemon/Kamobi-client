@@ -1,12 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Kamobi"
              x:Class="Kamobi.Views.HomePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Home page will go here"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    
+    <ContentPage.BindingContext>
+        <vm:Popular/>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Label Text="Popular" Style="{StaticResource Title}"/>
+        <CarouselView ItemsSource="{Binding popularni_restorani}" HeightRequest="200" PeekAreaInsets="100">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+
+                    <StackLayout>
+                        <Frame HeightRequest="200" WidthRequest="250" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
+                            <Image Source="{Binding imgSource}" Aspect="AspectFill"/>
+                        </Frame>
+                    </StackLayout>
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <Label Text="Categories" Style="{StaticResource Title}"/>
+
+
+
+    </StackLayout>
+
 </ContentPage>

@@ -6,6 +6,6 @@
            IsLightDismissEnabled="false"
            x:Class="Kamobi.Views.LoadingPopup">
     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-        <ActivityIndicator IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        <ActivityIndicator IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="{StaticResource Primary}"/>
     </StackLayout>
 </xct:Popup>

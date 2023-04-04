@@ -14,7 +14,7 @@
                 <Entry Text="" x:Name="CodeEntry" Placeholder="Your 4 digit code." HorizontalOptions="StartAndExpand" Keyboard="Numeric"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Button Text="Confirm" Clicked="ConfirmButtonClicked"></Button>
+                <Button Text="Confirm" Clicked="ConfirmButtonClicked" Style="{StaticResource BasicButton}"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

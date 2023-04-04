@@ -1,26 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             NavigationPage.HasNavigationBar="False"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.RegisterPage">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Label Text="Register" FontSize="Large"
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand" />
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Label Text="Username: " FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="UsernameEntry" Placeholder="Choose a username." HorizontalOptions="StartAndExpand"/>
+            <Label Text="Register" Style="{StaticResource Title}"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <Entry Text="" x:Name="UsernameEntry" Placeholder="Choose a username."/>
+                <Entry Text="" x:Name="EmailEntry" Placeholder="Enter your email address." Keyboard="Email"/>
+                <Entry Text="" x:Name="PasswordEntry" Placeholder="Choose a password." IsPassword="True"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Label Text="Email: " FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="EmailEntry" Placeholder="Enter your email address." HorizontalOptions="StartAndExpand" Keyboard="Email"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}"></Button>
+                <Button Text="Login instead" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" BackgroundColor="LightGray"></Button>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Label Text="Password:" FontSize="Medium" Padding="10"/>
-                <Entry Text="" x:Name="PasswordEntry" Placeholder="Choose a password." HorizontalOptions="StartAndExpand" IsPassword="True"/>
-            </StackLayout>
-            <Button Text="Register" Clicked="RegisterButtonClicked"></Button>
-            <Button Text="Login instead" Clicked="LoginButtonClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

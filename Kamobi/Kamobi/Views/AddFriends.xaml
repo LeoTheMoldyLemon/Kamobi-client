@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kamobi.Views.ProfilePage">
-   
+             x:Class="Kamobi.Views.AddFriends">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="User profile will go here"
+            <Label Text="You will add friends here"
                 VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Logout" Clicked="LogoutButtonClicked" Style="{StaticResource BasicButton}"></Button>
+                HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+    
