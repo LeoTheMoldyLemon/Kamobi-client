@@ -26,7 +26,14 @@ module.exports = {
 			},(err, info)=>{
 				if(err){console.log(err)}
 			});
-			setTimeout(()=>{if(!user.confirmedEmail){try{user.destroy()}catch{}}}, 5*60*1000)
+			setTimeout(async ()=>{
+				await user.reload()
+				if(!user.confirmedEmail){
+					try{
+						user.destroy()
+					}catch{}
+				}
+			}, 5*60*1000)
 			return res({success:true,code:code})
 		}catch(e){
 			console.error("[ERROR] ["+this.data.name+"] ", e)
