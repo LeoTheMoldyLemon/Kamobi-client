@@ -4,7 +4,7 @@
              x:Class="Kamobi.Views.PartyCreatePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Party creatio page will go here"
+            <Label Text="Party creation page will go here"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
