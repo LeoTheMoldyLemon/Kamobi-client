@@ -71,7 +71,10 @@ namespace Kamobi.Views
             if ((bool)returnData["confirmedEmail"])
             {
                 File.WriteAllText(fileName, data.ToJsonString());
+                loading = new LoadingPopup();
+                Navigation.ShowPopup(loading);
                 await Shell.Current.GoToAsync("//HomePage");
+                loading.Dismiss(null);
             }
             else
             {
