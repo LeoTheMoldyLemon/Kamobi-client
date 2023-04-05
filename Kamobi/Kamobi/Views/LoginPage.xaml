@@ -1,18 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Kamobi.Views.LoginPage"
-             NavigationPage.HasNavigationBar="False">
-    
+             x:Class="Kamobi.Views.LoginPage">
+
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-            <Label Text="Login" Style="{StaticResource Title}"/>
-            <Entry Text="" x:Name="UsernameEntry" Placeholder="Enter your username or email."/>
-            <Entry Text="" x:Name="PasswordEntry" Placeholder="Enter your password." IsPassword="True"/>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="Login" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}"></Button>
-                <Button Text="Register instead" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" BackgroundColor="LightGray"></Button>
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand">
+                </Frame>
             </StackLayout>
-        </StackLayout>
+            <StackLayout Margin="15, 60, 15, 0">
+                <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="250" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Margin="0, 0, 0, 10">
+                        <Frame HeightRequest="70" WidthRequest="100" HasShadow="False" BackgroundColor="Transparent">
+                            <Image Source="@drawable/KamobiLogoUski" Aspect="AspectFit"/>
+                        </Frame>
+                        <StackLayout Margin="0, 10, 0, 0">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                        <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
+                                    </Frame>
+                                    <Entry Text="" x:Name="UsernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                        <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
+                                    </Frame>
+                                    <Entry Text="" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
+                    <Button Text="Login" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Register instead" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" BackgroundColor="{StaticResource Secondary}" HorizontalOptions="CenterAndExpand"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>
