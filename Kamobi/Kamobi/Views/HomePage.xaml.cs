@@ -1,4 +1,5 @@
-﻿using Kamobi.Services;
+﻿using Kamobi.Models;
+using Kamobi.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;

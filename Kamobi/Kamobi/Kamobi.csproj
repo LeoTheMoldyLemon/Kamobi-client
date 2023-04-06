@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Android\Support\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\SMSConfirmPage.xaml.cs">
+      <DependentUpon>SMSConfirmPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\LoadingPage.xaml.cs">
       <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
@@ -45,7 +47,7 @@
     <EmbeddedResource Update="Views\AddFriends.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EmailConfirmPage.xaml">
+    <EmbeddedResource Update="Views\SMSConfirmPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\HomePage.xaml">

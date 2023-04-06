@@ -62,12 +62,12 @@ namespace Kamobi.Views
                     return;
                 }
                 UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-                UserInfo.email = (string)returnData["email"];
+                UserInfo.phoneNumber = (string)returnData["phoneNumber"];
                 UserInfo.passwordHash = (string)savedInfo["password"];
-                if (!(bool)returnData["confirmedEmail"])
+                if (!(bool)returnData["confirmedSMS"])
                 {
                     await Shell.Current.GoToAsync("//LoginPage");
-                    await Navigation.PushAsync(new EmailConfirmPage());
+                    await Navigation.PushAsync(new SMSConfirmPage());
                     return;
                 }
                 await Shell.Current.GoToAsync("//HomePage");

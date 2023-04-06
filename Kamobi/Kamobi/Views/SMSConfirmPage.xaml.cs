@@ -17,13 +17,13 @@ using Xamarin.Forms.Xaml;
 namespace Kamobi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EmailConfirmPage : ContentPage
+    public partial class SMSConfirmPage : ContentPage
     {
-        public EmailConfirmPage()
+        public SMSConfirmPage()
         {
             InitializeComponent();
             string infotext = infoText.Text;
-            infoText.Text = infotext.Replace("{email}", UserInfo.email);
+            infoText.Text = infotext.Replace("{phoneNumber}", UserInfo.phoneNumber);
         }
 
         private async void ConfirmButtonClicked(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(loading); //displaying loading circle popup
                 var data = JsonNode.Parse("{}");
                 data["username"] = UserInfo.username;
-                data["email"] = UserInfo.email;
+                data["phoneNumber"] = UserInfo.phoneNumber;
                 JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
                 loading.Dismiss(null);
                 if (returnData == null)
@@ -60,7 +60,7 @@ namespace Kamobi.Views
                 userdata["loginname"] = UserInfo.username;
                 userdata["password"] = UserInfo.passwordHash;
                 File.WriteAllText(fileName, userdata.ToJsonString());
-                Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your email!"));
+                Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your phone number!"));
                 await Shell.Current.GoToAsync("//HomePage");
                 return;
             }

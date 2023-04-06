@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
- namespace Kamobi
+ namespace Kamobi.Models
 {
-    public class Popularni_restorani
+    public class PopularRestaurant
     {
         public int id { get; set; }
         public string title { get; set; }

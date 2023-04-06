@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.SMSConfirmPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label Text="SMS verification" FontSize="Large"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="infoText" Text="A text message with a 4 digit code has been sent to {phoneNumber}. Please enter the code below to finalize your registration." FontSize="Medium"
+                VerticalOptions="Start" HorizontalOptions="CenterAndExpand" 
+                Padding="20"
+                />
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <Entry Text="" x:Name="CodeEntry" Placeholder="Your 4 digit code." HorizontalOptions="CenterAndExpand" Keyboard="Numeric"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Button Text="Confirm" Clicked="ConfirmButtonClicked" Style="{StaticResource BasicButton}"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

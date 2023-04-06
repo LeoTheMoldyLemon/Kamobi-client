@@ -8,6 +8,6 @@ namespace Kamobi.Services
     {
         public static string username;
         public static string passwordHash;
-        public static string email;
+        public static string phoneNumber;
     }
 }

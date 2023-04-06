@@ -3,36 +3,37 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using Kamobi.Models;
 
-namespace Kamobi
+namespace Kamobi.Models
 {
     public class Popular : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        private ObservableCollection<Popularni_restorani> Popularni_restorani;
+        private ObservableCollection<PopularRestaurant> popularRestaurants;
 
-        public ObservableCollection<Popularni_restorani> popularni_restorani
+        public ObservableCollection<PopularRestaurant> popular_restaurants
         {
-            get { return Popularni_restorani; }
+            get { return popularRestaurants; }
             set
             {
-                Popularni_restorani = value;
+                popularRestaurants = value;
 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("popularni_restorani"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("popular_restaurants"));
             }
         }
 
         public Popular()
         {
-            popularni_restorani = new ObservableCollection<Popularni_restorani>();
+            popular_restaurants = new ObservableCollection<PopularRestaurant>();
             addData();
         }
 
         private void addData()
         {
-            popularni_restorani.Add(new Popularni_restorani
+            popular_restaurants.Add(new PopularRestaurant
             {
 
                 id = 0,
@@ -40,7 +41,7 @@ namespace Kamobi
                 ponuda = "1 + 1 za 1.99€",
                 imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
             });
-            popularni_restorani.Add(new Popularni_restorani
+            popular_restaurants.Add(new PopularRestaurant
             {
 
                 id = 0,

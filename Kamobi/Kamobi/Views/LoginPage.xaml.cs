@@ -22,6 +22,9 @@ namespace Kamobi.Views
         public LoginPage()
         {
             InitializeComponent();
+            UsernameEntry.Focus();
+            UsernameEntry.ReturnCommand = new Command(() => { PasswordEntry.Focus(); });
+            PasswordEntry.ReturnCommand = new Command(()=> { LoginButtonClicked(null, null); });
         }
         
         private async void LoginButtonClicked(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace Kamobi.Views
             
             if (loginname.Length == 0)
             {
-                Navigation.ShowPopup(new InfoPopup("Please enter a username."));
+                Navigation.ShowPopup(new InfoPopup("Field can't be empty."));
                 return;
             }
             if (password.Length == 0)
@@ -66,9 +69,9 @@ namespace Kamobi.Views
             string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
             
             UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-            UserInfo.email = (string)returnData["email"];
+            UserInfo.phoneNumber = (string)returnData["phoneNumber"];
             UserInfo.passwordHash = passwordHash;
-            if ((bool)returnData["confirmedEmail"])
+            if ((bool)returnData["confirmedSMS"])
             {
                 File.WriteAllText(fileName, data.ToJsonString());
                 loading = new LoadingPopup();
@@ -78,7 +81,7 @@ namespace Kamobi.Views
             }
             else
             {
-                await Navigation.PushAsync(new EmailConfirmPage());
+                await Navigation.PushAsync(new SMSConfirmPage());
             }
             return;
         }

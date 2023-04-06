@@ -21,7 +21,7 @@
                                     <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                         <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
                                     </Frame>
-                                    <Entry Text="" x:Name="UsernameEntry" Placeholder="Username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    <Entry Text="" x:Name="UsernameEntry" ReturnType="Next" Placeholder="Phone number" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -30,7 +30,7 @@
                                     <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                         <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
                                     </Frame>
-                                    <Entry Text="" x:Name="PasswordEntry" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>

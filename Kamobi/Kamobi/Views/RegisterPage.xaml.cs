@@ -22,6 +22,9 @@ namespace Kamobi.Views
         public RegisterPage()
         {
             InitializeComponent();
+            UsernameEntry.ReturnCommand = new Command(() => { PhoneNumberEntry.Focus(); });
+            PhoneNumberEntry.ReturnCommand = new Command(() => { PasswordEntry.Focus(); });
+            PasswordEntry.ReturnCommand = new Command(() => { RegisterButtonClicked(null, null); });
         }
        
         private async void RegisterButtonClicked(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace Kamobi.Views
             string username = UsernameEntry.Text; //loading and checking data user has entered
             string password = PasswordEntry.Text;
             PasswordEntry.Text = "";
-            string email = EmailEntry.Text;
+            string phoneNumber = PhoneNumberEntry.Text;
             if (password.Length < 8)
             {
                 Navigation.ShowPopup(new InfoPopup("Password length must be at least 8."));
@@ -42,9 +45,9 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Password length must be no more than 32."));
                 return;
             }
-            if (!Regex.IsMatch(email, @"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"))
+            if (!Regex.IsMatch(phoneNumber, @"^[\+]?[0-9]{3}[0-9]{3}[0-9]{4,6}$"))
             {
-                Navigation.ShowPopup(new InfoPopup("Invalid email adress."));
+                Navigation.ShowPopup(new InfoPopup("Invalid phone number. Please use the \"+385 91 234 5678\" format."));
                 return;
             }
             if (username.Length == 0)
@@ -62,8 +65,8 @@ namespace Kamobi.Views
             var data = JsonNode.Parse("{}");
             data["username"] = username;
             data["password"] = passwordHash;
-            data["email"] = email;
-            JsonNode returnData = await App.socket.sendRequest("emailConfirmation", data, 20000); //parsing and sending data to server
+            data["phoneNumber"] = phoneNumber;
+            JsonNode returnData = await App.socket.sendRequest("SMSConfirmation", data, 20000); //parsing and sending data to server
             loading.Dismiss(null);
             if (returnData == null) {
                 Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
@@ -74,10 +77,10 @@ namespace Kamobi.Views
                 return;
             }
             DataManager.confirmationCode = (string)returnData["code"];
-            UserInfo.username = username; //remember user data for when they confirm email
+            UserInfo.username = username; //remember user data for when they confirm phone number
             UserInfo.passwordHash = passwordHash;
-            UserInfo.email = email;
-            await Navigation.PushAsync(new EmailConfirmPage()); //send user to email confirmation page
+            UserInfo.phoneNumber = phoneNumber;
+            await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)
         {

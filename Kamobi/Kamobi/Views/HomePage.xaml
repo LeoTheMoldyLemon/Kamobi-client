@@ -1,34 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Kamobi"
+             xmlns:vm="clr-namespace:Kamobi.Models"
              x:Class="Kamobi.Views.HomePage">
     
     <ContentPage.BindingContext>
         <vm:Popular/>
     </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Popular" Style="{StaticResource Title}"/>
+            <CarouselView ItemsSource="{Binding popular_restaurants}" HeightRequest="200" PeekAreaInsets="100">
 
-    <StackLayout>
-        <Label Text="Popular" Style="{StaticResource Title}"/>
-        <CarouselView ItemsSource="{Binding popularni_restorani}" HeightRequest="200" PeekAreaInsets="100">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
 
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
+                        <StackLayout>
+                            <Frame HeightRequest="200" WidthRequest="250" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
+                                <Image Source="{Binding imgSource}" Aspect="AspectFill"/>
+                            </Frame>
+                        </StackLayout>
 
-                    <StackLayout>
-                        <Frame HeightRequest="200" WidthRequest="250" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
-                            <Image Source="{Binding imgSource}" Aspect="AspectFill"/>
-                        </Frame>
-                    </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
 
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+            <Label Text="Categories" Style="{StaticResource Title}"/>
 
-        <Label Text="Categories" Style="{StaticResource Title}"/>
-
-
-
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
