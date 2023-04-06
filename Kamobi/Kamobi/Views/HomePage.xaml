@@ -5,12 +5,12 @@
              x:Class="Kamobi.Views.HomePage">
 
     <ContentPage.BindingContext>
-        <vm:Popular/>
+        <vm:ObesrvableCollections/>
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout>
             <Label Text="Popular" Style="{StaticResource Title}"/>
-            <CarouselView ItemsSource="{Binding popular_restaurants}" HeightRequest="200" PeekAreaInsets="100">
+            <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="200" PeekAreaInsets="100">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -24,7 +24,7 @@
 
 
             <Label Text="Categories" Style="{StaticResource Title}"/>
-            <CarouselView ItemsSource="{Binding categories}" HeightRequest="50" PeekAreaInsets="50">
+            <CarouselView ItemsSource="{Binding Categories}" HeightRequest="50" PeekAreaInsets="50">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>

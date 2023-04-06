@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kamobi.Models
 {
-    public class category
+    public class Category
     {
      
         public int id { get; set; }

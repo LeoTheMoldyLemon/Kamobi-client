@@ -7,35 +7,45 @@ using Kamobi.Models;
 
 namespace Kamobi.Models
 {
-    public class Popular : INotifyPropertyChanged
+    public class ObesrvableCollections : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        private ObservableCollection<PopularRestaurant> popularRestaurants;
+        private ObservableCollection<PopularRestaurant> LocalPopularRestaurants;
+        private ObservableCollection<Category> LocalCategories;
 
-        public ObservableCollection<PopularRestaurant> popular_restaurants
+
+        public ObesrvableCollections()
         {
-            get { return popularRestaurants; }
+            PopularRestaurants = new ObservableCollection<PopularRestaurant>();
+            Categories = new ObservableCollection<Category>();
+
+            addData();
+        }
+        public ObservableCollection<PopularRestaurant> PopularRestaurants
+        {
+            get { return LocalPopularRestaurants; }
             set
             {
-                popularRestaurants = value;
-
+                LocalPopularRestaurants = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("popular_restaurants"));
             }
         }
-
-        public Popular()
+        public ObservableCollection<Category> Categories
         {
-            popular_restaurants = new ObservableCollection<PopularRestaurant>();
-            categories = new ObservableCollection<category>();
-            addData();
-            addDataCategories();
+            get { return LocalCategories; }
+            set
+            {
+                LocalCategories = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("categories"));
+            }
         }
+
 
         private void addData()
         {
-            popular_restaurants.Add(new PopularRestaurant
+            PopularRestaurants.Add(new PopularRestaurant
             {
 
                 id = 0,
@@ -43,7 +53,7 @@ namespace Kamobi.Models
                 ponuda = "1 + 1 za 1.99€",
                 imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
             });
-            popular_restaurants.Add(new PopularRestaurant
+            PopularRestaurants.Add(new PopularRestaurant
             {
 
                 id = 0,
@@ -51,32 +61,14 @@ namespace Kamobi.Models
                 ponuda = "bucket za 4.99€",
                 imgSource = "https://sawepecomcdn.blob.core.windows.net/kfc-web-ordering/KFC_CRO/26_CheeserPromo/recommends_b41/kfc_b4o_recommends_dexktop_581x581.jpg"
             });
-
-        }
-
-        private ObservableCollection<category> category;
-        public ObservableCollection<category> categories
-        {
-            get { return category; }
-            set
-            {
-                category = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("categories"));
-            }
-        }
-        
-
-        private void addDataCategories()
-        {
-            categories.Add(new category
+            Categories.Add(new Category
             {
 
                 id = 0,
                 title = "Burger",
                 imgSource = "@drawable/burger.png"
             });
-            categories.Add(new category
+            Categories.Add(new Category
             {
 
                 id = 0,
@@ -84,5 +76,9 @@ namespace Kamobi.Models
                 imgSource = "@drawable/asian.png"
             });
         }
+
+        
+        
+
     }
 }
