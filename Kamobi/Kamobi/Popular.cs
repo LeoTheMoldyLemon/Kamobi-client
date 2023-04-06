@@ -27,7 +27,10 @@ namespace Kamobi
         public Popular()
         {
             popularni_restorani = new ObservableCollection<Popularni_restorani>();
+
+            categories = new ObservableCollection<category>();
             addData();
+            addDataCategories();
         }
 
         private void addData()
@@ -47,6 +50,38 @@ namespace Kamobi
                 title = "KFC",
                 ponuda = "bucket za 4.99€",
                 imgSource = "https://sawepecomcdn.blob.core.windows.net/kfc-web-ordering/KFC_CRO/26_CheeserPromo/recommends_b41/kfc_b4o_recommends_dexktop_581x581.jpg"
+            });
+
+        }
+
+        private ObservableCollection<category> category;
+        public ObservableCollection<category> categories
+        {
+            get { return category; }
+            set
+            {
+                category = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("categories"));
+            }
+        }
+        
+
+        private void addDataCategories()
+        {
+            categories.Add(new category
+            {
+
+                id = 0,
+                title = "Burger",
+                imgSource = "@drawable/burger.png"
+            });
+            categories.Add(new category
+            {
+
+                id = 0,
+                title = "asian",
+                imgSource = "@drawable/asian.png"
             });
         }
     }
