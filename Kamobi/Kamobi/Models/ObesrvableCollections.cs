@@ -21,7 +21,7 @@ namespace Kamobi.Models
             PopularRestaurants = new ObservableCollection<PopularRestaurant>();
             Categories = new ObservableCollection<Category>();
 
-            addData();
+            AddData();
         }
         public ObservableCollection<PopularRestaurant> PopularRestaurants
         {
@@ -43,7 +43,7 @@ namespace Kamobi.Models
         }
 
 
-        private void addData()
+        private void AddData()
         {
             PopularRestaurants.Add(new PopularRestaurant
             {
