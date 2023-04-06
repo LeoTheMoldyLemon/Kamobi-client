@@ -41,7 +41,7 @@ namespace Kamobi.Services
                 promise.TrySetResult(null);
             }
             var result = await Task.WhenAny(promise.Task, Task.Delay(timeout));
-            if (result == promise.Task) {
+            if (result == promise.Task && promise.Task.Result!=null) {
                 return JsonNode.Parse(promise.Task.Result);
             }
             return null;

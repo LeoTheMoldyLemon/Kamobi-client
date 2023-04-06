@@ -11,46 +11,31 @@
         <StackLayout>
             <Label Text="Popular" Style="{StaticResource Title}"/>
             <CarouselView ItemsSource="{Binding popular_restaurants}" HeightRequest="200" PeekAreaInsets="100">
-
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-
                         <StackLayout>
                             <Frame HeightRequest="200" WidthRequest="250" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
                                 <Image Source="{Binding imgSource}" Aspect="AspectFill"/>
                             </Frame>
                         </StackLayout>
-
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
 
-
-        <Label Text="Categories" Style="{StaticResource Title}"/>
-
+            <Label Text="Categories" Style="{StaticResource Title}"/>
+            <CarouselView ItemsSource="{Binding categories}" HeightRequest="50" PeekAreaInsets="50">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
+                                <ImageButton HorizontalOptions="Center" Source="{Binding imgSource}" Aspect="AspectFit"/>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </StackLayout>
     </ScrollView>
-        
-        <CarouselView ItemsSource="{Binding category_list}" HeightRequest="50" PeekAreaInsets="50">
-
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-
-                    <StackLayout>
-
-                        <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
-                            <ImageButton HorizontalOptions="Center" Source="{Binding imgSource}" Aspect="AspectFit"/>
-                        </Frame>
-                       
-                    </StackLayout>
-
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-
-
-
-    </StackLayout>
-
+    
 </ContentPage>

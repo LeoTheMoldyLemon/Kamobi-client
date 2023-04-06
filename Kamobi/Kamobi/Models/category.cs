@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Kamobi
+namespace Kamobi.Models
 {
     public class category
     {

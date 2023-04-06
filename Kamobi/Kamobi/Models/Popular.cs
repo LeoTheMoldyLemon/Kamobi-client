@@ -28,6 +28,7 @@ namespace Kamobi.Models
         public Popular()
         {
             popular_restaurants = new ObservableCollection<PopularRestaurant>();
+            categories = new ObservableCollection<category>();
             addData();
             addDataCategories();
         }
