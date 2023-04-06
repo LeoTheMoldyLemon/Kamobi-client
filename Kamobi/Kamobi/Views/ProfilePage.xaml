@@ -4,11 +4,33 @@
              x:Class="Kamobi.Views.ProfilePage">
    
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="User profile will go here"
-                VerticalOptions="Center" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Logout" Clicked="LogoutButtonClicked" Style="{StaticResource BasicButton}"></Button>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Margin="15, 60, 15, 0">
+
+                <Button Text="Make a profile" 
+                    VerticalOptions="Start" 
+                    HorizontalOptions="StartAndExpand" 
+                    Style="{StaticResource BasicButton}"/>
+
+
+                <Image Source="user_profile.png"
+                       Margin="0, 0, 30, 0"
+                       HeightRequest="100"
+                       WidthRequest="100"
+                       VerticalOptions="End" 
+                       HorizontalOptions="End" 
+                       BackgroundColor="AliceBlue"
+                       
+                       />
+
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+
+                <Button Text="Logout" Clicked="LogoutButtonClicked" Margin="20" Style="{StaticResource BasicButton}"></Button>
+
+            </StackLayout>
         </StackLayout>
+
+
     </ContentPage.Content>
 </ContentPage>

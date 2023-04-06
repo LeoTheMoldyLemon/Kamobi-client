@@ -45,7 +45,7 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Password length must be no more than 32."));
                 return;
             }
-            if (!Regex.IsMatch(phoneNumber, @"^[\+]?[0-9]{3}[0-9]{3}[0-9]{4,6}$"))
+            if (!Regex.IsMatch(phoneNumber, @"^[+]?[0-9]{11,12}$"))
             {
                 Navigation.ShowPopup(new InfoPopup("Invalid phone number. Please use the \"+385 91 234 5678\" format."));
                 return;
