@@ -30,7 +30,7 @@ namespace Kamobi.Views
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
             data["search"] = search;
-            JsonNode returnData = await App.socket.sendRequest("loginUser", data, 20000);
+            JsonNode returnData = await App.socket.sendRequest("addFriend", data, 20000);
             loading.Dismiss(null);
             if (!(bool)returnData["success"])
             {
