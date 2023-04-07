@@ -75,6 +75,7 @@ namespace Kamobi.Views
                 await Shell.Current.GoToAsync("//HomePage");
                 return;
             }
+            await Shell.Current.GoToAsync("//LoginPage");
         }
     }
 }
