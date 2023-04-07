@@ -30,8 +30,13 @@ namespace Kamobi.Views
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
             data["search"] = search;
-            JsonNode returnData = await App.socket.sendRequest("loginUser", data, 20000);
+            JsonNode returnData = await App.socket.sendRequest("addFriend", data, 20000);
             loading.Dismiss(null);
+            if (returnData == null)
+            {
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                return;
+            }
             if (!(bool)returnData["success"])
             {
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
