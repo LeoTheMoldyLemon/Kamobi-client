@@ -33,7 +33,11 @@ namespace Kamobi.Views
             string username = UsernameEntry.Text+"#"+((random.Next(0, 10000)).ToString()).PadLeft(4, ' '); //loading and checking data user has entered
             string password = PasswordEntry.Text;
             PasswordEntry.Text = "";
-            string phoneNumber = PhoneNumberEntry.Text;
+            string phoneNumber = PhoneNumberEntry.Text.Replace("+", "");
+            if (phoneNumber.StartsWith("00"))
+            {
+                phoneNumber = phoneNumber.Replace("00", "");
+            }
             if (password.Length < 8)
             {
                 Navigation.ShowPopup(new InfoPopup("Password length must be at least 8."));

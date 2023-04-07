@@ -31,7 +31,10 @@ namespace Kamobi.Views
         {
 
 
-            string loginname = UsernameEntry.Text;
+            string loginname = UsernameEntry.Text.Replace("+", "");
+            if (loginname.StartsWith("00")) {
+                loginname = loginname.Replace("00", "");
+            }
             string password = PasswordEntry.Text;
             PasswordEntry.Text = "";
             
