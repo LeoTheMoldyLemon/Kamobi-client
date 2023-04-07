@@ -41,10 +41,12 @@ namespace Kamobi.Views
             Console.WriteLine(fileName + " JSON STRING: " + jsonString);
             var savedInfo = JsonNode.Parse(jsonString); //reading and parsing any saved login data
             if (savedInfo["uuid"] == null) {
-                Console.WriteLine("Creating userInfo.json");
-                File.WriteAllText(fileName, "{\"uuid\":\"" + Guid.NewGuid().ToString() + "\"}");
+                string JSONstring = "{\"uuid\":\"" + Guid.NewGuid().ToString() + "\"}";
+                Console.WriteLine("Creating userInfo.json with content: "+ JSONstring);
+                File.WriteAllText(fileName, JSONstring);
             }
-            
+            string jsonString = File.ReadAllText(fileName);
+            savedInfo = JsonNode.Parse(jsonString);
             LoadingPopup loading1 = new LoadingPopup();
             Navigation.ShowPopup(loading1);
             JsonNode returnData = await App.socket.sendRequest("loginUUID", savedInfo, 20000); //if there is login data, compile it and send it to the server
