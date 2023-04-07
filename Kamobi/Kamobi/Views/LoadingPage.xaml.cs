@@ -45,7 +45,7 @@ namespace Kamobi.Views
                 Console.WriteLine("Creating userInfo.json with content: "+ JSONstring);
                 File.WriteAllText(fileName, JSONstring);
             }
-            string jsonString = File.ReadAllText(fileName);
+             jsonString = File.ReadAllText(fileName);
             savedInfo = JsonNode.Parse(jsonString);
             LoadingPopup loading1 = new LoadingPopup();
             Navigation.ShowPopup(loading1);
