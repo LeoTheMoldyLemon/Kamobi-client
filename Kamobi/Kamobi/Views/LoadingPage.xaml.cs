@@ -58,7 +58,7 @@ namespace Kamobi.Views
             }
             if (!(bool)returnData["success"])
             {
-                Console.WriteLine("AAAASDASDASDASDASDASDSAAA");
+                Console.WriteLine((int)returnData["error"]["code"]);
                 await Shell.Current.GoToAsync("//LoginPage");
                 if ((int)returnData["error"]["code"] != 2 && (int)returnData["error"]["code"] != 3)
                 {
