@@ -38,8 +38,7 @@ namespace Kamobi.Views
                 LoadingPopup loading = new LoadingPopup();
                 Navigation.ShowPopup(loading); //displaying loading circle popup
                 var data = JsonNode.Parse("{}");
-                data["username"] = UserInfo.username;
-                data["phoneNumber"] = UserInfo.phoneNumber;
+                data["id"] = UserInfo.id;
                 JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
                 loading.Dismiss(null);
                 if (returnData == null)

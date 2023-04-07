@@ -70,8 +70,9 @@ namespace Kamobi.Views
                 return;
             }
             string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
-            
+            UserInfo.id = (string)returnData["id"];
             UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
             UserInfo.phoneNumber = (string)returnData["phoneNumber"];
             UserInfo.passwordHash = passwordHash;
             if ((bool)returnData["confirmedSMS"])

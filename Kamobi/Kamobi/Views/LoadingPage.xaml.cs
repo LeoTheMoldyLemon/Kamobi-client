@@ -61,7 +61,9 @@ namespace Kamobi.Views
                     }
                     return;
                 }
+                UserInfo.id = (string)returnData["id"];
                 UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+                UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
                 UserInfo.phoneNumber = (string)returnData["phoneNumber"];
                 UserInfo.passwordHash = (string)savedInfo["password"];
                 if (!(bool)returnData["confirmedSMS"])

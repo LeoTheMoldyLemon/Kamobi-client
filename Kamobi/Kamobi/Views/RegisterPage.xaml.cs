@@ -81,7 +81,9 @@ namespace Kamobi.Views
             }
 
             DataManager.confirmationCode = (string)returnData["code"];
+            UserInfo.id= (string)returnData["id"];
             UserInfo.username = username; //remember user data for when they confirm phone number
+            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
             UserInfo.passwordHash = passwordHash;
             UserInfo.phoneNumber = phoneNumber;
             string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
