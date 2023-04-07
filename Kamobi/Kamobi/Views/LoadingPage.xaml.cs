@@ -28,7 +28,7 @@ namespace Kamobi.Views
             if (!(await App.socket.Connect(20000)))//connecting to the server
             {
                 loading.Dismiss(null);
-                Navigation.ShowPopup(new InfoPopup("Failed to connect to server, check your internet connection and try again.", true));
+                Navigation.ShowPopup(new InfoPopup("Failed to connect to server, check your internet connection and try again.", true) { IsLightDismissEnabled = false });
                 return;
             }
             loading.Dismiss(null);
@@ -67,7 +67,9 @@ namespace Kamobi.Views
                 if (!(bool)returnData["confirmedSMS"])
                 {
                     await Shell.Current.GoToAsync("//LoginPage");
+                    Console.WriteLine("sdffffffffffffffffffffffffffffffffffffffffffffffffffffff");
                     await Navigation.PushAsync(new SMSConfirmPage());
+                    Console.WriteLine("fghbjn vnvbhbnfgbn");
                     return;
                 }
                 await Shell.Current.GoToAsync("//HomePage");
