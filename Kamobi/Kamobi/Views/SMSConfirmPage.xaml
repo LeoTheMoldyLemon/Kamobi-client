@@ -19,6 +19,9 @@
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                 <Button Text="Confirm" Clicked="ConfirmButtonClicked" Style="{StaticResource BasicButton}"></Button>
             </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Button Text="Back to register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
