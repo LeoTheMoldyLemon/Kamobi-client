@@ -58,7 +58,7 @@ namespace Kamobi.Views
             }
             if (!(bool)returnData["success"])
             {
-
+                Console.WriteLine("AAAASDASDASDASDASDASDSAAA");
                 await Shell.Current.GoToAsync("//LoginPage");
                 if ((int)returnData["error"]["code"] != 2 && (int)returnData["error"]["code"] != 3)
                 {
@@ -70,10 +70,12 @@ namespace Kamobi.Views
             UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
             UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
             UserInfo.phoneNumber = (string)returnData["phoneNumber"];
-            UserInfo.passwordHash = (string)savedInfo["password"];
+            Console.WriteLine("AAAAAADASDA");
+            UserInfo.passwordHash = (string)returnData["password"];
             if (!(bool)returnData["confirmedSMS"])
             {
                 DataManager.confirmationCode = (string)returnData["code"];
+                Console.WriteLine("AAAAAA");
                 await Navigation.PushAsync(new SMSConfirmPage());
                 return;
             }
