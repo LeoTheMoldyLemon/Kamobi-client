@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace Kamobi.Services
+namespace Kamobi.Models
 {
     public class UserInfoTemplate : INotifyPropertyChanged
     {
+
         public event PropertyChangedEventHandler PropertyChanged;
         public string id;
         public string username
@@ -16,11 +17,7 @@ namespace Kamobi.Services
                 if (username != value)
                 {
                     username = value;
-
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("username"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("username"));
                 }
             }
             get
@@ -36,10 +33,7 @@ namespace Kamobi.Services
                 {
                     displayname = value;
 
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("displayname"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("displayname"));
                 }
             }
             get
@@ -56,10 +50,7 @@ namespace Kamobi.Services
                 {
                     phoneNumber = value;
 
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("username"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("username"));
                 }
             }
             get

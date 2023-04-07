@@ -7,7 +7,7 @@ using Kamobi.Models;
 
 namespace Kamobi.Models
 {
-    public class ObesrvableCollections : INotifyPropertyChanged
+    public class ObservableCollections : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -16,12 +16,11 @@ namespace Kamobi.Models
         private ObservableCollection<Category> LocalCategories;
 
 
-        public ObesrvableCollections()
+        public ObservableCollections()
         {
             PopularRestaurants = new ObservableCollection<PopularRestaurant>();
             Categories = new ObservableCollection<Category>();
 
-            AddData();
         }
         public ObservableCollection<PopularRestaurant> PopularRestaurants
         {

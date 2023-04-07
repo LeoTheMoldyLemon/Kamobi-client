@@ -9,7 +9,6 @@ namespace Kamobi
     public partial class App : Application
     {
         public static Socket socket;
-        public static UserInfoTemplate UserInfo = new UserInfoTemplate();
         public App()
         {
             socket = new Socket("http://kamobi-app.site:42069/");

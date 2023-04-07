@@ -75,20 +75,19 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
                 return;
             }
+            Console.WriteLine("Aaaaaaaaaaaa");
             if (!(bool)returnData["success"]) { //response error handling
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-
+            Console.WriteLine("aaaaaaaaaaaaaaaaaaaa");
             DataManager.confirmationCode = (string)returnData["code"];
-            App.UserInfo.id= (string)returnData["id"];
-            App.UserInfo.username = username; //remember user data for when they confirm phone number
-            App.UserInfo.displayname = App.UserInfo.username.Substring(0, App.UserInfo.username.Length - 5);
-            App.UserInfo.passwordHash = passwordHash;
-            App.UserInfo.phoneNumber = phoneNumber;
-            var userdata = JsonNode.Parse("{}");
-            userdata["loginname"] = App.UserInfo.phoneNumber;
-            userdata["password"] = App.UserInfo.passwordHash;
+            UserInfo.id= (string)returnData["id"];
+            UserInfo.username = username; //remember user data for when they confirm phone number
+            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
+            UserInfo.passwordHash = passwordHash;
+            UserInfo.phoneNumber = phoneNumber;
+            Console.WriteLine("AaaaaaaaaAAAAAAAaaa");
             await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)

@@ -5,7 +5,7 @@
              x:Class="Kamobi.Views.HomePage">
 
     <ContentPage.BindingContext>
-        <vm:ObesrvableCollections/>
+        <vm:ObservableCollections/>
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout>
