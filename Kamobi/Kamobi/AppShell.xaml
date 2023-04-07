@@ -40,7 +40,7 @@
         <ShellContent Icon="home.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Icon="search.png" Route="SearchPage" ContentTemplate="{DataTemplate local:SearchPage}" />
         <ShellContent Icon="kamoparty.png" Route="PartyCreatePage" ContentTemplate="{DataTemplate local:PartyCreatePage}" />
-        <ShellContent Icon="friends.png" Route="AddFriends" ContentTemplate="{DataTemplate local:AddFriends}" />
+        <ShellContent Icon="friends.png" Route="AddFriendsPage" ContentTemplate="{DataTemplate local:AddFriendsPage}" />
         <ShellContent Icon="user_profile.png" Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}" />
     </TabBar>
 

@@ -4,33 +4,34 @@
              x:Class="Kamobi.Views.ProfilePage">
    
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Horizontal" Margin="15, 60, 15, 0">
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" Margin="15, 60, 15, 0">
 
-                <Button Text="Make a profile" 
-                    VerticalOptions="Start" 
-                    HorizontalOptions="StartAndExpand" 
-                    Style="{StaticResource BasicButton}"/>
+                    <Button Text="Make a profile" 
+                        VerticalOptions="Start" 
+                        HorizontalOptions="StartAndExpand" 
+                        Style="{StaticResource BasicButton}"/>
 
 
-                <Image Source="user_profile.png"
-                       Margin="0, 0, 30, 0"
-                       HeightRequest="100"
-                       WidthRequest="100"
-                       VerticalOptions="End" 
-                       HorizontalOptions="End" 
-                       BackgroundColor="AliceBlue"
+                    <Image Source="user_profile.png"
+                           Margin="0, 0, 30, 0"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           VerticalOptions="End" 
+                           HorizontalOptions="End" 
+                           BackgroundColor="AliceBlue"
                        
-                       />
+                           />
 
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+
+                    <Button Text="Logout" Clicked="LogoutButtonClicked" Margin="20" Style="{StaticResource BasicButton}"></Button>
+
+                </StackLayout>
             </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand">
-
-                <Button Text="Logout" Clicked="LogoutButtonClicked" Margin="20" Style="{StaticResource BasicButton}"></Button>
-
-            </StackLayout>
-        </StackLayout>
-
+        </ScrollView>
 
     </ContentPage.Content>
 </ContentPage>
