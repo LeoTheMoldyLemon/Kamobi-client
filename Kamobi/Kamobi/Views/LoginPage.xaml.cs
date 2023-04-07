@@ -84,6 +84,7 @@ namespace Kamobi.Views
             }
             else
             {
+                DataManager.confirmationCode = (string)returnData["code"];
                 await Navigation.PushAsync(new SMSConfirmPage());
             }
             return;

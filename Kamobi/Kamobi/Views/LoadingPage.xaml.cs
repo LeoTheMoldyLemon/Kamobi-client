@@ -66,10 +66,8 @@ namespace Kamobi.Views
                 UserInfo.passwordHash = (string)savedInfo["password"];
                 if (!(bool)returnData["confirmedSMS"])
                 {
-                    await Shell.Current.GoToAsync("//LoginPage");
-                    Console.WriteLine("sdffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+                    DataManager.confirmationCode = (string)returnData["code"];
                     await Navigation.PushAsync(new SMSConfirmPage());
-                    Console.WriteLine("fghbjn vnvbhbnfgbn");
                     return;
                 }
                 await Shell.Current.GoToAsync("//HomePage");

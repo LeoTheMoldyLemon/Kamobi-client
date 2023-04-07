@@ -57,7 +57,7 @@ namespace Kamobi.Views
                 await Navigation.PopAsync();
                 string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
                 var userdata = JsonNode.Parse("{}");
-                userdata["loginname"] = UserInfo.username;
+                userdata["loginname"] = UserInfo.phoneNumber;
                 userdata["password"] = UserInfo.passwordHash;
                 File.WriteAllText(fileName, userdata.ToJsonString());
                 Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your phone number!"));
@@ -65,6 +65,10 @@ namespace Kamobi.Views
                 return;
             }
         }
-        
+        private async void RegisterButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//RegisterPage");
+        }
+
     }
 }

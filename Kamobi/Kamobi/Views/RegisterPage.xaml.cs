@@ -79,10 +79,16 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
+
             DataManager.confirmationCode = (string)returnData["code"];
             UserInfo.username = username; //remember user data for when they confirm phone number
             UserInfo.passwordHash = passwordHash;
             UserInfo.phoneNumber = phoneNumber;
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
+            var userdata = JsonNode.Parse("{}");
+            userdata["loginname"] = UserInfo.phoneNumber;
+            userdata["password"] = UserInfo.passwordHash;
+            File.WriteAllText(fileName, userdata.ToJsonString());
             await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)
