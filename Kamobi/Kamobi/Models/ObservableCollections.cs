@@ -21,6 +21,7 @@ namespace Kamobi.Models
             PopularRestaurants = new ObservableCollection<PopularRestaurant>();
             Categories = new ObservableCollection<Category>();
 
+            AddData();
         }
         public ObservableCollection<PopularRestaurant> PopularRestaurants
         {
