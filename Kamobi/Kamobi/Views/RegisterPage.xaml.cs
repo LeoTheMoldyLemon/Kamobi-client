@@ -81,16 +81,14 @@ namespace Kamobi.Views
             }
 
             DataManager.confirmationCode = (string)returnData["code"];
-            UserInfo.id= (string)returnData["id"];
-            UserInfo.username = username; //remember user data for when they confirm phone number
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-            UserInfo.passwordHash = passwordHash;
-            UserInfo.phoneNumber = phoneNumber;
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
+            App.UserInfo.id= (string)returnData["id"];
+            App.UserInfo.username = username; //remember user data for when they confirm phone number
+            App.UserInfo.displayname = App.UserInfo.username.Substring(0, App.UserInfo.username.Length - 5);
+            App.UserInfo.passwordHash = passwordHash;
+            App.UserInfo.phoneNumber = phoneNumber;
             var userdata = JsonNode.Parse("{}");
-            userdata["loginname"] = UserInfo.phoneNumber;
-            userdata["password"] = UserInfo.passwordHash;
-            File.WriteAllText(fileName, userdata.ToJsonString());
+            userdata["loginname"] = App.UserInfo.phoneNumber;
+            userdata["password"] = App.UserInfo.passwordHash;
             await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)

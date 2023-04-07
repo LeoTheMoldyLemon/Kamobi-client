@@ -23,7 +23,7 @@ namespace Kamobi.Views
         {
             InitializeComponent();
             string infotext = infoText.Text;
-            infoText.Text = infotext.Replace("{phoneNumber}", UserInfo.phoneNumber);
+            infoText.Text = infotext.Replace("{phoneNumber}", App.UserInfo.phoneNumber);
         }
 
         private async void ConfirmButtonClicked(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Kamobi.Views
                 LoadingPopup loading = new LoadingPopup();
                 Navigation.ShowPopup(loading); //displaying loading circle popup
                 var data = JsonNode.Parse("{}");
-                data["id"] = UserInfo.id;
+                data["id"] = App.UserInfo.id;
                 JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
                 loading.Dismiss(null);
                 if (returnData == null)
@@ -54,11 +54,9 @@ namespace Kamobi.Views
                     return;
                 }
                 await Navigation.PopAsync();
-                string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
                 var userdata = JsonNode.Parse("{}");
-                userdata["loginname"] = UserInfo.phoneNumber;
-                userdata["password"] = UserInfo.passwordHash;
-                File.WriteAllText(fileName, userdata.ToJsonString());
+                userdata["loginname"] = App.UserInfo.phoneNumber;
+                userdata["password"] = App.UserInfo.passwordHash;
                 Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your phone number!"));
                 await Shell.Current.GoToAsync("//HomePage");
                 return;

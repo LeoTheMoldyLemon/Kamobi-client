@@ -69,15 +69,14 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
-            UserInfo.id = (string)returnData["id"];
-            UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-            UserInfo.phoneNumber = (string)returnData["phoneNumber"];
-            UserInfo.passwordHash = passwordHash;
+           
+            App.UserInfo.id = (string)returnData["id"];
+            App.UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+            App.UserInfo.displayname = App.UserInfo.username.Substring(0, App.UserInfo.username.Length - 5);
+            App.UserInfo.phoneNumber = (string)returnData["phoneNumber"];
+            App.UserInfo.passwordHash = passwordHash;
             if ((bool)returnData["confirmedSMS"])
             {
-                File.WriteAllText(fileName, data.ToJsonString());
                 loading = new LoadingPopup();
                 Navigation.ShowPopup(loading);
                 await Shell.Current.GoToAsync("//HomePage");

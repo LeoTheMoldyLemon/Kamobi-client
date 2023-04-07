@@ -20,8 +20,6 @@ namespace Kamobi.Views
 
         private async void LogoutButtonClicked(object sender, EventArgs e)
         {
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "userInfo.json");
-            File.WriteAllText(fileName, "{\"loginname\":\"\",\"password\":\"\"}");
             await Shell.Current.GoToAsync("//LoginPage");
         }
     }

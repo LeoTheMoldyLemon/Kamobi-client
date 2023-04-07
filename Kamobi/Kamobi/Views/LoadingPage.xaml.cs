@@ -35,47 +35,49 @@ namespace Kamobi.Views
             if (!File.Exists(fileName))
             { //if file doesnt exist, create it
                 Console.WriteLine("Creating userInfo.json");
-                File.WriteAllText(fileName, "{\"loginname\":\"\",\"password\":\"\"}");
+                File.WriteAllText(fileName, "{\"uuid\":\"" + Guid.NewGuid().ToString() + "\"}");
             }
             string jsonString = File.ReadAllText(fileName);
             Console.WriteLine(fileName + " JSON STRING: " + jsonString);
             var savedInfo = JsonNode.Parse(jsonString); //reading and parsing any saved login data
-            if (savedInfo["loginname"] != null && savedInfo["password"] != null)
+            if (savedInfo["uuid"] == null) {
+                Console.WriteLine("Creating userInfo.json");
+                File.WriteAllText(fileName, "{\"uuid\":\"" + Guid.NewGuid().ToString() + "\"}");
+            }
+            
+            LoadingPopup loading1 = new LoadingPopup();
+            Navigation.ShowPopup(loading1);
+            JsonNode returnData = await App.socket.sendRequest("loginUUID", savedInfo, 20000); //if there is login data, compile it and send it to the server
+            loading1.Dismiss(null);
+            if (returnData == null)
             {
-                LoadingPopup loading1 = new LoadingPopup();
-                Navigation.ShowPopup(loading1);
-                JsonNode returnData = await App.socket.sendRequest("loginUser", savedInfo, 20000); //if there is login data, compile it and send it to the server
-                loading1.Dismiss(null);
-                if (returnData == null)
-                {
-                    Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."){IsLightDismissEnabled=false });
-                    return;
-                }
-                if (!(bool)returnData["success"])
-                {
-
-                    await Shell.Current.GoToAsync("//LoginPage");
-                    if ((int)returnData["error"]["code"] != 2)
-                    {
-                        Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"])); //error handling
-                    }
-                    return;
-                }
-                UserInfo.id = (string)returnData["id"];
-                UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-                UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-                UserInfo.phoneNumber = (string)returnData["phoneNumber"];
-                UserInfo.passwordHash = (string)savedInfo["password"];
-                if (!(bool)returnData["confirmedSMS"])
-                {
-                    DataManager.confirmationCode = (string)returnData["code"];
-                    await Navigation.PushAsync(new SMSConfirmPage());
-                    return;
-                }
-                await Shell.Current.GoToAsync("//HomePage");
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."){IsLightDismissEnabled=false });
                 return;
             }
-            await Shell.Current.GoToAsync("//LoginPage");
+            if (!(bool)returnData["success"])
+            {
+
+                await Shell.Current.GoToAsync("//LoginPage");
+                if ((int)returnData["error"]["code"] != 2 && (int)returnData["error"]["code"] != 3)
+                {
+                    Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"])); //error handling
+                }
+                return;
+            }
+            App.UserInfo.id = (string)returnData["id"];
+            App.UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+            App.UserInfo.displayname = App.UserInfo.username.Substring(0, App.UserInfo.username.Length - 5);
+            App.UserInfo.phoneNumber = (string)returnData["phoneNumber"];
+            App.UserInfo.passwordHash = (string)savedInfo["password"];
+            if (!(bool)returnData["confirmedSMS"])
+            {
+                DataManager.confirmationCode = (string)returnData["code"];
+                await Navigation.PushAsync(new SMSConfirmPage());
+                return;
+            }
+            await Shell.Current.GoToAsync("//HomePage");
+            return;
+            
         }
     }
 }
