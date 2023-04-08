@@ -11,7 +11,9 @@ namespace Kamobi
         public static Socket socket;
         public App()
         {
-            socket = new Socket("http://kamobi-app.site:42069/");
+            string host = "http://kamobi-app.site:42069/";
+            socket = new Socket(host);
+            Console.WriteLine(host);
             InitializeComponent();
 
             MainPage = new AppShell();

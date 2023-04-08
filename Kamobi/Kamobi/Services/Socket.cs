@@ -68,11 +68,15 @@ namespace Kamobi.Services
         /// <returns>True if it managed to connect, false if it didn't.</returns>
         public async Task<Boolean> Connect(int timeout=5000)
         {
+            Console.WriteLine("Attempting to connect to socket.io server");
             var connection = socket.ConnectAsync();
             var result = await Task.WhenAny(connection, Task.Delay(timeout));
             if (result == connection){
+
+                Console.WriteLine("Connected to socket.io server");
                 return true;
             }
+            Console.WriteLine("Failed to connect to socket.io server");
             await socket.DisconnectAsync();
             return false;
         }
