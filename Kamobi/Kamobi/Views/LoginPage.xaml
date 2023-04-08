@@ -36,10 +36,8 @@
                             </Frame>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" >
-                            <CheckBox Color="{StaticResource Primary}" HorizontalOptions="Start" Margin="10,0,0,0" IsChecked="true" />
-
+                            <CheckBox x:Name="RememberCheckBox" Color="{StaticResource Primary}" HorizontalOptions="Start" Margin="10,0,0,0" IsChecked="true" />
                             <Label Text="Remember me" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0"></Label>
-                            
                         </StackLayout>
                         </StackLayout>
                 </Frame>

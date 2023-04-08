@@ -59,6 +59,7 @@ namespace Kamobi.Views
             var data = JsonNode.Parse("{}");
             data["loginname"] = loginname;
             data["password"] = passwordHash;
+            data["rememberUUID"] = RememberCheckBox.IsChecked;
             JsonNode returnData = await App.socket.sendRequest("loginUser", data, 20000);
             loading.Dismiss(null);
             if (returnData == null) {
