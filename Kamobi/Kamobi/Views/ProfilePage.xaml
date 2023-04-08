@@ -58,7 +58,7 @@
                 </StackLayout>
 
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Rewiews"
+                    <Label Text="Reviews"
                            Margin="30, 30, 0, 0"
                            VerticalOptions="StartAndExpand" 
                            HorizontalOptions="StartAndExpand" 
