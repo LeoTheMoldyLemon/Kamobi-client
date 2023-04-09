@@ -10,12 +10,14 @@
     <ScrollView>
         <StackLayout>
             <Label Text="Popular" Style="{StaticResource Title}"/>
+            
             <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="200" PeekAreaInsets="100">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
                             <Frame HeightRequest="200" WidthRequest="250" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
-                                <Image Source="{Binding imgSource}" Aspect="AspectFill"/>
+                                <Image Source="{Binding imgSource}" 
+                                       Aspect="AspectFill"/>
                             </Frame>
                         </StackLayout>
                     </DataTemplate>
@@ -24,12 +26,18 @@
 
 
             <Label Text="Categories" Style="{StaticResource Title}"/>
-            <CarouselView ItemsSource="{Binding Categories}" HeightRequest="50" PeekAreaInsets="50">
+
+            <CarouselView ItemsSource="{Binding Categories}" HeightRequest="75" PeekAreaInsets="150">
                 <CarouselView.ItemTemplate>
+                    
                     <DataTemplate>
                         <StackLayout>
-                            <Frame HeightRequest="50" WidthRequest="50" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
-                                <ImageButton HorizontalOptions="Center" Source="{Binding imgSource}" Aspect="AspectFit"/>
+                            <Frame HeightRequest="75" WidthRequest="75" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
+                                <ImageButton
+                                             Source="{Binding imgSource}" 
+                                             Aspect="AspectFit"/>
+
+                                
                             </Frame>
                         </StackLayout>
                     </DataTemplate>
