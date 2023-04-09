@@ -10,7 +10,7 @@
                     PlaceholderColor="{StaticResource Secondary}"
                     BackgroundColor="{StaticResource AlmostWhite}"
                     Margin="0,20,0,0"
-                    SearchButtonPressed="True"
+                    
                     
                     />
             
