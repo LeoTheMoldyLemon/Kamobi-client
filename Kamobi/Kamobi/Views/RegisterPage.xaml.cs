@@ -58,7 +58,7 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Please enter a username."));
                 return;
             }
-            string passwordHash = "";
+            string passwordHash;
             using (SHA256 sha256Hash = SHA256.Create()) //hashing password
             {
                 passwordHash = Encoding.UTF8.GetString(sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password)));
