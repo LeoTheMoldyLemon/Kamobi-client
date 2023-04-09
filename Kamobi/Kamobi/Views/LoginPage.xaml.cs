@@ -70,7 +70,7 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-           
+            
             UserInfo.id = (string)returnData["id"];
             UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
             UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);

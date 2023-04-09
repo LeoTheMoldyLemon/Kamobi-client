@@ -38,7 +38,7 @@
                                     <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                         <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
                                     </Frame>
-                                    <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Choose a password" IsPassword="True" Keyboard="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" BackgroundColor="{StaticResource BaseColor}" Placeholder="Choose a password" IsPassword="True" Keyboard="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                                     <ImageButton Source="@drawable/eye_open" x:Name="ToggleHidePasswordButton"  VerticalOptions="Center" HorizontalOptions="End" HeightRequest="30" Clicked="ToggleHidePasswordClicked" Margin="0, 0, 10, 0"/>
                                 </StackLayout>
                             </Frame>
