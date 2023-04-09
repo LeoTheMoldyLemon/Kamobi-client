@@ -3,9 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.AddFriendsPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand">
+        
+        <StackLayout>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <SearchBar
+                    Placeholder="Search..."
+                    CancelButtonColor="{StaticResource Primary}"
+                    PlaceholderColor="{StaticResource Secondary}"
+                    BackgroundColor="{StaticResource AlmostWhite}"
+                    Margin="0,20,0,0"
+                    SearchButtonPressed="True"
+                    
+                    />
+                
+
+
+
+            </StackLayout>
             <Label Text="You will add friends here"
-                VerticalOptions="Center" 
+                VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
