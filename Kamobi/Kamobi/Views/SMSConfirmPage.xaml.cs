@@ -24,6 +24,7 @@ namespace Kamobi.Views
             InitializeComponent();
             string infotext = infoText.Text;
             infoText.Text = infotext.Replace("{phoneNumber}", UserInfo.phoneNumber);
+            CodeEntry.ReturnCommand = new Command(() => { ConfirmButtonClicked(null, null); });
         }
 
         private async void ConfirmButtonClicked(object sender, EventArgs e)

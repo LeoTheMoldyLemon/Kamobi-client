@@ -31,6 +31,7 @@
                                         <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
                                     </Frame>
                                     <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    <ImageButton Source="@drawable/eye_open" x:Name="ToggleHidePasswordButton"  VerticalOptions="Center" HorizontalOptions="End" HeightRequest="20" Clicked="ToggleHidePasswordClicked"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>

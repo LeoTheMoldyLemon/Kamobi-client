@@ -13,9 +13,11 @@
                 />
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                 <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                    <Entry Text="" x:Name="CodeEntry" Placeholder="Your 4 digit code." HorizontalOptions="CenterAndExpand" Keyboard="Numeric"/>
+                    <Entry Text="" x:Name="CodeEntry" ReturnType="Done" Placeholder="Your 4 digit code." HorizontalOptions="FillAndExpand" Keyboard="Numeric" HeightRequest="37" Margin="0, 0, 15, 0"/>
                 </Frame>
+                
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
                 <Button Text="Confirm" Clicked="ConfirmButtonClicked" Style="{StaticResource BasicButton}"></Button>
             </StackLayout>

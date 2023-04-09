@@ -93,5 +93,15 @@ namespace Kamobi.Views
         {
             await Shell.Current.GoToAsync("//RegisterPage");
         }
+        private void ToggleHidePasswordClicked(object sender, EventArgs e) {
+            PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
+            if (PasswordEntry.IsPassword) {
+                ToggleHidePasswordButton.Source = "@drawable/eye_open";
+            }
+            else
+            {
+                ToggleHidePasswordButton.Source = "@drawable/eye_closed";
+            }
+        }
     }
 }
