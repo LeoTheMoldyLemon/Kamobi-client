@@ -75,24 +75,34 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
                 return;
             }
-            Console.WriteLine("Aaaaaaaaaaaa");
             if (!(bool)returnData["success"]) { //response error handling
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            Console.WriteLine("aaaaaaaaaaaaaaaaaaaa");
             DataManager.confirmationCode = (string)returnData["code"];
             UserInfo.id= (string)returnData["id"];
             UserInfo.username = username; //remember user data for when they confirm phone number
             UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
             UserInfo.passwordHash = passwordHash;
             UserInfo.phoneNumber = phoneNumber;
-            Console.WriteLine("AaaaaaaaaAAAAAAAaaa");
             await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//LoginPage");
         }
+        private void ToggleHidePasswordClicked(object sender, EventArgs e)
+        {
+            PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
+            if (PasswordEntry.IsPassword)
+            {
+                ToggleHidePasswordButton.Source = "@drawable/eye_open";
+            }
+            else
+            {
+                ToggleHidePasswordButton.Source = "@drawable/eye_closed";
+            }
+        }
     }
+    
 }
