@@ -4,6 +4,7 @@
              x:Class="Kamobi.Views.SearchPage">
     <ContentPage.Content>
         <StackLayout>
+           
             <SearchBar
                     Placeholder="Search..."
                     CancelButtonColor="{StaticResource Primary}"
@@ -13,10 +14,39 @@
                     
                     
                     />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="#Fish"
+                   Margin="20,20,0,20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" 
+                   BackgroundColor="{StaticResource Primary}"
+                   Style="{StaticResource Text}"
+                   CornerRadius="50"
+                   
+                   />
+            <Button Text="#Burger"
+                   Margin="5,20,0,20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" 
+                   BackgroundColor="{StaticResource Primary}"
+                   Style="{StaticResource Text}"
+                   CornerRadius="50"
+                   
+                   />
+            <Button Text="#Pizza"
+                   Margin="5,20,0,20"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" 
+                   BackgroundColor="{StaticResource Primary}"
+                   Style="{StaticResource Text}"
+                   CornerRadius="50"
+                   
+                   />
             
-            <Label Text="Search page will go here"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                
+            
+            
+                </StackLayout>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>

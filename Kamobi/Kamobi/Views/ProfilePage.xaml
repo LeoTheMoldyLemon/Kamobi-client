@@ -17,6 +17,7 @@
                                  VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="EndAndExpand" 
                                  Margin="0, 15, 15, 0"
+                                 
 
                     />
                 </StackLayout>

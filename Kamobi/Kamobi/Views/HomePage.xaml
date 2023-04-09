@@ -34,11 +34,16 @@
                         <StackLayout>
                             <Frame HeightRequest="75" WidthRequest="75" BackgroundColor="White" HasShadow="True" Margin="10" Padding="0" CornerRadius="15" HorizontalOptions="CenterAndExpand">
                                 <ImageButton
-                                             Source="{Binding imgSource}" 
-                                             Aspect="AspectFit"/>
+                                    Source="{Binding imgSource}" 
+                                    BackgroundColor="{StaticResource Primary}" 
+                                    Aspect="AspectFit"
+                                    />
 
-                                
+
+
+
                             </Frame>
+                            
                         </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
