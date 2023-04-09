@@ -79,7 +79,6 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            DataManager.confirmationCode = (string)returnData["code"];
             UserInfo.id= (string)returnData["id"];
             UserInfo.username = username; //remember user data for when they confirm phone number
             UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);

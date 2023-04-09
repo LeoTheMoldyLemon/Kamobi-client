@@ -29,35 +29,29 @@ namespace Kamobi.Views
 
         private async void ConfirmButtonClicked(object sender, EventArgs e)
         {
-            if (CodeEntry.Text != DataManager.confirmationCode)
+            LoadingPopup loading = new LoadingPopup();
+            Navigation.ShowPopup(loading); //displaying loading circle popup
+            var data = JsonNode.Parse("{}");
+            data["id"] = UserInfo.id;
+            data["code"] = CodeEntry.Text;
+            JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
+            loading.Dismiss(null);
+            if (returnData == null)
             {
-                Navigation.ShowPopup(new InfoPopup("Incorrect code, try again."));
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
                 return;
             }
-            else 
-            {
-                LoadingPopup loading = new LoadingPopup();
-                Navigation.ShowPopup(loading); //displaying loading circle popup
-                var data = JsonNode.Parse("{}");
-                data["id"] = UserInfo.id;
-                JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
-                loading.Dismiss(null);
-                if (returnData == null)
-                {
-                    Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
-                    return;
+            if (!(bool)returnData["success"]) { //error handling
+                Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
+                if ((int)returnData["error"]["code"] == 2) {
+                    await Navigation.PopAsync();
                 }
-                if (!(bool)returnData["success"]) { //error handling
-                    Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
-                    if ((int)returnData["error"]["code"] == 2) {
-                        await Navigation.PopAsync();
-                    }
-                    return;
-                }
-                Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your phone number!"));
-                await Shell.Current.GoToAsync("//HomePage");
                 return;
             }
+            Navigation.ShowPopup(new InfoPopup("You have successfully confirmed your phone number!"));
+            await Shell.Current.GoToAsync("//HomePage");
+            return;
+            
         }
         private async void RegisterButtonClicked(object sender, EventArgs e)
         {

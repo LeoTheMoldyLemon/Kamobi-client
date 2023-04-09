@@ -7,6 +7,6 @@ namespace Kamobi.Services
     
     class DataManager
     {
-        public static string confirmationCode;
+        
     }
 }
