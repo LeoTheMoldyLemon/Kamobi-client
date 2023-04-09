@@ -11,18 +11,18 @@
                 VerticalOptions="Start" HorizontalOptions="CenterAndExpand" 
                 Padding="20"
                 />
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                    <Entry Text="" x:Name="CodeEntry" ReturnType="Done" Placeholder="Your 4 digit code." HorizontalOptions="FillAndExpand" Keyboard="Numeric" HeightRequest="37" Margin="0, 0, 15, 0"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="5" Margin="0" CornerRadius="50" HorizontalOptions="Center">
+                    <Entry Text="" x:Name="CodeEntry" ReturnType="Done" Placeholder="Your 4 digit code." HorizontalOptions="CenterAndExpand" Keyboard="Numeric" HeightRequest="37" Margin="15, 0, 15, 0"/>
                 </Frame>
                 
             </StackLayout>
             
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Button Text="Confirm" Clicked="ConfirmButtonClicked" Style="{StaticResource BasicButton}"></Button>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                <Button Text="Confirm" Clicked="ConfirmButtonClicked" HorizontalOptions="CenterAndExpand" Style="{StaticResource BasicButton}"></Button>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-                <Button Text="Back to register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}"></Button>
+                <Button Text="Back to register" Clicked="RegisterButtonClicked"  HorizontalOptions="CenterAndExpand" Style="{StaticResource BasicButton}"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
