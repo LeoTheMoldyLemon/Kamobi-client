@@ -36,7 +36,7 @@ namespace Kamobi.Views
             string phoneNumber = PhoneNumberEntry.Text.Replace("+", "");
             if (phoneNumber.StartsWith("00"))
             {
-                phoneNumber = phoneNumber.Replace("00", "");
+                phoneNumber = phoneNumber.Remove(0, 2);
             }
             if (password.Length < 8)
             {

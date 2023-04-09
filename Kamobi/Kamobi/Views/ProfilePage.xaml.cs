@@ -55,11 +55,22 @@ namespace Kamobi.Views
         private async void ChangePasswordButtonClicked(object sender, EventArgs e)
         {   
             string passwordHash, password1 = "ass", password2 = "ass";
+            if (password1.Length < 8)
+            {
+                Navigation.ShowPopup(new InfoPopup("Password length must be at least 8."));
+                return;
+            }
+            if (password1.Length > 32)
+            {
+                Navigation.ShowPopup(new InfoPopup("Password length must be no more than 32."));
+                return;
+            }
             if (password1 != password2)
             {
                 Navigation.ShowPopup(new InfoPopup("Passwords don't match."));
                 return;
             }
+            
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             using (SHA256 sha256Hash = SHA256.Create()) //hashing password
@@ -80,8 +91,7 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            UserInfo.username = (string)data["username"];
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
+
         }
 
     }
