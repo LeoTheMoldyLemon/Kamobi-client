@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using Kamobi.Models;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Kamobi.Models
 {
@@ -14,12 +16,15 @@ namespace Kamobi.Models
 
         private ObservableCollection<PopularRestaurant> LocalPopularRestaurants;
         private ObservableCollection<Category> LocalCategories;
+        private ObservableCollection<Review> UserReviews;
+
 
 
         public ObservableCollections()
         {
             PopularRestaurants = new ObservableCollection<PopularRestaurant>();
             Categories = new ObservableCollection<Category>();
+            Reviews = new ObservableCollection<Review>();
 
             AddData();
         }
@@ -42,6 +47,25 @@ namespace Kamobi.Models
             }
         }
 
+        public ObservableCollection<Review> Reviews
+        {
+            get { return UserReviews; }
+            set
+            {
+                UserReviews = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("reviews"));
+            }
+        }
+
+        private async void OnImageButtonClicked(object sender, EventArgs e)
+        {
+            var imageButton = (ImageButton)sender;
+            var item = imageButton.BindingContext as PopularRestaurant;
+            if (item != null && !string.IsNullOrEmpty(item.link))
+            {
+                await Launcher.OpenAsync(new Uri(item.link));
+            }
+        }
 
         private void AddData()
         {
@@ -50,7 +74,7 @@ namespace Kamobi.Models
 
                 id = 0,
                 title = "McDonalds",
-                ponuda = "1 + 1 za 1.99€",
+                link = "https://mcdonalds.hr/o-nama/novosti/11-ponuda-uzitak-koji-vrijedi-vise/",
                 imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
             });
             PopularRestaurants.Add(new PopularRestaurant
@@ -58,11 +82,25 @@ namespace Kamobi.Models
 
                 id = 0,
                 title = "KFC",
-                ponuda = "bucket za 4.99€",
+                link = "https://kfc.hr/",
                 imgSource = "https://sawepecomcdn.blob.core.windows.net/kfc-web-ordering/KFC_CRO/26_CheeserPromo/recommends_b41/kfc_b4o_recommends_dexktop_581x581.jpg"
             });
 
-            
+            Reviews.Add(new Review
+            { 
+                id = 0,
+                name = "Leonardin restoran",
+                rating = 1,
+                imgSource = "https://cdn.vox-cdn.com/thumbor/WR9hE8wvdM4hfHysXitls9_bCZI=/0x0:1192x795/1400x1400/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg"
+            });
+
+            Reviews.Add(new Review
+            {
+                id = 0,
+                name = "Leonardin restoran 2",
+                rating = 5,
+                imgSource = "https://s.yimg.com/ny/api/res/1.2/gts9lRWMvRWAcVXhlnODCA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MQ--/https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40"
+            });
 
 
             Categories.Add(new Category
@@ -81,13 +119,13 @@ namespace Kamobi.Models
                 imgSource = "@drawable/pizza.png"
             });
 
-            /*Categories.Add(new Category
+            Categories.Add(new Category
             {
 
                 id = 0,
                 title = "Pasta",
                 imgSource = "@drawable/pasta.png"
-            });*/
+            });
 
             Categories.Add(new Category
             {
@@ -101,23 +139,23 @@ namespace Kamobi.Models
             {
 
                 id = 0,
-                title = "Healthy",
+                title = "Healthy Food",
                 imgSource = "@drawable/healthy.png"
             });
-
-            /*Categories.Add(new Category
-            {
-
-                id = 0,
-                title = "Croatian",
-                imgSource = "@drawable/croatian.png"
-            });*/
 
             Categories.Add(new Category
             {
 
                 id = 0,
-                title = "StreetFood",
+                title = "Croatian",
+                imgSource = "@drawable/croatian.png"
+            });
+
+            Categories.Add(new Category
+            {
+
+                id = 0,
+                title = "Street Food",
                 imgSource = "@drawable/streetfood.png"
             });
 
@@ -165,7 +203,7 @@ namespace Kamobi.Models
             {
 
                 id = 0,
-                title = "FastFood",
+                title = "Fast Food",
                 imgSource = "@drawable/fastfood.png"
             });
             
@@ -189,7 +227,7 @@ namespace Kamobi.Models
             {
 
                 id = 0,
-                title = "Bakery",
+                title = "Pastry",
                 imgSource = "@drawable/bakery.png"
             });
             

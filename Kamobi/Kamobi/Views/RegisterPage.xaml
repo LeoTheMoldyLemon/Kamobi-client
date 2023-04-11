@@ -3,52 +3,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.RegisterPage">
     <ContentPage.Content>
-        <Grid>
-            <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand">
-                </Frame>
-            </StackLayout>
-            <StackLayout Margin="15, 60, 15, 0">
-                <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="320" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    <StackLayout Margin="0, 0, 0, 10">
-                        <Frame HeightRequest="70" WidthRequest="100" HasShadow="False" BackgroundColor="Transparent">
-                            <Image Source="@drawable/KamobiLogoUski" Aspect="AspectFit"/>
-                        </Frame>
-                        <StackLayout Margin="0, 10, 0, 0">
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
-                                        <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
-                                    </Frame>
-                                    <Entry Text="" x:Name="UsernameEntry" ReturnType="Next" Placeholder="Choose a username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
-                                        <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
-                                    </Frame>
-                                    <Entry Text="" x:Name="PhoneNumberEntry" ReturnType="Next" Placeholder="Enter your phone number" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
-                                </StackLayout>
-                            </Frame>
-
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
-                                        <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
-                                    </Frame>
-                                    <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Choose a password" IsPassword="True" Keyboard="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
-                                </StackLayout>
-                            </Frame>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
-                    <Button Text="Register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
-                    <Button Text="Login instead" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource Secondary}"></Button>
+        <ScrollView>
+            <Grid>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="180" HorizontalOptions="FillAndExpand">
+                    </Frame>
                 </StackLayout>
-            </StackLayout>
-        </Grid>
+                <StackLayout Margin="15, 60, 15, 0">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="400" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Margin="0, 0, 0, 10">
+                            <Frame HeightRequest="125" WidthRequest="250" HasShadow="False" BackgroundColor="Transparent">
+                                <Image Source="@drawable/RegisterLogo" Aspect="AspectFit"/>
+                            </Frame>
+                            <StackLayout Margin="0, 0, 0, 0">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
+                                        </Frame>
+                                        <Entry Text="" x:Name="UsernameEntry" ReturnType="Next" Placeholder="Choose a username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/icon_phone" HorizontalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <Entry Text="" x:Name="PhoneNumberEntry" ReturnType="Next" Placeholder="Enter your phone number" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Choose a password" IsPassword="True" Keyboard="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" >
+                                <CheckBox x:Name="RememberCheckBox" Color="{StaticResource Primary}" HorizontalOptions="Start" Margin="10,0,0,0" IsChecked="true" />
+                                <Label Text="Remember me" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
+                        <Button Text="Register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
+                        <Button Text="Log in instead" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource Secondary}"></Button>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="*By registering you agree to our" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Button Text="terms of use" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
