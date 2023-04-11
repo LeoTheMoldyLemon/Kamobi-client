@@ -19,6 +19,7 @@ namespace Kamobi.Views
         public ProfilePage()
         {
             InitializeComponent();
+            BindingContext = App.User;
         }
 
         private async void LogoutButtonClicked(object sender, EventArgs e)
@@ -49,8 +50,8 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            UserInfo.username = (string)data["username"];
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
+            App.User.username = (string)data["username"];
+            App.User.displayname = App.User.username.Substring(0, App.User.username.Length - 5);
         }
         private async void ChangePasswordButtonClicked(object sender, EventArgs e)
         {   

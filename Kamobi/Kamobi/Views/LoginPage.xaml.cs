@@ -70,12 +70,12 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            
-            UserInfo.id = (string)returnData["id"];
-            UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-            UserInfo.phoneNumber = (string)returnData["phoneNumber"];
-            UserInfo.passwordHash = passwordHash;
+
+            App.User.id = (string)returnData["id"];
+            App.User.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+            App.User.displayname = App.User.username.Substring(0, App.User.username.Length - 5);
+            App.User.phoneNumber = (string)returnData["phoneNumber"];
+            App.User.passwordHash = passwordHash;
             if ((bool)returnData["confirmedSMS"])
             {
                 loading = new LoadingPopup();

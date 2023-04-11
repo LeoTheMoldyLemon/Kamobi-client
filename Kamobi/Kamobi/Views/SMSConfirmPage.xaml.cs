@@ -23,7 +23,7 @@ namespace Kamobi.Views
         {
             InitializeComponent();
             string infotext = infoText.Text;
-            infoText.Text = infotext.Replace("{phoneNumber}", UserInfo.phoneNumber);
+            infoText.Text = infotext.Replace("{phoneNumber}", App.User.phoneNumber);
             CodeEntry.ReturnCommand = new Command(() => { ConfirmButtonClicked(null, null); });
         }
 
@@ -32,7 +32,7 @@ namespace Kamobi.Views
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading); //displaying loading circle popup
             var data = JsonNode.Parse("{}");
-            data["id"] = UserInfo.id;
+            data["id"] = App.User.id;
             data["code"] = CodeEntry.Text;
             JsonNode returnData = await App.socket.sendRequest("registerUser", data, 20000); //sending a request to the server, waiting for response
             loading.Dismiss(null);

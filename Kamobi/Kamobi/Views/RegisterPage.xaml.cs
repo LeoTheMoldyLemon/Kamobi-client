@@ -79,11 +79,11 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-            UserInfo.id= (string)returnData["id"];
-            UserInfo.username = username; //remember user data for when they confirm phone number
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-            UserInfo.passwordHash = passwordHash;
-            UserInfo.phoneNumber = phoneNumber;
+            App.User.id= (string)returnData["id"];
+            App.User.username = username; //remember user data for when they confirm phone number
+            App.User.displayname = App.User.username.Substring(0, App.User.username.Length - 5);
+            App.User.passwordHash = passwordHash;
+            App.User.phoneNumber = phoneNumber;
             await Navigation.PushAsync(new SMSConfirmPage()); //send user to SMS confirmation page
         }
         private async void LoginButtonClicked(object sender, EventArgs e)

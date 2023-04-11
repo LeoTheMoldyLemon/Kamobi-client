@@ -5,16 +5,63 @@ using System.Text;
 
 namespace Kamobi.Services
 {
-    public class UserInfo
+    public class UserInfo : INotifyPropertyChanged
     {
-        
-        public static string id;
-        public static string username;
-        public static string displayname;
-        public static string phoneNumber;
-        public static string passwordHash;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        
+        private string _id;
+        private string _username;
+        private string _displayname;
+        private string _phoneNumber;
+        private string _passwordHash;
+
+        public string id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(id)));
+            }
+        }
+        public string username
+        {
+            get => _username;
+            set
+            {
+                _username = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(username)));
+            }
+        }
+        public string displayname
+        {
+            get => _displayname;
+            set
+            {
+                _displayname = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(displayname)));
+            }
+        }
+        public string phoneNumber
+        {
+            get => _phoneNumber;
+            set
+            {
+                _phoneNumber = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(phoneNumber)));
+            }
+        }
+        public string passwordHash
+        {
+            get => _passwordHash;
+            set
+            {
+                _passwordHash = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(passwordHash)));
+            }
+        }
+
+
         /*
         public static event PropertyChangedEventHandler PropertyChanged;
         public static string id {

@@ -1,4 +1,5 @@
-﻿using Kamobi.Services;
+﻿using Kamobi.Models;
+using Kamobi.Services;
 using Kamobi.Views;
 using System;
 using Xamarin.Forms;
@@ -9,6 +10,8 @@ namespace Kamobi
     public partial class App : Application
     {
         public static Socket socket;
+        public static ObservableCollections CollectionVM = new ObservableCollections();
+        public static UserInfo User = new UserInfo();
         public App()
         {
             string host = "http://kamobi-app.site:42069/";

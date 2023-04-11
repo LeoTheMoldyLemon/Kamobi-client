@@ -4,9 +4,7 @@
              xmlns:vm="clr-namespace:Kamobi.Models"
              x:Class="Kamobi.Views.HomePage">
 
-    <ContentPage.BindingContext>
-        <vm:ObservableCollections/>
-    </ContentPage.BindingContext>
+
     <ScrollView>
         <StackLayout>
             <Label Text="Popular" Style="{StaticResource Title}"/>

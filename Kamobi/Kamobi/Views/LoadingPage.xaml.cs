@@ -66,11 +66,11 @@ namespace Kamobi.Views
                 }
                 return;
             }
-            UserInfo.id = (string)returnData["id"];
-            UserInfo.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
-            UserInfo.displayname = UserInfo.username.Substring(0, UserInfo.username.Length - 5);
-            UserInfo.phoneNumber = (string)returnData["phoneNumber"];
-            UserInfo.passwordHash = (string)returnData["password"];
+            App.User.id = (string)returnData["id"];
+            App.User.username = (string)returnData["username"]; //if successfully logged in, remember user data and go to home page, skipping login and register entirely
+            App.User.displayname = App.User.username.Substring(0, App.User.username.Length - 5);
+            App.User.phoneNumber = (string)returnData["phoneNumber"];
+            App.User.passwordHash = (string)returnData["password"];
             if (!(bool)returnData["confirmedSMS"])
             {
                 await Navigation.PushAsync(new SMSConfirmPage());
