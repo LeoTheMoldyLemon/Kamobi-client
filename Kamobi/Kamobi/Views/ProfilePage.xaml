@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Kamobi.Models"
+             xmlns:local="clr-namespace:Kamobi.Services"
              x:Class="Kamobi.Views.ProfilePage">
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <vm:UserInfoTemplate/>
-    </ContentPage.BindingContext>
+    </ContentPage.BindingContext>-->
     <ContentPage.Content>
         <ScrollView>
             <Grid>
@@ -16,24 +17,24 @@
                     <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="100" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Hi username!" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Source={x:Static local:UserInfo.displayname}, StringFormat='Hi, {0}!'}" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand"/>
                                 <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0,0,15,0">
                                     <ImageButton Source="@drawable/icon_settings" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
                                 </Frame>
                             </StackLayout>
-                            <Label Text="Your code is username#0000" Margin="15,0,0,50" Style="{StaticResource Text}"/>
+                            <Label Text="{Binding Source={x:Static local:UserInfo.username}, StringFormat='Your full username is {0}.'}" Margin="15,0,0,50" Style="{StaticResource Text}"/>
                         </StackLayout>
                     </Frame>
                     <StackLayout Margin="0,20,0,0">
                         <Label Text="Your reviews" Style="{StaticResource Title}"/>
-                        <Frame Style="{StaticResource DisplayFrame}">
+                        <!--<Frame Style="{StaticResource DisplayFrame}">
                             <StackLayout Orientation="Horizontal">
                                 <Frame Style="{StaticResource BasicFrame}" Margin="0" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Start">
                                     <Image Source="@drawable/fastfood" Aspect="AspectFill"/>
                                 </Frame>
-                                <Label Text="ime restorana" Style="{StaticResource Smalltitle}"/>
+                                <Label Text="{Binding username}" Style="{StaticResource Smalltitle}"/>
                             </StackLayout>
-                        </Frame>
+                        </Frame>-->
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="End">

@@ -39,13 +39,10 @@
                                         <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                             <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
                                         </Frame>
-                                        <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Choose a password" IsPassword="True" Keyboard="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                        <Entry Text="" x:Name="PasswordEntry" ReturnType="Done" Placeholder="Choose a password" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 0, 0"/>
+                                        <ImageButton Source="@drawable/eye_open" BackgroundColor="{StaticResource BaseColor}" x:Name="ToggleHidePasswordButton"  VerticalOptions="Center" HorizontalOptions="End" HeightRequest="30" Clicked="ToggleHidePasswordClicked" Margin="0, 0, 10, 0"/>
                                     </StackLayout>
                                 </Frame>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" >
-                                <CheckBox x:Name="RememberCheckBox" Color="{StaticResource Primary}" HorizontalOptions="Start" Margin="10,0,0,0" IsChecked="true" />
-                                <Label Text="Remember me" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0"></Label>
                             </StackLayout>
                         </StackLayout>
                     </Frame>
@@ -55,7 +52,7 @@
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="*By registering you agree to our" HorizontalOptions="Start" VerticalOptions="Center"/>
-                        <Button Text="terms of use" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                        <Button Text="Terms of Use" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
             </Grid>

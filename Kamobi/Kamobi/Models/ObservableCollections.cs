@@ -16,7 +16,7 @@ namespace Kamobi.Models
 
         private ObservableCollection<PopularRestaurant> LocalPopularRestaurants;
         private ObservableCollection<Category> LocalCategories;
-        private ObservableCollection<Review> UserReviews;
+        private ObservableCollection<Review> LocalReviews;
 
 
 
@@ -34,7 +34,7 @@ namespace Kamobi.Models
             set
             {
                 LocalPopularRestaurants = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("popular_restaurants"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PopularRestaurants"));
             }
         }
         public ObservableCollection<Category> Categories
@@ -43,17 +43,17 @@ namespace Kamobi.Models
             set
             {
                 LocalCategories = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("categories"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Categories"));
             }
         }
 
         public ObservableCollection<Review> Reviews
         {
-            get { return UserReviews; }
+            get { return LocalReviews; }
             set
             {
-                UserReviews = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("reviews"));
+                LocalReviews = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Reviews"));
             }
         }
 

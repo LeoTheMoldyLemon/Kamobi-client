@@ -70,7 +70,6 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup("Passwords don't match."));
                 return;
             }
-            ImageSource.FromStream
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             using (SHA256 sha256Hash = SHA256.Create()) //hashing password
