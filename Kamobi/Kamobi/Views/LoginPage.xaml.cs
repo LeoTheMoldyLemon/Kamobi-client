@@ -93,7 +93,8 @@ namespace Kamobi.Views
         {
             await Shell.Current.GoToAsync("//RegisterPage");
         }
-        private void ToggleHidePasswordClicked(object sender, EventArgs e) {
+        private void ToggleHidePasswordClicked(object sender, EventArgs e)
+        {
             PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
             if (PasswordEntry.IsPassword) {
                 ToggleHidePasswordButton.Source = "@drawable/eye_open";
@@ -102,6 +103,37 @@ namespace Kamobi.Views
             {
                 ToggleHidePasswordButton.Source = "@drawable/eye_closed";
             }
+        }
+        private async void ForgotPasswordClicked(object sender, EventArgs e)
+        {
+            string phoneNumber = UsernameEntry.Text.Replace("+", "");
+            if (phoneNumber.StartsWith("00"))
+            {
+                phoneNumber = phoneNumber.Replace("00", "");
+            }
+            if (phoneNumber.Length == 0)
+            {
+                Navigation.ShowPopup(new InfoPopup("Field can't be empty."));
+                return;
+            }
+            LoadingPopup loading = new LoadingPopup();
+            Navigation.ShowPopup(loading);
+            var data = JsonNode.Parse("{}");
+            data["phoneNumber"] = phoneNumber;
+            JsonNode returnData = await App.socket.sendRequest("sendSMS", data, 20000);
+            loading.Dismiss(null);
+            if (returnData == null)
+            {
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                return;
+            }
+            if (!(bool)returnData["success"])
+            {
+                Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
+                return;
+            }
+            App.User.phoneNumber = phoneNumber;
+            await Navigation.PushAsync(new ForgotPasswordSMSPage());
         }
     }
 }

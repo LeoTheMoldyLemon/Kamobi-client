@@ -41,8 +41,8 @@
                             </StackLayout>
                 
                             <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Label Text="Forgot password?" Margin="15" HorizontalOptions="Start" VerticalOptions="End"/>
-                                <Button Text="Click here" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="End"/>
+                                <Label Text="Forgot password? Enter your phone number above then" Margin="15" HorizontalOptions="Start" VerticalOptions="End"/>
+                                <Button Clicked="ForgotPasswordClicked" Text="Click here" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="End"/>
                             </StackLayout>
                         </StackLayout>
                     </Frame>

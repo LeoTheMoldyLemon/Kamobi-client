@@ -40,12 +40,12 @@ namespace Kamobi.Views
             }
             if (password.Length < 8)
             {
-                Navigation.ShowPopup(new InfoPopup("Password length must be at least 8."));
+                Navigation.ShowPopup(new InfoPopup("Password must be at least 8 characters long."));
                 return;
             }
             if (password.Length > 32)
             {
-                Navigation.ShowPopup(new InfoPopup("Password length must be no more than 32."));
+                Navigation.ShowPopup(new InfoPopup("Password can be at most 32 characters long."));
                 return;
             }
             if (!Regex.IsMatch(phoneNumber, @"^[+]?[0-9]{11,12}$"))
