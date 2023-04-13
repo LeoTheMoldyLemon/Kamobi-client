@@ -27,14 +27,7 @@
                     </Frame>
                     <StackLayout Margin="0,20,0,0">
                         <Label Text="Your reviews" Style="{StaticResource Title}"/>
-                        <!--<Frame Style="{StaticResource DisplayFrame}">
-                            <StackLayout Orientation="Horizontal">
-                                <Frame Style="{StaticResource BasicFrame}" Margin="0" HeightRequest="70" WidthRequest="70" VerticalOptions="Center" HorizontalOptions="Start">
-                                    <Image Source="@drawable/fastfood" Aspect="AspectFill"/>
-                                </Frame>
-                                <Label Text="{Binding username}" Style="{StaticResource Smalltitle}"/>
-                            </StackLayout>
-                        </Frame>-->
+                        
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="End">

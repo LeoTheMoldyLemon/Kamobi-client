@@ -4,7 +4,8 @@
              x:Class="Kamobi.Views.SearchPage">
     <ContentPage.Content>
         <StackLayout>
-           
+            
+
             <SearchBar
                     Placeholder="Search..."
                     CancelButtonColor="{StaticResource Primary}"
@@ -14,39 +15,56 @@
                     
                     
                     />
-            <StackLayout Orientation="Horizontal">
-                <Button Text="#Fish"
-                   Margin="20,20,0,20"
-                   VerticalOptions="Start"
-                   HorizontalOptions="Start" 
-                   BackgroundColor="{StaticResource Primary}"
-                   Style="{StaticResource Text}"
-                   CornerRadius="50"
+            <ScrollView Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal">
+                
+                    <Button Text="#Seafood"
+                       Margin="20,20,0,20"
+                       VerticalOptions="Start"
+                    
+                       BackgroundColor="{StaticResource Primary}"
+                       Style="{StaticResource Text}"
+                       CornerRadius="50"
                    
-                   />
-            <Button Text="#Burger"
-                   Margin="5,20,0,20"
-                   VerticalOptions="Start"
-                   HorizontalOptions="Start" 
-                   BackgroundColor="{StaticResource Primary}"
-                   Style="{StaticResource Text}"
-                   CornerRadius="50"
+                       />
+                    <Button Text="#Burger"
+                           Margin="5,20,0,20"
+                           VerticalOptions="Start" 
+                           BackgroundColor="{StaticResource Primary}"
+                           Style="{StaticResource Text}"
+                           CornerRadius="50"
                    
-                   />
-            <Button Text="#Pizza"
-                   Margin="5,20,0,20"
-                   VerticalOptions="Start"
-                   HorizontalOptions="Start" 
-                   BackgroundColor="{StaticResource Primary}"
-                   Style="{StaticResource Text}"
-                   CornerRadius="50"
+                           />
+                    <Button Text="#Pizza"
+                           Margin="5,20,0,20"
+                           VerticalOptions="Start"
+                           BackgroundColor="{StaticResource Primary}"
+                           Style="{StaticResource Text}"
+                           CornerRadius="50"
                    
-                   />
+                           />
+                    <Button Text="#Pasta"
+                           Margin="5,20,0,20"
+                           VerticalOptions="Start"
+                           BackgroundColor="{StaticResource Primary}"
+                           Style="{StaticResource Text}"
+                           CornerRadius="50"
+                   
+                           />
+                    <Button Text="#StreetFood"
+                           Margin="5,20,0,20"
+                           VerticalOptions="Start"
+                           BackgroundColor="{StaticResource Primary}"
+                           Style="{StaticResource Text}"
+                           CornerRadius="50"
+                   
+                           />
             
                 
             
             
                 </StackLayout>
-            </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
