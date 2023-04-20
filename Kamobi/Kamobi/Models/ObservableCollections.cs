@@ -17,7 +17,7 @@ namespace Kamobi.Models
         private ObservableCollection<PopularRestaurant> LocalPopularRestaurants;
         private ObservableCollection<Category> LocalCategories;
         private ObservableCollection<Review> LocalReviews;
-
+        private ObservableCollection<Friend> LocalFriendsList;
 
 
         public ObservableCollections()
@@ -25,8 +25,18 @@ namespace Kamobi.Models
             PopularRestaurants = new ObservableCollection<PopularRestaurant>();
             Categories = new ObservableCollection<Category>();
             Reviews = new ObservableCollection<Review>();
+            FriendsList = new ObservableCollection<Friend>();
 
             AddData();
+        }
+        public ObservableCollection<Friend> FriendsList
+        {
+            get { return LocalFriendsList; }
+            set
+            {
+                LocalFriendsList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FriendsList"));
+            }
         }
         public ObservableCollection<PopularRestaurant> PopularRestaurants
         {
@@ -231,7 +241,7 @@ namespace Kamobi.Models
                 imgSource = "@drawable/bakery.png"
             });
             
-            
+
         }
 
         

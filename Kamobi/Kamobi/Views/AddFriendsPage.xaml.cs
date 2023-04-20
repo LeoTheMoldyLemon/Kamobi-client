@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kamobi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,13 @@ namespace Kamobi.Views
         public AddFriendsPage()
         {
             InitializeComponent();
+            BindingContext = App.CollectionVM;
+            
         }
 
         private async void AddFriendClicked(object sender, EventArgs e)
         {
-            string search = "NekiEntry.Text";
+            string search = FriendRequestName.Text;
             if (search.Length == 0)
             {
                 Navigation.ShowPopup(new InfoPopup("Please enter a valid username or phone number."));

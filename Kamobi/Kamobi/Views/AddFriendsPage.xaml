@@ -4,25 +4,30 @@
              x:Class="Kamobi.Views.AddFriendsPage">
     <ContentPage.Content>
         
-        <StackLayout>
-            <StackLayout VerticalOptions="StartAndExpand">
-                <SearchBar
-                    Placeholder="Search..."
-                    CancelButtonColor="{StaticResource Primary}"
-                    PlaceholderColor="{StaticResource Secondary}"
-                    BackgroundColor="{StaticResource AlmostWhite}"
-                    Margin="0,20,0,0"
-                    
-                    
-                    />
-                
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+                <Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' />
+                <Entry x:Name="FriendRequestName" Placeholder="Full name or international phone number."/>
+                <Button Text="Send request" Clicked="AddFriendClicked"></Button>
 
 
 
             </StackLayout>
-            <Label Text="You will add friends here"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="Your current friends:"
+                VerticalOptions="Start" 
                 HorizontalOptions="CenterAndExpand"/>
+            <ListView ItemsSource="{Binding FriendsList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding username}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

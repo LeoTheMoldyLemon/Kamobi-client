@@ -30,7 +30,9 @@ namespace Kamobi.Services
             set
             {
                 _username = value;
+                _displayname = value.Substring(0, value.Length - 5);
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(username)));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(displayname)));
             }
         }
         public string displayname
