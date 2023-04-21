@@ -11,7 +11,7 @@
                     </Frame>
                 </StackLayout>
                 <StackLayout Margin="15, 60, 15, 0">
-                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="390" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="450" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Margin="0, 0, 0, 10">
                             <Frame HeightRequest="125" WidthRequest="200" HasShadow="False" BackgroundColor="Transparent">
                                 <Image Source="@drawable/LoginLogo" Aspect="AspectFit"/>

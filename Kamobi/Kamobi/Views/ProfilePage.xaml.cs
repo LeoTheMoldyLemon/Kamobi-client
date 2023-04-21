@@ -22,6 +22,7 @@ namespace Kamobi.Views
             BindingContext = App.User;
         }
 
+
         private async void LogoutButtonClicked(object sender, EventArgs e)
         {
             LoadingPopup loading = new LoadingPopup();
@@ -53,6 +54,12 @@ namespace Kamobi.Views
             App.User.username = (string)data["username"];
             App.User.displayname = App.User.username.Substring(0, App.User.username.Length - 5);
         }
+
+        private async void SettingsButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//SettingsPage");
+        }
+
         private async void ChangePasswordButtonClicked(object sender, EventArgs e)
         {   
             string passwordHash, password1 = "ass", password2 = "ass";

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="180" HorizontalOptions="FillAndExpand">
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="15, 60, 15, 0">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="700" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Margin="0, 0, 0, 10">
+                            <Label Text="Settings" Style="{StaticResource Title}" Margin="0, 10, 0, 0"/>
+                            <StackLayout Margin="0, 20, 0, 0">
+                                <Label Text="Change username" Margin="3" Style="{StaticResource Smalltitle}"/>
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
+                                        </Frame>
+                                        <Entry Text="" Placeholder="Choose a username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="0, 20, 0, 0">
+                                <Label Text="Change phone number" Margin="3" Style="{StaticResource Smalltitle}"/>
+                                <Label Text="*Conifrmation will be needed" Style="{StaticResource Text}" Margin="0"/>
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/icon_phone" HorizontalOptions="Center"/>
+                                        </Frame>
+                                        <Entry Text="" Placeholder="Phone number" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Margin="0, 20, 0, 0">
+                                <Label Text="Change password" Margin="3" Style="{StaticResource Smalltitle}"/>
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <Entry Text="" Placeholder="Password" IsPassword="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout VerticalOptions="End" Margin="0,100,0,0">
+                                <Label Text="Enter your current password to save changes" Margin="3" Style="{StaticResource Text}"/>
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                            <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
+                                        </Frame>
+                                        <Entry Text="" Placeholder="Password" IsPassword="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="End" Margin="0,10,0,0">
+                                    <Button Text="Cancel" Style="{StaticResource BasicButton}" BackgroundColor="{StaticResource Secondary}" HorizontalOptions="CenterAndExpand"/>
+                                    <Button Text="Save" Style="{StaticResource BasicButton}" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
