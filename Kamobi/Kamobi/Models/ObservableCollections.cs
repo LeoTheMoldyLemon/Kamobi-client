@@ -18,7 +18,7 @@ namespace Kamobi.Models
         private ObservableCollection<Category> LocalCategories;
         private ObservableCollection<Review> LocalReviews;
         private ObservableCollection<Friend> LocalFriendsList;
-
+        private ObservableCollection<Friend> LocalFriendRequestsList;
 
         public ObservableCollections()
         {
@@ -26,8 +26,19 @@ namespace Kamobi.Models
             Categories = new ObservableCollection<Category>();
             Reviews = new ObservableCollection<Review>();
             FriendsList = new ObservableCollection<Friend>();
+            FriendRequestsList = new ObservableCollection<Friend>();
+
 
             AddData();
+        }
+        public ObservableCollection<Friend> FriendRequestsList
+        {
+            get { return LocalFriendRequestsList; }
+            set
+            {
+                LocalFriendRequestsList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FriendRequestsList"));
+            }
         }
         public ObservableCollection<Friend> FriendsList
         {

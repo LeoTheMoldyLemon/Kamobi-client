@@ -36,12 +36,24 @@ namespace Kamobi.Views
             App.socket.setupListener("friendsListUpdate", (dataString) =>
             {
                 var data = JsonNode.Parse(dataString.ToString());
-                App.CollectionVM.FriendsList.Add(new Friend
+                if ((bool)data["accepted"])
                 {
-                    id = (string)data["id"],
-                    username = (string)data["username"],
-                    displayname = ((string)data["username"]).Substring(0, ((string)data["username"]).Length - 5)
-                });
+                    App.CollectionVM.FriendsList.Add(new Friend
+                    {
+                        id = (string)data["id"],
+                        username = (string)data["username"],
+                        displayname = ((string)data["username"]).Substring(0, ((string)data["username"]).Length - 5)
+                    });
+                }
+                else
+                {
+                    App.CollectionVM.FriendRequestsList.Add(new Friend
+                    {
+                        id = (string)data["id"],
+                        username = (string)data["username"],
+                        displayname = ((string)data["username"]).Substring(0, ((string)data["username"]).Length - 5)
+                    });
+                }
             });
             if (!File.Exists(fileName))
             { //if file doesnt exist, create it
