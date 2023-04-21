@@ -7,7 +7,7 @@
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
                 <Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' />
-                <Entry x:Name="FriendRequestName" Placeholder="Full name or international phone number."/>
+                <Entry Text="" x:Name="FriendRequestName" Placeholder="Full name or international phone number."/>
                 <Button Text="Send request" Clicked="AddFriendClicked"></Button>
 
 

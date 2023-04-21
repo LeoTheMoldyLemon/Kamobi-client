@@ -35,24 +35,29 @@ namespace Kamobi.Views
             loading.Dismiss(null);
             App.socket.setupListener("friendsListUpdate", (dataString) =>
             {
-                var data = JsonNode.Parse(dataString.ToString());
-                if ((bool)data["accepted"])
+                
+                var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString()).AsArray();
+                foreach (JsonNode datanode in data)
                 {
-                    App.CollectionVM.FriendsList.Add(new Friend
+                    Console.WriteLine(datanode.ToJsonString());
+                    if ((bool)datanode["accepted"])
                     {
-                        id = (string)data["id"],
-                        username = (string)data["username"],
-                        displayname = ((string)data["username"]).Substring(0, ((string)data["username"]).Length - 5)
-                    });
-                }
-                else
-                {
-                    App.CollectionVM.FriendRequestsList.Add(new Friend
+                        App.CollectionVM.FriendsList.Add(new Friend
+                        {
+                            id = (string)datanode["id"],
+                            username = (string)datanode["username"],
+                            displayname = ((string)datanode["username"]).Substring(0, ((string)datanode["username"]).Length - 5)
+                        });
+                    }
+                    else
                     {
-                        id = (string)data["id"],
-                        username = (string)data["username"],
-                        displayname = ((string)data["username"]).Substring(0, ((string)data["username"]).Length - 5)
-                    });
+                        App.CollectionVM.FriendRequestsList.Add(new Friend
+                        {
+                            id = (string)datanode["id"],
+                            username = (string)datanode["username"],
+                            displayname = ((string)datanode["username"]).Substring(0, ((string)datanode["username"]).Length - 5)
+                        });
+                    }
                 }
             });
             if (!File.Exists(fileName))
