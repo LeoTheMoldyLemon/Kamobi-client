@@ -13,21 +13,45 @@
 
 
             </StackLayout>
-            <Label Text="Your current friends:"
-                VerticalOptions="Start" 
-                HorizontalOptions="CenterAndExpand"/>
-            <ListView ItemsSource="{Binding FriendsList}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding username}"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+            <ScrollView>
+                <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                    <Label Text="Your current friends:"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"/>
+                    <ListView SelectionMode="None" ItemsSource="{Binding FriendsList}" VerticalOptions="Start">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding username}"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                 
-            </ListView>
+                    </ListView>
+                    <Label Text="Pending friend requests:"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="CenterAndExpand"/>
+                    <ListView HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding FriendRequestsList}" VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding username}" HorizontalOptions="Center"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                        
+                                            <Button Text="Accept" HorizontalOptions="EndAndExpand"/>
+                                            <Button Text="Deny" HorizontalOptions="End"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
