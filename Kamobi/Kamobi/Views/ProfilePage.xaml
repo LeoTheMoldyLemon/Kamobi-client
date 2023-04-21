@@ -30,7 +30,6 @@
                                 <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0,0,15,0">
                                     <ImageButton Source="@drawable/icon_settings" 
                                                  Style="{StaticResource ImageButtonBasic}" 
-                                                 Clicked="SettingsButtonClicked"
                                                  Aspect="AspectFill"/>
                                 </Frame>
                             </StackLayout>

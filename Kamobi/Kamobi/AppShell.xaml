@@ -55,9 +55,5 @@
         <ShellContent Title="Register" Route="RegisterPage" ContentTemplate="{DataTemplate local:RegisterPage}" />
     </TabBar>
 
-    <TabBar>
-        <ShellContent Title="Settings" Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}" />
-    </TabBar>
-
 
 </Shell>

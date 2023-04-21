@@ -59,9 +59,6 @@
     <EmbeddedResource Update="Views\ForgotPasswordSMSPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SettingsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\SMSConfirmPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
