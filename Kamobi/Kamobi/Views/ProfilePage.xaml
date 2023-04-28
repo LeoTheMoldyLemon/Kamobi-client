@@ -17,21 +17,18 @@
                     <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="100" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Orientation="Vertical">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding displayname, StringFormat='Hi, {0}!'}" 
-                                       Style="{StaticResource Title}" 
-                                       HorizontalOptions="Start"/>
+                                <Label Text="{Binding displayname, StringFormat='Hi, {0}!'}" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 
-                                <Image Source="@drawable/UserProfilePic.png" 
+                                <!--<Image Source="@drawable/UserProfilePic.png" 
                                        HeightRequest="50" 
                                        WidthRequest="50" 
                                        HorizontalOptions="StartAndExpand" 
                                        Margin="10,0,0,0"/>
                                 
+                                Ovo nam stvarno ne treba ako ne mislimo implementirati slike za svakog usera, što trenutno ne mislimo. Molim vas ne vracajte ovo nazad jer promjeni cijeli layout (settings gumb i close settings gumb bi trebali biti na istom mjestu)-->
+                                
                                 <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0,0,15,0">
-                                    <ImageButton Source="@drawable/icon_settings" 
-                                                 Style="{StaticResource ImageButtonBasic}" 
-                                                 Clicked="SettingsButtonClicked"
-                                                 Aspect="AspectFill"/>
+                                    <ImageButton Source="@drawable/icon_settings" Style="{StaticResource ImageButtonBasic}" Clicked="SettingsButtonClicked" Aspect="AspectFill"/>
                                 </Frame>
                             </StackLayout>
                             <Label Text="{Binding username, StringFormat='Your full username is {0}.'}" 
@@ -56,6 +53,7 @@
                             Margin="15" 
                             Style="{StaticResource BasicButton}"/>
                 </StackLayout>
+                <!--prebaciti funkcionalnost unutar settings pagea i izbrisati cijeli button-->
             </Grid>
         </ScrollView>
     </ContentPage.Content>
