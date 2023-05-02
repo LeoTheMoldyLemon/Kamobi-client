@@ -10,7 +10,7 @@
                     </Frame>
                 </StackLayout>
                 <StackLayout Margin="15, 60, 15, 0">
-                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="400" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="420" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Margin="0, 0, 0, 10">
                             <Frame HeightRequest="125" WidthRequest="250" HasShadow="False" BackgroundColor="Transparent">
                                 <Image Source="@drawable/RegisterLogo" Aspect="AspectFit"/>
@@ -44,16 +44,16 @@
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="*By registering you agree to our" HorizontalOptions="Start" VerticalOptions="Center"/>
-                                <Button Text="Terms of Use" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Label Text="By registering you agree to" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                <Button Text="Terms of Use" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="End" VerticalOptions="Center"/>
                             </StackLayout>
                         </StackLayout>
                         
                     </Frame>
                     <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
-                        <Button Text="Register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
                         <Button Text="Log in instead" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource Secondary}"></Button>
+                        <Button Text="Register" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
                     </StackLayout>
                     
                 </StackLayout>
