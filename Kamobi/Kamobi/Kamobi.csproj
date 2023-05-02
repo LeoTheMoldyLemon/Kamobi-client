@@ -32,8 +32,14 @@
     <Compile Update="Views\AddFriendsPage.xaml.cs">
       <DependentUpon>AddFriendsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ChangePasswordSMSPage.xaml.cs">
+      <DependentUpon>ChangePasswordSMSPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\ForgotPasswordSMSPage.xaml.cs">
       <DependentUpon>ForgotPasswordSMSPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ChangePhoneNumberSMSPage.xaml.cs">
+      <DependentUpon>ChangePhoneNumberSMSPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\SMSConfirmPage.xaml.cs">
       <DependentUpon>SMSConfirmPage.xaml</DependentUpon>
@@ -56,11 +62,17 @@
     <EmbeddedResource Update="Views\AddFriendsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChangePasswordSMSPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ForgotPasswordSMSPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChangePhoneNumberSMSPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SMSConfirmPage.xaml">
       <Generator>MSBuild:Compile</Generator>

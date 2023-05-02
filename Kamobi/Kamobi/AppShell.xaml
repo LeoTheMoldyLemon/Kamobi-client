@@ -58,6 +58,7 @@
     <TabBar>
         <ShellContent Title="Settings" Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}" />
     </TabBar>
+    
 
 
 </Shell>

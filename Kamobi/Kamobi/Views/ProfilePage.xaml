@@ -44,7 +44,7 @@
                     </StackLayout>
                     
                 </StackLayout>
-                <StackLayout VerticalOptions="End">
+                <!--<StackLayout VerticalOptions="End">
                     <Button Text="Log out" 
                             Clicked="LogoutButtonClicked" 
                             WidthRequest="150" 
@@ -52,7 +52,7 @@
                             HorizontalOptions="Start" 
                             Margin="15" 
                             Style="{StaticResource BasicButton}"/>
-                </StackLayout>
+                </StackLayout>-->
                 <!--prebaciti funkcionalnost unutar settings pagea i izbrisati cijeli button-->
             </Grid>
         </ScrollView>

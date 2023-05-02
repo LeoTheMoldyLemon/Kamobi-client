@@ -15,7 +15,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Settings" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0,0,15,0">
-                                    <ImageButton Source="@drawable/icon_close"
+                                    <ImageButton Clicked="BackButtonClicked" Source="@drawable/icon_close"
                                                  Style="{StaticResource ImageButtonBasic}" 
                                                  Aspect="AspectFill"/>
                                     <!--funkcija za vratiti se na profil bez promjena-->
@@ -28,10 +28,10 @@
                                         <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                             <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
                                         </Frame>
-                                        <Entry Text="" Placeholder="Choose a username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                        <Entry x:Name="UsernameEntry" ReturnType="Done" Text="" Placeholder="Choose a username" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                                     </StackLayout>
                                 </Frame>
-                                <Button Style="{StaticResource BasicButtonSmall}" Text="Save" HorizontalOptions="End"/>
+                                <Button Style="{StaticResource BasicButtonSmall}" Clicked="ChangeUsernameButtonClicked" Text="Save" HorizontalOptions="End"/>
                                 <!--funkcija za spremiti username-->
                             </StackLayout>
                             <StackLayout Margin="0, 20, 0, 0">
@@ -41,33 +41,39 @@
                                         <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                             <Image Source="@drawable/icon_phone" HorizontalOptions="Center"/>
                                         </Frame>
-                                        <Entry Text="" Placeholder="Phone number" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                                        <Entry x:Name="PhoneNumberEntry"  Text="" Placeholder="Phone number" ReturnType="Done" Keyboard="Telephone" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                                     </StackLayout>
                                 </Frame>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="*Conifrmation will be needed" Style="{StaticResource Text}" Margin="0" HorizontalOptions="StartAndExpand"/>
-                                    <Button Style="{StaticResource BasicButtonSmall}" Text="Save" HorizontalOptions="End"/>
+                                    <Button Style="{StaticResource BasicButtonSmall}" Clicked="ChangePhoneNumberClicked" Text="Save" HorizontalOptions="End"/>
                                     <!--funkcija za spremiti phone number-->
                                 </StackLayout>
                             </StackLayout>
                             <StackLayout Margin="0, 20, 0, 0">
                                 <Label Text="Change password" Margin="3" Style="{StaticResource Smalltitle}"/>
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <!--<Frame BackgroundColor="Transparent" BorderColor="DarkGray" HasShadow="false"  Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                     <StackLayout Orientation="Horizontal">
                                         <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
                                             <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
-                                        </Frame>
-                                        <Entry Text="" Placeholder="Password" IsPassword="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
-                                    </StackLayout>
+                                        </Frame>-->
+                                        <!--<Entry x:Name="PasswordEntry"  Text="" ReturnType="Done" Placeholder="Password" IsPassword="False" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>-->
+                                <!-- </StackLayout>
                                 </Frame>
-                                <Button Style="{StaticResource BasicButtonSmall}" Text="Save" HorizontalOptions="End"/>
+                                <Button Style="{StaticResource BasicButtonSmall}" Text="Change Password" HorizontalOptions="End"/>-->
                                 <!--funkcija za spremiti password-->
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                        <Image Source="@drawable/icon_lock" HorizontalOptions="FillAndExpand"/>
+                                    </Frame>
+                                    <Button Clicked="ChangePasswordButtonClicked" Style="{StaticResource BasicButton}" Text="Change Password" HorizontalOptions="End"/>
+                                </StackLayout>
                             </StackLayout>
                             <StackLayout Orientation="Vertical">
                                 <Label Text="Want to say goodbye?" Style="{StaticResource Smalltitle}"/>
                                 <StackLayout Orientation="Horizontal">
                                     <Button Text="Delete profile" Style="{StaticResource BasicButton}" BackgroundColor="{StaticResource Secondary}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                    <Button Text="Log out" Style="{StaticResource BasicButton}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                    <Button Clicked="LogoutButtonClicked" Text="Log out" Style="{StaticResource BasicButton}" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
                                     <!--dodati funkcionalnosti za gumbice-->
                                 </StackLayout>
                             </StackLayout>
