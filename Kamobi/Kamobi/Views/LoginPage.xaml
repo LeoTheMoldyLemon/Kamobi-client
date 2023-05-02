@@ -11,7 +11,7 @@
                     </Frame>
                 </StackLayout>
                 <StackLayout Margin="15, 60, 15, 0">
-                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="450" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="440" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Margin="0, 0, 0, 10">
                             <Frame HeightRequest="125" WidthRequest="200" HasShadow="False" BackgroundColor="Transparent">
                                 <Image Source="@drawable/LoginLogo" Aspect="AspectFit"/>
@@ -39,16 +39,20 @@
                                 <CheckBox x:Name="RememberCheckBox" Color="{StaticResource Primary}" HorizontalOptions="Start" Margin="10,0,0,0" IsChecked="true" />
                                 <Label Text="Remember me" HorizontalOptions="Start" VerticalOptions="Center" Margin="5,0,0,0"></Label>
                             </StackLayout>
-                
-                            <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Label Text="Forgot password? &#10;Enter your phone number above then" Margin="15" HorizontalOptions="StartAndExpand" VerticalOptions="End"/>
-                                <Button Clicked="ForgotPasswordClicked" Text="Click here" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="Start" VerticalOptions="End"/>
+
+                            <StackLayout Orientation="Vertical" Spacing="0">
+                                <Label Text="Forgot password?"  Margin="0, 30, 0, 0" Style="{StaticResource Smalltitle}" VerticalOptions="End"/>
+                                <StackLayout Orientation="Horizontal" Spacing="0" Margin="0" VerticalOptions="Start">
+                                    <Label Text="Enter your phone number &amp;"  HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+                                    <Button Clicked="ForgotPasswordClicked" Text="Click here" BorderWidth="0" BackgroundColor="Transparent" TextColor="{StaticResource Secondary}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                </StackLayout>
                             </StackLayout>
+                            
                         </StackLayout>
                     </Frame>
                     <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
-                        <Button Text="Log in" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
                         <Button Text="Register instead" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="{StaticResource Secondary}"></Button>
+                        <Button Text="Log in" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
                     </StackLayout>
                 </StackLayout>
             </Grid>
