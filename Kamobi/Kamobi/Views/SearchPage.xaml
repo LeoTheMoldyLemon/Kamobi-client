@@ -2,69 +2,58 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.SearchPage">
-    <ContentPage.Content>
-        <StackLayout>
-            
-
-            <SearchBar
+<ScrollView>
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout>
+                <Frame Margin="15, 30, 15, 0" BackgroundColor="{StaticResource BaseColor}" BorderColor="{StaticResource BaseColor}" HasShadow="false"  Padding="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                    <SearchBar
                     Placeholder="Search..."
                     CancelButtonColor="{StaticResource Primary}"
                     PlaceholderColor="{StaticResource Secondary}"
-                    BackgroundColor="{StaticResource AlmostWhite}"
-                    Margin="0,20,0,0"
-                    
-                    
-                    />
-            <ScrollView Orientation="Horizontal">
-                <StackLayout Orientation="Horizontal">
-                
-                    <Button Text="#Seafood"
-                       Margin="20,20,0,20"
-                       VerticalOptions="Start"
-                    
-                       BackgroundColor="{StaticResource Primary}"
-                       Style="{StaticResource Text}"
-                       CornerRadius="50"
-                   
-                       />
-                    <Button Text="#Burger"
-                           Margin="5,20,0,20"
-                           VerticalOptions="Start" 
-                           BackgroundColor="{StaticResource Primary}"
-                           Style="{StaticResource Text}"
-                           CornerRadius="50"
-                   
-                           />
-                    <Button Text="#Pizza"
+                    BackgroundColor="{StaticResource BaseColor}"
+                    TextColor="{StaticResource Secondary}"
+                    Margin="0"/>
+                </Frame>
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <StackLayout Orientation="Horizontal">
+
+                        <Button Text="#Seafood" Style="{StaticResource VariableButtonSmall}" Margin="15, 15, 5, 15"/>
+                        <Button Text="#Burger" Style="{StaticResource VariableButtonSmall}"/>
+                        <Button Text="#Pizza" Style="{StaticResource VariableButtonSmall}"/>
+                        <Button Text="#Mexican" Style="{StaticResource VariableButtonSmall}"/>
+                        <Button Text="#Streetfood" Style="{StaticResource VariableButtonSmall}"/>
+                        <Button Text="#Pasta" Style="{StaticResource VariableButtonSmall}"/>
+
+                        <!--<Button Text="#Pizza"
                            Margin="5,20,0,20"
                            VerticalOptions="Start"
                            BackgroundColor="{StaticResource Primary}"
-                           Style="{StaticResource Text}"
-                           CornerRadius="50"
+                           CornerRadius="30"
+                           HeightRequest="40"
                    
                            />
-                    <Button Text="#Pasta"
+                        <Button Text="#Pasta"
                            Margin="5,20,0,20"
                            VerticalOptions="Start"
                            BackgroundColor="{StaticResource Primary}"
-                           Style="{StaticResource Text}"
-                           CornerRadius="50"
-                   
+                           CornerRadius="30"
+                           HeightRequest="40"
                            />
-                    <Button Text="#StreetFood"
+                        <Button Text="#StreetFood"
                            Margin="5,20,0,20"
                            VerticalOptions="Start"
                            BackgroundColor="{StaticResource Primary}"
-                           Style="{StaticResource Text}"
-                           CornerRadius="50"
-                   
-                           />
-            
-                
-            
-            
-                </StackLayout>
-            </ScrollView>
-        </StackLayout>
-    </ContentPage.Content>
+                           CornerRadius="30"
+                           HeightRequest="40"
+                            />-->
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

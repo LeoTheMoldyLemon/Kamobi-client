@@ -95,6 +95,16 @@
                 <Setter Property="Aspect" Value="AspectFit"/>
             </Style>
 
+            <Style x:Key="VariableButtonSmall" TargetType="Button">
+                <Setter Property="Margin" Value="0, 15, 5, 15"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                
+
+            </Style>
+
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

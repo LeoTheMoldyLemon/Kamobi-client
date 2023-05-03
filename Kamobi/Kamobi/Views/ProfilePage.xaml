@@ -4,18 +4,19 @@
              xmlns:vm="clr-namespace:Kamobi.Models"
              xmlns:local="clr-namespace:Kamobi"
              x:Class="Kamobi.Views.ProfilePage">
+    
     <!--<ContentPage.BindingContext>
         <vm:UserInfoTemplate/>
     </ContentPage.BindingContext>-->
-    <ContentPage.Content>
         <ScrollView>
             <Grid>
                 <StackLayout Padding="0" Margin="0">
-                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="180" HorizontalOptions="FillAndExpand"/>
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
-                <StackLayout Margin="15, 60, 15, 0">
-                    <Frame BackgroundColor="{StaticResource BaseColor}" HasShadow="True" HeightRequest="100" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                        <StackLayout Orientation="Vertical">
+                
+                <StackLayout>
+                <Frame BackgroundColor="{StaticResource BaseColor}" Margin="15, 30, 15, 0" HasShadow="True" HeightRequest="85" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Vertical" Spacing="0">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding displayname, StringFormat='Hi, {0}!'}" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 
@@ -34,10 +35,10 @@
                             <Label Text="{Binding username, StringFormat='Your full username is {0}.'}" 
                                    Margin="15,0,0,50" 
                                    Style="{StaticResource Text}"/>
-                            
+                             
                         </StackLayout>
                     </Frame>
-                    <StackLayout Margin="0,20,0,0">
+                    <StackLayout Margin="0,30,0,0">
                         <Label Text="Your reviews" 
                                Style="{StaticResource Title}"/>
                         
@@ -56,5 +57,4 @@
                 <!--prebaciti funkcionalnost unutar settings pagea i izbrisati cijeli button-->
             </Grid>
         </ScrollView>
-    </ContentPage.Content>
 </ContentPage>
