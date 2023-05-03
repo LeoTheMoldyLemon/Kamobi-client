@@ -2,84 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.AddFriendsPage">
-    <ContentPage.Content>
-        
-        
-        <StackLayout Orientation="Vertical">
 
-            
-
-            <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-
-                <Frame BackgroundColor="{StaticResource Secondary}" >
-
-                    <Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' 
+    <ScrollView VerticalScrollBarVisibility="Never">
+        <Grid>
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout  Spacing="0">
+                <Frame Margin="15, 30, 15, 0" BackgroundColor="{StaticResource BaseColor}" HeightRequest="54" BorderColor="Transparent" Padding="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                            <Image Source="@drawable/search" HorizontalOptions="Center" HeightRequest="30" Aspect="AspectFit"/>
+                        </Frame>
+                        <Entry Text=""  x:Name="FriendRequestName" Placeholder="Add a friend" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                    </StackLayout>
+                </Frame>
+                <Button Text="Send request"  Margin="0,7,15,15" Clicked="AddFriendClicked" Style="{StaticResource VariableButtonSmall}" HorizontalOptions="End"/>
+                <!--<Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' 
                            VerticalOptions="Start" 
                            HorizontalOptions="EndAndExpand"
                            Style="{StaticResource Text}"
-                           
+                           />-->
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Your friends" Style="{StaticResource Title}"/>
+                            <ListView SelectionMode="None" ItemsSource="{Binding FriendsList}" VerticalOptions="Start">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell >
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding username}" Style="{StaticResource Text}"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+                            </ListView>
+                            <Label Text="Pending friend requests" Style="{StaticResource Title}"
                            />
-                </Frame>
+                            <ListView HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding FriendRequestsList}" VerticalOptions="Start">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding username}" HorizontalOptions="Center"/>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                <Entry Text="" x:Name="FriendRequestName" 
-                       Placeholder="Full name or international phone number." 
-                       Style="{StaticResource Text}"
-                       VerticalOptions="Start" 
-                       
-                       HeightRequest="50"
-                       
-                       />
-                
-                <Button Text="Send request" Clicked="AddFriendClicked" ></Button>
+                                                    <Button Text="Accept" HorizontalOptions="EndAndExpand"/>
+                                                    <Button Text="Deny" HorizontalOptions="End"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
 
-
-
-            </StackLayout>
-            <ScrollView>
-                <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                    <Label Text="Your current friends:"
-                        Style="{StaticResource Text}"
-                        VerticalOptions="Start" 
-                        HorizontalOptions="CenterAndExpand"/>
-                    <ListView SelectionMode="None" ItemsSource="{Binding FriendsList}" VerticalOptions="Start">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell >
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding username}"
-                                               Style="{StaticResource Text}"
-                                               />
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                
-                    </ListView>
-                    <Label Text="Pending friend requests:"
-                        VerticalOptions="Start" 
-                        HorizontalOptions="CenterAndExpand"
-                        Style="{StaticResource Text}"
-                           />
-                    <ListView HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding FriendRequestsList}" VerticalOptions="FillAndExpand">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="{Binding username}" HorizontalOptions="Center"/>
-                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                        
-                                            <Button Text="Accept" HorizontalOptions="EndAndExpand"/>
-                                            <Button Text="Deny" HorizontalOptions="End"/>
-                                        </StackLayout>
-                                    </StackLayout>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-
-                    </ListView>
+                            </ListView>
                 </StackLayout>
-            </ScrollView>
-        </StackLayout>
-    </ContentPage.Content>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>
     

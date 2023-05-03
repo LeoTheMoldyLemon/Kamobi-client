@@ -6,7 +6,7 @@
 
 
     <ScrollView>
-        <StackLayout Margin="0, 15, 0, 0">
+        <StackLayout Margin="0, 10, 0, 0">
             <Label Text="Popular" Style="{StaticResource Title}"/>
             
             <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="200" PeekAreaInsets="100">

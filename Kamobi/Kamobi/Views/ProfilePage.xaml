@@ -11,14 +11,14 @@
         <ScrollView>
             <Grid>
                 <StackLayout Padding="0" Margin="0">
-                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand"/>
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 
                 <StackLayout>
-                <Frame BackgroundColor="{StaticResource BaseColor}" Margin="15, 30, 15, 0" HasShadow="True" HeightRequest="85" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <Frame BackgroundColor="{StaticResource BaseColor}" Margin="15, 30, 15, 4" Padding="0" HasShadow="True" HeightRequest="106" HorizontalOptions="FillAndExpand" CornerRadius="30">
                         <StackLayout Orientation="Vertical" Spacing="0">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding displayname, StringFormat='Hi, {0}!'}" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <StackLayout Orientation="Horizontal" Margin="10,10,25,0">
+                                <Label Text="{Binding displayname, StringFormat='Hi, {0}!'}" Margin="15,15,10,0" Style="{StaticResource Title}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 
                                 <!--<Image Source="@drawable/UserProfilePic.png" 
                                        HeightRequest="50" 
@@ -28,17 +28,17 @@
                                 
                                 Ovo nam stvarno ne treba ako ne mislimo implementirati slike za svakog usera, što trenutno ne mislimo. Molim vas ne vracajte ovo nazad jer promjeni cijeli layout (settings gumb i close settings gumb bi trebali biti na istom mjestu)-->
                                 
-                                <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0,0,15,0">
+                                <Frame Style="{StaticResource BasicFrame}" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="Center" HasShadow="False" Margin="0">
                                     <ImageButton Source="@drawable/icon_settings" Style="{StaticResource ImageButtonBasic}" Clicked="SettingsButtonClicked" Aspect="AspectFill"/>
                                 </Frame>
                             </StackLayout>
                             <Label Text="{Binding username, StringFormat='Your full username is {0}.'}" 
-                                   Margin="15,0,0,50" 
+                                   Margin="25,0,0,15" 
                                    Style="{StaticResource Text}"/>
                              
                         </StackLayout>
                     </Frame>
-                    <StackLayout Margin="0,30,0,0">
+                    <StackLayout>
                         <Label Text="Your reviews" 
                                Style="{StaticResource Title}"/>
                         

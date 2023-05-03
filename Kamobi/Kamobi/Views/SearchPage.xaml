@@ -5,10 +5,39 @@
 <ScrollView>
         <Grid>
             <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand"/>
+                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
             <StackLayout>
-                <Frame Margin="15, 30, 15, 0" BackgroundColor="{StaticResource BaseColor}" BorderColor="{StaticResource BaseColor}" HasShadow="false"  Padding="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                <StackLayout Margin="15, 30, 15, 0" Spacing="0">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" HeightRequest="54" BorderColor="Transparent" Padding="0" Margin="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                <Image Source="@drawable/search" HorizontalOptions="Center" HeightRequest="30" Aspect="AspectFit"/>
+                            </Frame>
+                            <Entry Text="" Placeholder="Search for a reastaurant" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button Text="Search"  Margin="0,7,0,15" Style="{StaticResource VariableButtonSmall}" HorizontalOptions="End"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" >
+                    <Label Text="Search by tags" Style="{StaticResource Smalltitle}" Margin="15, 15, 0, 7"/>
+                    <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="#Seafood" Style="{StaticResource VariableHastagButton}" Margin="15, 0,0,0"/>
+                            <Button Text="#Burger" Style="{StaticResource VariableHastagButton}"/>
+                            <Button Text="#Pizza" Style="{StaticResource VariableHastagButton}"/>
+                            <Button Text="#Mexican" Style="{StaticResource VariableHastagButton}"/>
+                            <Button Text="#Streetfood" Style="{StaticResource VariableHastagButton}"/>
+                            <Button Text="#Pasta" Style="{StaticResource VariableHastagButton}"/>
+                        </StackLayout>
+                    </ScrollView>
+                    <Label Text="Recomended for you" Style="{StaticResource Title}"/>
+                </StackLayout>
+            </StackLayout>
+            
+            
+            <!--<StackLayout>
+                <Frame Margin="15, 30, 15, 0" HeightRequest="54" BackgroundColor="{StaticResource BaseColor}" BorderColor="{StaticResource BaseColor}" HasShadow="false"  Padding="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                     <SearchBar
                     Placeholder="Search..."
                     CancelButtonColor="{StaticResource Primary}"
@@ -16,44 +45,8 @@
                     BackgroundColor="{StaticResource BaseColor}"
                     TextColor="{StaticResource Secondary}"
                     Margin="0"/>
-                </Frame>
-
-                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                    <StackLayout Orientation="Horizontal">
-
-                        <Button Text="#Seafood" Style="{StaticResource VariableButtonSmall}" Margin="15, 15, 5, 15"/>
-                        <Button Text="#Burger" Style="{StaticResource VariableButtonSmall}"/>
-                        <Button Text="#Pizza" Style="{StaticResource VariableButtonSmall}"/>
-                        <Button Text="#Mexican" Style="{StaticResource VariableButtonSmall}"/>
-                        <Button Text="#Streetfood" Style="{StaticResource VariableButtonSmall}"/>
-                        <Button Text="#Pasta" Style="{StaticResource VariableButtonSmall}"/>
-
-                        <!--<Button Text="#Pizza"
-                           Margin="5,20,0,20"
-                           VerticalOptions="Start"
-                           BackgroundColor="{StaticResource Primary}"
-                           CornerRadius="30"
-                           HeightRequest="40"
-                   
-                           />
-                        <Button Text="#Pasta"
-                           Margin="5,20,0,20"
-                           VerticalOptions="Start"
-                           BackgroundColor="{StaticResource Primary}"
-                           CornerRadius="30"
-                           HeightRequest="40"
-                           />
-                        <Button Text="#StreetFood"
-                           Margin="5,20,0,20"
-                           VerticalOptions="Start"
-                           BackgroundColor="{StaticResource Primary}"
-                           CornerRadius="30"
-                           HeightRequest="40"
-                            />-->
-                    </StackLayout>
-                </ScrollView>
-
-            </StackLayout>
+                </Frame>-->
+            <!--</StackLayout>-->
         </Grid>
     </ScrollView>
 </ContentPage>
