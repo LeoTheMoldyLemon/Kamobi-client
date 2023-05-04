@@ -6,7 +6,7 @@
         <ScrollView>
             <Grid>
                 <StackLayout Padding="0" Margin="0">
-                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="130" HorizontalOptions="FillAndExpand">
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand">
                     </Frame>
                 </StackLayout>
                 <StackLayout Margin="15, 60, 15, 0">

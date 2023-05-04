@@ -33,7 +33,7 @@
                                 </Frame>
                             </StackLayout>
                             <Label Text="{Binding username, StringFormat='Your full username is {0}.'}" 
-                                   Margin="25,0,0,15" 
+                                   Margin="25,10,0,15" 
                                    Style="{StaticResource Text}"/>
                              
                         </StackLayout>

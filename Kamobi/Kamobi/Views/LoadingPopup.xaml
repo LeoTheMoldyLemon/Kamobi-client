@@ -4,7 +4,8 @@
            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
            Size="300,300"
            IsLightDismissEnabled="false"
-           x:Class="Kamobi.Views.LoadingPopup">
+           x:Class="Kamobi.Views.LoadingPopup"
+           Color="Transparent">
     <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
         <ActivityIndicator IsRunning="true" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="{StaticResource Primary}"/>
     </StackLayout>
