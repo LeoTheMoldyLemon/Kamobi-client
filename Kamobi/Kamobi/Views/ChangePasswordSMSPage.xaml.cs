@@ -23,7 +23,7 @@ namespace Kamobi.Views
         {
             InitializeComponent();
             string infotext = infoText.Text;
-            infoText.Text = infotext.Replace("{phoneNumber}", App.User.phoneNumber);
+            infoText.Text = infotext.Replace("{phoneNumber}", "+"+App.User.phoneNumber);
             CodeEntry.ReturnCommand = new Command(() => { ConfirmButtonClicked(null, null); });
         }
 

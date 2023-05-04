@@ -19,7 +19,9 @@ namespace Kamobi.Views
             InitializeComponent();
             BindingContext = App.CollectionVM;
             
+            
         }
+
 
         private async void AddFriendClicked(object sender, EventArgs e)
         {
@@ -46,6 +48,48 @@ namespace Kamobi.Views
                 return;
             }
 
+        }
+
+        private async void AcceptClicked(object sender, EventArgs e)
+        {
+            Friend target = (Friend)((Button)sender).CommandParameter;
+            LoadingPopup loading = new LoadingPopup();
+            Navigation.ShowPopup(loading);
+            var data = JsonNode.Parse("{}");
+            data["id"] = target.id;
+            JsonNode returnData = await App.socket.sendRequest("acceptFriend", data, 20000);
+            loading.Dismiss(null);
+            if (returnData == null)
+            {
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                return;
+            }
+            if (!(bool)returnData["success"])
+            {
+                Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
+                return;
+            }
+        }
+
+        private async void DenyClicked(object sender, EventArgs e)
+        {
+            Friend target = (Friend)((Button)sender).CommandParameter;
+            LoadingPopup loading = new LoadingPopup();
+            Navigation.ShowPopup(loading);
+            var data = JsonNode.Parse("{}");
+            data["id"] = target.id;
+            JsonNode returnData = await App.socket.sendRequest("denyFriend", data, 20000);
+            loading.Dismiss(null);
+            if (returnData == null)
+            {
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                return;
+            }
+            if (!(bool)returnData["success"])
+            {
+                Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
+                return;
+            }
         }
     }
 }

@@ -37,6 +37,8 @@ namespace Kamobi.Views
             {
                 
                 var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString()).AsArray();
+                App.CollectionVM.FriendsList = new System.Collections.ObjectModel.ObservableCollection<Friend>();
+                App.CollectionVM.FriendRequestsList = new System.Collections.ObjectModel.ObservableCollection<Friend>();
                 foreach (JsonNode datanode in data)
                 {
                     Console.WriteLine(datanode.ToJsonString());

@@ -3,68 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.AddFriendsPage">
 
-    <ScrollView VerticalScrollBarVisibility="Never">
-        <Grid>
-            <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
-            <StackLayout  Spacing="0">
-                <Frame Margin="15, 30, 15, 0" BackgroundColor="{StaticResource BaseColor}" HeightRequest="54" BorderColor="Transparent" Padding="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
-                            <Image Source="@drawable/search" HorizontalOptions="Center" HeightRequest="30" Aspect="AspectFit"/>
-                        </Frame>
-                        <Entry Text=""  x:Name="FriendRequestName" Placeholder="Add a friend" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
-                    </StackLayout>
-                </Frame>
+    <StackLayout>
+        <StackLayout Padding="0" Margin="0">
+            <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout  Spacing="0">
+            <Frame Margin="15, 30, 15, 0" BackgroundColor="{StaticResource BaseColor}" HeightRequest="54" BorderColor="Transparent" Padding="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                 <StackLayout Orientation="Horizontal">
-                    <Frame Style="{StaticResource BasicFrame}" CornerRadius="50" BackgroundColor="{StaticResource Secondary}" Margin="22, 7, 0, 0" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="Start" HasShadow="False">
-                        <ImageButton Source="@drawable/icon_question" HeightRequest="30" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
+                    <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                        <Image Source="@drawable/search" HorizontalOptions="Center" HeightRequest="30" Aspect="AspectFit"/>
                     </Frame>
-                    <Button Text="Send request"  Margin="0,7,15,15" Clicked="AddFriendClicked" Style="{StaticResource VariableButtonSmall}" HorizontalOptions="End"/>
+                    <Entry Text=""  x:Name="FriendRequestName" Placeholder="Add a friend" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 0, 15, 0"/>
                 </StackLayout>
-                <!--<Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' 
-                           VerticalOptions="Start" 
-                           HorizontalOptions="EndAndExpand"
-                           Style="{StaticResource Text}"
-                           />-->
-
-                <StackLayout Orientation="Vertical">
-                    <Label Text="Your friends" Style="{StaticResource Title}"/>
-                            <ListView SelectionMode="None" ItemsSource="{Binding FriendsList}" VerticalOptions="Start">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell >
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label Text="{Binding username}" Style="{StaticResource Text}"/>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-
-                            </ListView>
-                            <Label Text="Pending friend requests" Style="{StaticResource Title}"
-                           />
-                            <ListView HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding FriendRequestsList}" VerticalOptions="Start">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Orientation="Vertical">
-                                                <Label Text="{Binding username}" HorizontalOptions="Center"/>
-                                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                                    <Button Text="Accept" HorizontalOptions="EndAndExpand"/>
-                                                    <Button Text="Deny" HorizontalOptions="End"/>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-
-                            </ListView>
-                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <Frame Style="{StaticResource BasicFrame}" CornerRadius="50" BackgroundColor="{StaticResource Secondary}" Margin="22, 7, 0, 0" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="Start" HasShadow="False">
+                    <ImageButton Source="@drawable/icon_question" HeightRequest="30" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
+                </Frame>
+                <Button Text="Send request"  Margin="0,7,15,15" Clicked="AddFriendClicked" Style="{StaticResource VariableButtonSmall}" HorizontalOptions="End"/>
             </StackLayout>
-        </Grid>
-    </ScrollView>
+            <!--<Label Text='Type in the full name (name + "#" + 4 digit code) or an international phone number of a friend you would like to add.' 
+                        VerticalOptions="Start" 
+                        HorizontalOptions="EndAndExpand"
+                        Style="{StaticResource Text}"
+                        />-->
+            <StackLayout Orientation="Vertical">
+                <Label Text="Your friends" Style="{StaticResource Title}"/>
+
+                <ListView SelectionMode="None" ItemsSource="{Binding FriendsList}" VerticalOptions="Start">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding username}" Style="{StaticResource Text}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <Label Text="Pending friend requests" Style="{StaticResource Title}"/>
+
+                <ListView HasUnevenRows="True" SelectionMode="None" ItemsSource="{Binding FriendRequestsList}" VerticalOptions="Start">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding username}" HorizontalOptions="Center"/>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                                        <Button Clicked="AcceptClicked" CommandParameter="{Binding .}" Style="{StaticResource BasicButtonSmall}" Text="Accept" HorizontalOptions="EndAndExpand"/>
+                                        <Button Clicked="DenyClicked" CommandParameter="{Binding .}" Style="{StaticResource BasicButtonSmall}" Text="Deny" HorizontalOptions="End"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
     
