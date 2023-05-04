@@ -101,6 +101,8 @@ namespace Kamobi.Views
         }
         private async void LogoutButtonClicked(object sender, EventArgs e)
         {
+            App.CollectionVM = new Models.ObservableCollections();
+            App.User = new Services.UserInfo();
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
