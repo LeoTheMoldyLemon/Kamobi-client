@@ -35,8 +35,8 @@
                         <DataTemplate>
                             <ViewCell >
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding username}" Style="{StaticResource Text}"/>
-                                    <Button Clicked="Button_Clicked" CommandParameter="{Binding .}" Text="Unfriend" Style="{StaticResource BasicButtonSmall}" />
+                                    <Label FontSize="Medium" Margin="50,10,0,0" Text="{Binding username}" Style="{StaticResource Text}"/>
+                                    <Button Margin="0,0,50,0" WidthRequest="100" HorizontalOptions="EndAndExpand" Clicked="UnfriendClicked" CommandParameter="{Binding .}" Text="Unfriend" Style="{StaticResource BasicButtonSmall}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
