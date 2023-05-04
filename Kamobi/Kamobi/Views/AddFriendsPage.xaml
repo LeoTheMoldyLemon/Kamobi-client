@@ -36,6 +36,7 @@
                             <ViewCell >
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding username}" Style="{StaticResource Text}"/>
+                                    <Button Clicked="Button_Clicked" CommandParameter="{Binding .}" Text="Unfriend" Style="{StaticResource BasicButtonSmall}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

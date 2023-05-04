@@ -47,7 +47,8 @@ namespace Kamobi.Views
                 Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
                 return;
             }
-
+            Navigation.ShowPopup(new InfoPopup("Friend request has been sent."));
+            FriendRequestName.Text = "";
         }
 
         private async void AcceptClicked(object sender, EventArgs e)
@@ -79,6 +80,27 @@ namespace Kamobi.Views
             var data = JsonNode.Parse("{}");
             data["id"] = target.id;
             JsonNode returnData = await App.socket.sendRequest("denyFriend", data, 20000);
+            loading.Dismiss(null);
+            if (returnData == null)
+            {
+                Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                return;
+            }
+            if (!(bool)returnData["success"])
+            {
+                Navigation.ShowPopup(new InfoPopup((string)returnData["error"]["description"]));
+                return;
+            }
+        }
+
+        private async void UnfriendClicked(object sender, EventArgs e)
+        {
+            Friend target = (Friend)((Button)sender).CommandParameter;
+            LoadingPopup loading = new LoadingPopup();
+            Navigation.ShowPopup(loading);
+            var data = JsonNode.Parse("{}");
+            data["id"] = target.id;
+            JsonNode returnData = await App.socket.sendRequest("removeFriend", data, 20000);
             loading.Dismiss(null);
             if (returnData == null)
             {
