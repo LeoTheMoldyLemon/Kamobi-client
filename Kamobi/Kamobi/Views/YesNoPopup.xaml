@@ -7,8 +7,10 @@
            x:Class="Kamobi.Views.YesNoPopup">
 
     <StackLayout BackgroundColor="{StaticResource BaseColor}" xct:CornerRadiusEffect.CornerRadius="30" Orientation="Vertical" VerticalOptions="CenterAndExpand">
-        <Label x:Name="description" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="15"/>
-        <Button Text="Yes" x:Name="yesButton" Clicked="yesButton_Clicked" VerticalOptions="End" HorizontalOptions="EndAndExpand" Style="{StaticResource BasicButton}" WidthRequest="50" Margin="15"/>
-        <Button Text="No" x:Name="noButton" Clicked="noButton_Clicked" VerticalOptions="End" HorizontalOptions="StartAndExpand" Style="{StaticResource BasicButton}" WidthRequest="50" Margin="15"/>
+        <Label x:Name="description" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="15,70,15,0"/>
+        <StackLayout Orientation="Horizontal" Spacing="0" VerticalOptions="EndAndExpand">
+            <Button Text="No" x:Name="noButton" Clicked="noButton_Clicked" HorizontalOptions="EndAndExpand" Style="{StaticResource BasicButton}" BackgroundColor="{StaticResource Secondary}" Margin="0,0,0,15"/>
+            <Button Text="Yes" x:Name="yesButton" Clicked="yesButton_Clicked"  HorizontalOptions="End" Style="{StaticResource BasicButton}" Margin="7,0,15,15"/>
+        </StackLayout>
     </StackLayout>
 </xct:Popup>
