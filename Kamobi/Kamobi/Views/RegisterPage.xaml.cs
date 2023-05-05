@@ -30,7 +30,7 @@ namespace Kamobi.Views
         private async void RegisterButtonClicked(object sender, EventArgs e)
         {
             var random = new Random((int)DateTime.Now.Ticks);
-            string username = UsernameEntry.Text+"#"+((random.Next(0, 10000)).ToString()).PadLeft(4, ' '); //loading and checking data user has entered
+            string username = UsernameEntry.Text+"#"+((random.Next(0, 10000)).ToString()).PadLeft(4, '0'); //loading and checking data user has entered
             string password = PasswordEntry.Text;
             PasswordEntry.Text = "";
             string phoneNumber = PhoneNumberEntry.Text.Replace("+", "");

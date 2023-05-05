@@ -53,7 +53,7 @@ namespace Kamobi.Views
 
         private async void AcceptClicked(object sender, EventArgs e)
         {
-            Friend target = (Friend)((Button)sender).CommandParameter;
+            Friend target = (Friend)((ImageButton)sender).CommandParameter;
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
@@ -74,7 +74,7 @@ namespace Kamobi.Views
 
         private async void DenyClicked(object sender, EventArgs e)
         {
-            Friend target = (Friend)((Button)sender).CommandParameter;
+            Friend target = (Friend)((ImageButton)sender).CommandParameter;
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
@@ -95,7 +95,7 @@ namespace Kamobi.Views
 
         private async void UnfriendClicked(object sender, EventArgs e)
         {
-            Friend target = (Friend)((Button)sender).CommandParameter;
+            Friend target = (Friend)((ImageButton)sender).CommandParameter;
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");

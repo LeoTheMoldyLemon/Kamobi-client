@@ -27,7 +27,7 @@ namespace Kamobi.Views
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
             var random = new Random((int)DateTime.Now.Ticks);
-            data["username"] = UsernameEntry.Text + "#" + random.Next(0, 10000).ToString().PadLeft(4, ' ');
+            data["username"] = UsernameEntry.Text + "#" + random.Next(0, 10000).ToString().PadLeft(4, '0');
             UsernameEntry.Text = "";
             JsonNode returnData = await App.socket.sendRequest("updateUser", data, 20000);
             loading.Dismiss(null);
@@ -101,8 +101,7 @@ namespace Kamobi.Views
         }
         private async void LogoutButtonClicked(object sender, EventArgs e)
         {
-            App.CollectionVM = new Models.ObservableCollections();
-            App.User = new Services.UserInfo();
+            
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");

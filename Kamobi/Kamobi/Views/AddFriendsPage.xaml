@@ -75,9 +75,9 @@
                             </ListView.ItemTemplate>
                         </ListView>-->
                         
-                        <StackLayout BindableLayout.ItemsSource="{Binding FriendsList}">
-                            <BindableLayout.ItemTemplate>
-                                <DataTemplate>
+                        <StackLayout BindableLayout.ItemsSource="{Binding FriendsList}" >
+                            <BindableLayout.ItemTemplate >
+                                <DataTemplate >
                                     <StackLayout Orientation="Horizontal">
                                         <Frame Style="{StaticResource FriendDisplayFrame}" Padding="0" HeightRequest="54">
                                             <StackLayout Orientation="Horizontal" Spacing="0">
