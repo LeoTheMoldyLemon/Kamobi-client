@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.FilterPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <StackLayout Padding="0" Margin="0">
+                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand">
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="15, 30, 15, 0">
+                    <Frame BackgroundColor="{StaticResource BaseColor}" Padding="0" HasShadow="True" HeightRequest="550" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                        <StackLayout Orientation="Vertical">
+
+                            <StackLayout Margin="15, 0, 15,0" Orientation="Vertical">
+
+                                <ImageButton Source="@drawable/icon_close"
+                                             Style="{StaticResource ImageButtonBasic}" 
+                                             Aspect="AspectFill" HorizontalOptions="End"
+                                             HeightRequest="30"
+                                             WidthRequest="30"
+                                             Margin="0,10,10,0"/>
+                                
+                                
+
+                                <Slider Maximum="500"
+                                        MinimumTrackColor="Black"
+                                        MaximumTrackColor="Black"
+                                        ThumbColor="{StaticResource Primary}"/>
+                                
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label
+                                        Text="Distance:"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource Text}"
+                                    />
+
+                                    <Label
+                                        Text="0 km"
+                                        HorizontalOptions="Center"
+                                        Style="{StaticResource Text}"
+                                    />
+
+
+
+
+                                </StackLayout>
+                                
+                                <!-- Add that text changes according to value-->
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <CheckBox
+                                        Color="{StaticResource Primary}" 
+                                        HorizontalOptions="Start" 
+                                        Margin="10,0,0,0" 
+                                        IsChecked="true" />
+                                    <Label Text="Delivery" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <CheckBox
+                                        Color="{StaticResource Primary}"
+                                        HorizontalOptions="Start" 
+                                        Margin="10,0,0,0" 
+                                        IsChecked="true"/>
+                                    
+                                    <Label Text="Takeout" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    
+                                    <CheckBox
+                                        Color="{StaticResource Primary}" 
+                                        HorizontalOptions="Start" 
+                                              Margin="10,0,0,0" 
+                                              IsChecked="true"/>
+                                    
+                                    <Label Text="Dine in" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+                                    
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <CheckBox
+                                        Color="{StaticResource Primary}" 
+                                        HorizontalOptions="Start" 
+                                              Margin="10,0,0,0" 
+                                              IsChecked="true"/>
+
+                                    <Label Text="Vegan" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <CheckBox
+                                        Color="{StaticResource Primary}" 
+                                        HorizontalOptions="Start" 
+                                              Margin="10,0,0,0" 
+                                              IsChecked="true"/>
+
+                                    <Label Text="Vegetarian" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <CheckBox
+                                        Color="{StaticResource Primary}" 
+                                        HorizontalOptions="Start" 
+                                              Margin="10,0,0,0" 
+                                              IsChecked="true"/>
+
+                                    <Label Text="Gluten free" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="5,0,0,0"
+                                           Style="{StaticResource Text}"/>
+
+                                </StackLayout>
+
+                                <Label Text="Price range" 
+                                           HorizontalOptions="Start" 
+                                           VerticalOptions="Center" 
+                                           Margin="20,20,0,0"
+                                           Style="{StaticResource Text}"/>
+
+                                <StackLayout Orientation="Horizontal">
+
+                                    <ImageButton Source="@drawable/price.png"
+                                                 HeightRequest="50"
+                                                 Margin="20,10,0,0"
+                                                 BackgroundColor="{StaticResource AlmostWhite}"/>
+                                    <ImageButton Source="@drawable/price.png"
+                                                 HeightRequest="50"
+                                                 Margin="15,10,0,0"
+                                                 BackgroundColor="{StaticResource AlmostWhite}"/>
+                                    <ImageButton Source="@drawable/price.png"
+                                                 HeightRequest="50"
+                                                 Margin="15,10,0,0"
+                                                 BackgroundColor="{StaticResource AlmostWhite}"/>
+                                    <ImageButton Source="@drawable/price.png"
+                                                 HeightRequest="50"
+                                                 Margin="15,10,0,0"
+                                                 BackgroundColor="{StaticResource AlmostWhite}"/>
+                                    
+                                </StackLayout>
+
+                                <Button
+                                    Text="Start!"
+                                    Style="{StaticResource BasicButton}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="Center"
+                                    Margin="0,20,0,0"
+                                    />
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Frame>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
