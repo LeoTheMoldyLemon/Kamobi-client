@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.SearchPage">
-<ScrollView>
+<StackLayout>
         <Grid>
             <StackLayout Padding="0" Margin="0">
                 <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="106" HorizontalOptions="FillAndExpand"/>
@@ -25,7 +25,7 @@
                         <StackLayout Orientation="Horizontal">
                             <Button Text="#Vegeterian" Style="{StaticResource VariableHastagButton}" Margin="15, 0,0,0"/>
                             <Button Text="#Vegan" Style="{StaticResource VariableHastagButton}"/>
-                            <Button Text="GlutenFree" Style="{StaticResource VariableHastagButton}"/>
+                            <Button Text="#GlutenFree" Style="{StaticResource VariableHastagButton}"/>
                             <Button Text="#Seafood" Style="{StaticResource VariableHastagButton}"/>
                             <Button Text="#Burger" Style="{StaticResource VariableHastagButton}"/>
                             <Button Text="#Pizza" Style="{StaticResource VariableHastagButton}"/>
@@ -51,5 +51,5 @@
                 </Frame>-->
             <!--</StackLayout>-->
         </Grid>
-    </ScrollView>
+    </StackLayout>
 </ContentPage>

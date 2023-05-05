@@ -50,9 +50,9 @@
                             
                         </StackLayout>
                     </Frame>
-                    <StackLayout Orientation="Horizontal" Margin="0, 15, 0, 0">
-                        <Button Text="Register instead" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="Center" BackgroundColor="{StaticResource Secondary}"></Button>
-                        <Button Text="Log in" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand"></Button>
+                    <StackLayout Orientation="Horizontal" Margin="0, 7, 0, 0">
+                        <Button Text="Register instead" Clicked="RegisterButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="EndAndExpand" BackgroundColor="{StaticResource Secondary}"></Button>
+                        <Button Text="Log in" Clicked="LoginButtonClicked" Style="{StaticResource BasicButton}" HorizontalOptions="End"></Button>
                     </StackLayout>
                 </StackLayout>
             </Grid>
