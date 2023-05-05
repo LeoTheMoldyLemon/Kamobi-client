@@ -43,10 +43,10 @@
                                                     <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
                                                 </Frame>
                                                 <Label Text="{Binding username}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Style="{StaticResource Smalltitle}"/>
-                                                <ImageButton  Source="@drawable/icon_close" Clicked="DenyClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand" Margin="0,7,0,7" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
-                                                <ImageButton  Source="@drawable/icon_check" Clicked="AcceptClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Margin="10" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
-                                                <!--<Button Clicked="AcceptClicked" CommandParameter="{Binding .}" Style="{StaticResource VariableButtonSmall}" Text="Accept" HorizontalOptions="EndAndExpand"/>-->
-                                                <!--<Button Clicked="DenyClicked" CommandParameter="{Binding .}" Style="{StaticResource VariableButtonSmall}" Text="Deny" HorizontalOptions="End"/>-->
+                                                <!--<ImageButton  Source="@drawable/icon_close" Clicked="DenyClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand" Margin="0,7,0,7" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
+                                                <ImageButton  Source="@drawable/icon_check" Clicked="AcceptClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Margin="10" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>-->
+                                                <Button Clicked="AcceptClicked" CommandParameter="{Binding .}" Style="{StaticResource VariableButtonSmall}" Text="Accept" HorizontalOptions="EndAndExpand" Margin="7"/>
+                                                <Button Clicked="DenyClicked" CommandParameter="{Binding .}" Style="{StaticResource VariableButtonSmall}" Text="Deny" HorizontalOptions="End" Margin="7"/>
                                             </StackLayout>
                                         </Frame>
                                     </StackLayout>
@@ -85,7 +85,8 @@
                                                     <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
                                                 </Frame>
                                                 <Label Text="{Binding username}" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
-                                                    <ImageButton  Source="@drawable/icon_close" Clicked="UnfriendClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand" Margin="7" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
+                                                <Button  Clicked="UnfriendClicked" CommandParameter="{Binding .}" Text="Unfriend" HorizontalOptions="EndAndExpand" Margin="7" Style="{StaticResource VariableButtonSmall}"/>
+                                                    <!--<ImageButton  Source="@drawable/icon_close" Clicked="UnfriendClicked" CommandParameter="{Binding .}" CornerRadius="50" Background="{StaticResource BaseColor}" HeightRequest="40" WidthRequest="40" HorizontalOptions="EndAndExpand" Margin="7" VerticalOptions="CenterAndExpand" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>-->
                                             </StackLayout>
                                         </Frame>
                                     </StackLayout>
