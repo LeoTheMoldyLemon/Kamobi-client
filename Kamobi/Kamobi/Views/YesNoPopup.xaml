@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+           Size="300,300"
+           Color="Transparent"
+           x:Class="Kamobi.Views.YesNoPopup">
+
+    <StackLayout BackgroundColor="{StaticResource BaseColor}" xct:CornerRadiusEffect.CornerRadius="30" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+        <Label x:Name="description" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="15"/>
+        <Button Text="Yes" x:Name="yesButton" Clicked="yesButton_Clicked" VerticalOptions="End" HorizontalOptions="EndAndExpand" Style="{StaticResource BasicButton}" WidthRequest="50" Margin="15"/>
+        <Button Text="No" x:Name="noButton" Clicked="noButton_Clicked" VerticalOptions="End" HorizontalOptions="StartAndExpand" Style="{StaticResource BasicButton}" WidthRequest="50" Margin="15"/>
+    </StackLayout>
+</xct:Popup>

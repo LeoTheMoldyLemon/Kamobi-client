@@ -96,6 +96,10 @@ namespace Kamobi.Views
         private async void UnfriendClicked(object sender, EventArgs e)
         {
             Friend target = (Friend)((ImageButton)sender).CommandParameter;
+
+            if (!(bool)await Navigation.ShowPopupAsync(new YesNoPopup("Are you sure you want to unfriend "+target.username+"?"))) {
+                return;
+            }
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
