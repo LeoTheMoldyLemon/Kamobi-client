@@ -5,43 +5,8 @@
              x:Class="Kamobi.Views.PartyCreatePage">
 
     <StackLayout>
-        <!--<StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="180" HorizontalOptions="FillAndExpand"></Frame>
-            </StackLayout>-->
-        
-            <StackLayout Margin="0, 0, 0, 10">
-                <Frame HeightRequest="125" WidthRequest="200" HasShadow="False" BackgroundColor="Transparent">
-                    <Image Source="@drawable/LoginLogo" Aspect="AspectFit"/>
-                </Frame>
-            </StackLayout>
-            <StackLayout Margin="15, 30, 15, 0">
-            <Frame BackgroundColor="{StaticResource BaseColor}" Padding="0" HasShadow="True" HeightRequest="360" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                <StackLayout Orientation="Vertical" Spacing="0">
-                    <Frame BackgroundColor="{StaticResource Primary}" HeightRequest="120" Margin="0">
-                        <Frame.GestureRecognizers>
-                            <DropGestureRecognizer AllowDrop="True"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="120" Margin="0">
-                        <Frame.GestureRecognizers>
-                            <DropGestureRecognizer AllowDrop="True"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                    <Frame BackgroundColor="{StaticResource Dark}" HeightRequest="120" Margin="0">
-                        <Frame.GestureRecognizers>
-                            <DropGestureRecognizer AllowDrop="True"/>
-                        </Frame.GestureRecognizers>
-                    </Frame>
-                </StackLayout>
-            </Frame>
-            </StackLayout>
-        
-        <Frame HeightRequest="70" WidthRequest="70" Padding="10" Style="{StaticResource BasicFrame}">
-            <ImageButton Source="@drawable/mexican.png" Aspect="Fill" BackgroundColor="Transparent"/>
-            <Frame.GestureRecognizers>
-                <DragGestureRecognizer CanDrag="True"/>
-            </Frame.GestureRecognizers>
-        </Frame>
+
+        <Button Text="Invite" Style="{StaticResource BasicButton}" Margin="30" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="InviteButton_Clicked"/>
 
     </StackLayout>
 </ContentPage>

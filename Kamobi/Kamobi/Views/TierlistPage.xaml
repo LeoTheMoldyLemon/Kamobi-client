@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.TierlistPage">
+    <StackLayout>
+        <Grid>
+            <StackLayout>
+                <Frame BackgroundColor="{StaticResource Secondary}" Margin="0,106,0,0" HeightRequest="500" HasShadow="False"/>
+            </StackLayout>
+
+            <StackLayout>
+                <StackLayout Margin="0,30,0,0">
+                    <Frame HeightRequest="40" WidthRequest="100" HasShadow="False" BackgroundColor="Transparent">
+                        <Image Source="@drawable/KamobiLogoUski" Aspect="AspectFit"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Margin="15,0,15,15">
+                    <StackLayout Orientation="Vertical" Spacing="15">
+                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                    <Image Source="@drawable/love" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                </Frame>
+                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                    <Image Source="@drawable/like" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                </Frame>
+                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                    <Image Source="@drawable/dislike" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                </Frame>
+                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                    <Frame Style="{StaticResource Partydrop}">
+                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+
+                <!--<Frame Style="{StaticResource PartyCategory}">
+                    <ImageButton Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                    <Frame.GestureRecognizers>
+                        <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                    </Frame.GestureRecognizers>
+                </Frame>-->
+
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+                    <StackLayout Orientation="Horizontal" Spacing="15">
+
+                        <Frame Style="{StaticResource PartyCategory}" Margin="15,0,0,15">
+                            <ImageButton Source="@drawable/mexican.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/pizza.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/pasta.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/sandwich.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/steak.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/streetfood.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame Style="{StaticResource PartyCategory}">
+                            <ImageButton Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Frame.GestureRecognizers>
+                                <DragGestureRecognizer CanDrag="True"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                    <Button Text="Finish" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="FinishButton_Clicked"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+</ContentPage>

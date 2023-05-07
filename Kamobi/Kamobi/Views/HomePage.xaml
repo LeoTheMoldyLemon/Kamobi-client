@@ -11,7 +11,7 @@
             
             <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="200" PeekAreaInsets="100">
                 <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" SnapPointsType="Mandatory" />
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15" SnapPointsType="None" />
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -29,7 +29,7 @@
 
             <CarouselView ItemsSource="{Binding Categories}" PeekAreaInsets="120" Loop="True">
                 <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" SnapPointsType="Mandatory" />
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="7" SnapPointsType="None" />
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>

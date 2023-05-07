@@ -113,6 +113,22 @@
                 <Setter Property="CornerRadius" Value="30"/>
             </Style>
             
+            <Style x:Key="PartyCategory" TargetType="Frame" BasedOn="{StaticResource BasicFrame}">
+                <Setter Property="HeightRequest" Value="70"/>
+                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="Padding" Value="7"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BaseColor}"/>
+                <Setter Property="Margin" Value="0,0,0,15"/>
+            </Style>
+            
+            <Style x:Key="Partydrop" TargetType="Frame" BasedOn="{StaticResource BasicFrame}">
+                <Setter Property="HeightRequest" Value="90"/>
+                <Setter Property="WidthRequest" Value="90"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BaseColor}"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+            
         </ResourceDictionary>        
     </Application.Resources>
 </Application>

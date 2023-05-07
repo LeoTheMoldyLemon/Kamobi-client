@@ -58,7 +58,11 @@
     <TabBar>
         <ShellContent Title="Settings" Route="SettingsPage" ContentTemplate="{DataTemplate local:SettingsPage}" />
     </TabBar>
-    
+
+    <TabBar>
+        <ShellContent Title="Tierlist" Route="TierlistPage" ContentTemplate="{DataTemplate local:TierlistPage}" />
+    </TabBar>
+
 
 
 </Shell>

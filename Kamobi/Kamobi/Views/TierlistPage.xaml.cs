@@ -10,18 +10,20 @@ using Xamarin.Forms.Xaml;
 namespace Kamobi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PartyCreatePage : ContentPage
+    public partial class TierlistPage : ContentPage
     {
-        public PartyCreatePage()
+        public TierlistPage()
         {
             InitializeComponent();
         }
-
-
-        private async void InviteButton_Clicked(object sender, EventArgs e)
+        private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)
         {
-            await Shell.Current.GoToAsync("//TierlistPage");
+
         }
 
+        private async void FinishButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//ProfilePage");
+        }
     }
 }
