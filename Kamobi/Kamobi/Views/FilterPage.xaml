@@ -24,10 +24,10 @@
                                 
                                 
 
-                                <Slider Maximum="500"
+                                <!-- <Slider Maximum="500"
                                         MinimumTrackColor="Black"
                                         MaximumTrackColor="Black"
-                                        ThumbColor="{StaticResource Primary}"/>
+                                        ThumbColor="{StaticResource Primary}"/> 
                                 
                                 <StackLayout Orientation="Horizontal">
 
@@ -46,7 +46,7 @@
 
 
 
-                                </StackLayout>
+                                </StackLayout>-->
                                 
                                 <!-- Add that text changes according to value-->
 
