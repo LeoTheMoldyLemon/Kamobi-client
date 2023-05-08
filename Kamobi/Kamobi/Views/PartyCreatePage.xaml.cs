@@ -15,6 +15,7 @@ namespace Kamobi.Views
         public PartyCreatePage()
         {
             InitializeComponent();
+            BindingContext = App.CollectionVM;
         }
 
 
