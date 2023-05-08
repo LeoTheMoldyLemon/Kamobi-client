@@ -3,10 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Kamobi.Models"
              x:Class="Kamobi.Views.PartyCreatePage">
+    <ScrollView>
+        <Grid>
+            <StackLayout Padding="0" Margin="0,106,0,0">
+                <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="91" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+                <StackLayout Margin="0,30,0,0">
+                    <Frame HeightRequest="40" WidthRequest="100" HasShadow="False" BackgroundColor="Transparent">
+                        <Image Source="@drawable/KamobiLogoUski" Aspect="AspectFit"/>
+                    </Frame>
+                </StackLayout>
 
-    <StackLayout>
+                <StackLayout>
+                    <StackLayout  Spacing="0">
+                        <Frame Margin="15, 121, 15, 0" BackgroundColor="{StaticResource BaseColor}" BorderColor="Transparent" Padding="0" CornerRadius="50" VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                    <Image Source="@drawable/search" HorizontalOptions="Center" HeightRequest="30" Aspect="AspectFit"/>
+                                </Frame>
+                                <Entry Text=""  x:Name="FriendRequestName" Placeholder="Add a friend" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="37" Margin="0, 8.5, 15, 8.5"/>
+                            </StackLayout>
+                        </Frame>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame Style="{StaticResource BasicFrame}" CornerRadius="50" BackgroundColor="{StaticResource BaseColor}" Padding="2" Margin="20, 7, 0, 0" HeightRequest="40" WidthRequest="40" HorizontalOptions="StartAndExpand" VerticalOptions="Start" HasShadow="False">
+                                <ImageButton Source="@drawable/icon_question" HeightRequest="40" CornerRadius="50" Margin="2" Style="{StaticResource ImageButtonBasic}" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="invite"  Margin="0,7,15,15" Style="{StaticResource VariableButtonSmall}" HorizontalOptions="End"/>
+                        </StackLayout>
+                    </StackLayout>
 
-        <Button Text="Invite" Style="{StaticResource BasicButton}" Margin="30" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Clicked="InviteButton_Clicked"/>
+                    <StackLayout>
+                        <Label Text="Your friends" Style="{StaticResource Title}"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding FriendsList}" >
+                            <BindableLayout.ItemTemplate >
+                                <DataTemplate >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame Style="{StaticResource FriendDisplayFrame}" Padding="0" HeightRequest="54">
+                                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Start" Padding="0" Margin="7" HeightRequest="40" WidthRequest="40">
+                                                    <Image Source="@drawable/user_profile" HorizontalOptions="Center"/>
+                                                </Frame>
+                                                <Label Text="{Binding username}" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </StackLayout>
 
-    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Button Text="Make a party" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="InviteButton_Clicked"/>
+                    </StackLayout>
+
+                </StackLayout>
+        </Grid>
+
+    </ScrollView>
 </ContentPage>
