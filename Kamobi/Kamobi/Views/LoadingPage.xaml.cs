@@ -54,10 +54,11 @@ namespace Kamobi.Views
             App.socket.setupListener("partyRequest", async (dataString) =>
             {
 
-                var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString());
-                Console.WriteLine(dataString);
-                App.CollectionVM.MemberList = new ThreadSafeObservableCollection<Friend>();
-                Console.WriteLine(data.ToJsonString());
+            var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString());
+            Console.WriteLine(dataString);
+            App.CollectionVM.MemberList = new ThreadSafeObservableCollection<Friend>();
+            Console.WriteLine(data.ToJsonString());
+            Device.BeginInvokeOnMainThread(async() =>  {
                 if ((bool)await Navigation.ShowPopupAsync(new YesNoPopup(data["username"] + " has invited you to their KamopParty! Would you like to join?"))) {
                     LoadingPopup loading2 = new LoadingPopup();
                     Navigation.ShowPopup(loading2);
@@ -75,8 +76,10 @@ namespace Kamobi.Views
                     }
                     await Shell.Current.GoToAsync("//PartyMemberPage");
                 }
+            });
 
-                
+
+
             });
             App.socket.setupListener("friendsListUpdate", (dataString) =>
             {
