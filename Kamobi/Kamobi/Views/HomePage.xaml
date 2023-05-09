@@ -7,27 +7,46 @@
 
     <ScrollView>
         <StackLayout Margin="0, 10, 0, 0">
-            <Label Text="Popular" Style="{StaticResource Title}"/>
-            
-            <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="200" PeekAreaInsets="100">
+
+            <Label Text="Hot deals" Style="{StaticResource Title}"/>
+
+            <CarouselView ItemsSource="{Binding HotDeals}" HeightRequest="230" PeekAreaInsets="100">
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15" SnapPointsType="None" />
                 </CarouselView.ItemsLayout>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame HeightRequest="190" WidthRequest="200" Style="{StaticResource BasicFrame}">
+                            <Frame HeightRequest="200" WidthRequest="200" Style="{StaticResource BasicFrame}">
                                 <ImageButton Source="{Binding imgSource}" Command="{Binding OpenLinkCommand}" CommandParameter="{Binding .}" Aspect="AspectFill" Style="{StaticResource ImageButtonBasic}"/>
                             </Frame>
+                            <Label Text="{Binding title}" Style="{StaticResource Smalltitle}" Margin="0" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            
+            <Label Text="Popular in Zagreb" Style="{StaticResource Title}"/>
+
+            <CarouselView ItemsSource="{Binding PopularRestaurants}" HeightRequest="250" PeekAreaInsets="100">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15" SnapPointsType="None" />
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HeightRequest="200" WidthRequest="200" Style="{StaticResource BasicFrame}">
+                                <ImageButton Source="{Binding imgSource}" Command="{Binding OpenLinkCommand}" CommandParameter="{Binding .}" Aspect="AspectFill" Style="{StaticResource ImageButtonBasic}"/>
+                            </Frame>
+                            <Label Text="{Binding title}" Style="{StaticResource Smalltitle}" Margin="0" HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
 
+            <Label Text="Explore by Categories" Style="{StaticResource Title}"/>
 
-            <Label Text="Categories" Style="{StaticResource Title}"/>
-
-            <CarouselView ItemsSource="{Binding Categories}" PeekAreaInsets="120" Loop="True">
+            <CarouselView ItemsSource="{Binding Categories}" PeekAreaInsets="130" Loop="True">
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="7" SnapPointsType="None" />
                 </CarouselView.ItemsLayout>
@@ -42,6 +61,8 @@
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
+
+
         </StackLayout>
     </ScrollView>
     

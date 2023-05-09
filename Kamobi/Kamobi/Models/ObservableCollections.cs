@@ -15,8 +15,9 @@ namespace Kamobi.Models
 
 
         private ThreadSafeObservableCollection<PopularRestaurant> LocalPopularRestaurants;
+        private ThreadSafeObservableCollection<HotDeal> LocalHotDeals;
         private ThreadSafeObservableCollection<Category> LocalCategories;
-        private ThreadSafeObservableCollection<Review> LocalReviews;
+        //private ThreadSafeObservableCollection<Review> LocalReviews;
         private ThreadSafeObservableCollection<Friend> LocalFriendsList;
         private ThreadSafeObservableCollection<Friend> LocalFriendRequestsList;
         private ThreadSafeObservableCollection<Friend> LocalMemberList;
@@ -25,8 +26,9 @@ namespace Kamobi.Models
         public ObservableCollections()
         {
             PopularRestaurants = new ThreadSafeObservableCollection<PopularRestaurant>();
+            HotDeals = new ThreadSafeObservableCollection<HotDeal>();
             Categories = new ThreadSafeObservableCollection<Category>();
-            Reviews = new ThreadSafeObservableCollection<Review>();
+            //Reviews = new ThreadSafeObservableCollection<Review>();
             FriendsList = new ThreadSafeObservableCollection<Friend>();
             FriendRequestsList = new ThreadSafeObservableCollection<Friend>();
             MemberList = new ThreadSafeObservableCollection<Friend>();
@@ -69,6 +71,16 @@ namespace Kamobi.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PopularRestaurants"));
             }
         }
+        public ThreadSafeObservableCollection<HotDeal> HotDeals
+        {
+            get { return LocalHotDeals; }
+            set
+            {
+                LocalHotDeals = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("HotDeals"));
+            }
+        }
+
         public ThreadSafeObservableCollection<Category> Categories
         {
             get { return LocalCategories; }
@@ -79,15 +91,15 @@ namespace Kamobi.Models
             }
         }
 
-        public ThreadSafeObservableCollection<Review> Reviews
-        {
-            get { return LocalReviews; }
-            set
-            {
-                LocalReviews = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Reviews"));
-            }
-        }
+        //public ThreadSafeObservableCollection<Review> Reviews
+        //{
+        //    get { return LocalReviews; }
+        //    set
+        //    {
+        //        LocalReviews = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Reviews"));
+        //    }
+        //}
 
         private async void OnImageButtonClicked(object sender, EventArgs e)
         {
@@ -105,33 +117,49 @@ namespace Kamobi.Models
             {
 
                 id = 0,
-                title = "McDonalds",
-                link = "https://mcdonalds.hr/o-nama/novosti/11-ponuda-uzitak-koji-vrijedi-vise/",
-                imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
+                title = "Chef Mate Janković pokreće novi projekt: ‘Imat ćemo 12 novih jela svaki tjedan‘",
+                link = "https://www.jutarnji.hr/dobrahrana/price/chef-mate-jankovic-pokrece-novi-projekt-imat-cemo-12-novih-jela-svaki-tjedan-15296789",
+                imgSource = "https://static.jutarnji.hr/images/slike/2023/01/18/27642993.jpg"
             });
             PopularRestaurants.Add(new PopularRestaurant
             {
 
                 id = 0,
-                title = "KFC",
+                title = "PROSLAVITE ROĐENDAN U BATKU!",
+                link = "https://batak-grill.hr/proslavite-rodendan-u-batku/",
+                imgSource = "https://batak-grill.hr/wp-content/uploads/2022/10/Batak-6029-1024x683.webp"
+            });
+            PopularRestaurants.Add(new PopularRestaurant
+            {
+
+                id = 0,
+                title = "HOT CHALLANGE, ALI NA SUBMARINE NAČIN!",
+                link = "https://submarineburger.com/2022/10/27/hot-challange-ali-na-submarine-nacin/",
+                imgSource = "https://submarineburger.com/wp-content/uploads/2022/10/Submarine-burger-hot-burger-ninja-contest_2-938x385.webp"
+            });
+
+            HotDeals.Add(new HotDeal
+            {
+                id = 0,
+                title = "McDonalds ponuda 1+1",
+                link = "https://mcdonalds.hr/o-nama/novosti/11-ponuda-uzitak-koji-vrijedi-vise/",
+                imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
+            });
+
+            HotDeals.Add(new HotDeal
+            {
+                id = 0,
+                title = "KFC bucket za jednu osobu",
                 link = "https://kfc.hr/",
                 imgSource = "https://sawepecomcdn.blob.core.windows.net/kfc-web-ordering/KFC_CRO/26_CheeserPromo/recommends_b41/kfc_b4o_recommends_dexktop_581x581.jpg"
             });
 
-            Reviews.Add(new Review
-            { 
-                id = 0,
-                name = "Leonardin restoran",
-                rating = 1,
-                imgSource = "https://cdn.vox-cdn.com/thumbor/WR9hE8wvdM4hfHysXitls9_bCZI=/0x0:1192x795/1400x1400/filters:focal(596x398:597x399)/cdn.vox-cdn.com/uploads/chorus_asset/file/22312759/rickroll_4k.jpg"
-            });
-
-            Reviews.Add(new Review
+            HotDeals.Add(new HotDeal
             {
                 id = 0,
-                name = "Leonardin restoran 2",
-                rating = 5,
-                imgSource = "https://s.yimg.com/ny/api/res/1.2/gts9lRWMvRWAcVXhlnODCA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MQ--/https://media.zenfs.com/en/nerdist_761/2d47d0794ed390d7807134077817ca40"
+                title = "MENU ZA KLINCE; KIDS EAT FREE SUNDAY",
+                link = "https://submarineburger.com/menu/",
+                imgSource = "https://submarineburger.com/wp-content/uploads/2020/11/Kiddie%C2%B4s-menu-558x373.webp"
             });
 
 
@@ -262,12 +290,6 @@ namespace Kamobi.Models
                 title = "Pastry",
                 imgSource = "@drawable/bakery.png"
             });
-            
-
         }
-
-        
-        
-
     }
 }
