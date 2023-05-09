@@ -14,24 +14,24 @@ namespace Kamobi.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-        private ObservableCollection<PopularRestaurant> LocalPopularRestaurants;
-        private ObservableCollection<Category> LocalCategories;
-        private ObservableCollection<Review> LocalReviews;
-        private ObservableCollection<Friend> LocalFriendsList;
-        private ObservableCollection<Friend> LocalFriendRequestsList;
+        private ThreadSafeObservableCollection<PopularRestaurant> LocalPopularRestaurants;
+        private ThreadSafeObservableCollection<Category> LocalCategories;
+        private ThreadSafeObservableCollection<Review> LocalReviews;
+        private ThreadSafeObservableCollection<Friend> LocalFriendsList;
+        private ThreadSafeObservableCollection<Friend> LocalFriendRequestsList;
 
         public ObservableCollections()
         {
-            PopularRestaurants = new ObservableCollection<PopularRestaurant>();
-            Categories = new ObservableCollection<Category>();
-            Reviews = new ObservableCollection<Review>();
-            FriendsList = new ObservableCollection<Friend>();
-            FriendRequestsList = new ObservableCollection<Friend>();
+            PopularRestaurants = new ThreadSafeObservableCollection<PopularRestaurant>();
+            Categories = new ThreadSafeObservableCollection<Category>();
+            Reviews = new ThreadSafeObservableCollection<Review>();
+            FriendsList = new ThreadSafeObservableCollection<Friend>();
+            FriendRequestsList = new ThreadSafeObservableCollection<Friend>();
 
 
             AddData();
         }
-        public ObservableCollection<Friend> FriendRequestsList
+        public ThreadSafeObservableCollection<Friend> FriendRequestsList
         {
             get { return LocalFriendRequestsList; }
             set
@@ -40,7 +40,7 @@ namespace Kamobi.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FriendRequestsList"));
             }
         }
-        public ObservableCollection<Friend> FriendsList
+        public ThreadSafeObservableCollection<Friend> FriendsList
         {
             get { return LocalFriendsList; }
             set
@@ -49,7 +49,7 @@ namespace Kamobi.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("FriendsList"));
             }
         }
-        public ObservableCollection<PopularRestaurant> PopularRestaurants
+        public ThreadSafeObservableCollection<PopularRestaurant> PopularRestaurants
         {
             get { return LocalPopularRestaurants; }
             set
@@ -58,7 +58,7 @@ namespace Kamobi.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PopularRestaurants"));
             }
         }
-        public ObservableCollection<Category> Categories
+        public ThreadSafeObservableCollection<Category> Categories
         {
             get { return LocalCategories; }
             set
@@ -68,7 +68,7 @@ namespace Kamobi.Models
             }
         }
 
-        public ObservableCollection<Review> Reviews
+        public ThreadSafeObservableCollection<Review> Reviews
         {
             get { return LocalReviews; }
             set
