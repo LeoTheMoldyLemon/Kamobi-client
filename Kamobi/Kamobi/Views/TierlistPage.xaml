@@ -22,17 +22,10 @@
                                 <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
                                     <Image Source="@drawable/love" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
                                 </Frame>
-                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                </StackLayout>
+                                <StackLayout.GestureRecognizers>
+                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+
                             </StackLayout>
                         </Frame>
                         <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
@@ -40,17 +33,10 @@
                                 <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
                                     <Image Source="@drawable/like" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
                                 </Frame>
-                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                </StackLayout>
+                                <StackLayout.GestureRecognizers>
+                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+
                             </StackLayout>
                         </Frame>
 
@@ -59,17 +45,11 @@
                                 <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
                                     <Image Source="@drawable/dislike" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
                                 </Frame>
-                                <StackLayout Orientation="Horizontal" Spacing="7" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                    <Frame Style="{StaticResource Partydrop}">
-                                        <Image Source="@drawable/pinklines" Aspect="AspectFit"/>
-                                    </Frame>
-                                </StackLayout>
+                                
+                                <StackLayout.GestureRecognizers>
+                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -86,49 +66,49 @@
                     <StackLayout Orientation="Horizontal" Spacing="15">
 
                         <Frame Style="{StaticResource PartyCategory}" Margin="15,0,0,15">
-                            <ImageButton Source="@drawable/mexican.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/mexican.png" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
                                 <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/pizza.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/pizza.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/pasta.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/pasta.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/sandwich.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/sandwich.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/steak.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/steak.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/streetfood.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/streetfood.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
                         <Frame Style="{StaticResource PartyCategory}">
-                            <ImageButton Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                            <Image Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
                             <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True"/>
+                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                             </Frame.GestureRecognizers>
                         </Frame>
 
-
+                        
                     </StackLayout>
                 </ScrollView>
                 <StackLayout Orientation="Vertical" VerticalOptions="Fill">
