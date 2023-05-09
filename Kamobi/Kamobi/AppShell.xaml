@@ -63,6 +63,12 @@
         <ShellContent Title="Tierlist" Route="TierlistPage" ContentTemplate="{DataTemplate local:TierlistPage}" />
     </TabBar>
 
+    <TabBar>
+        <ShellContent  Route="PartyMemberPage" ContentTemplate="{DataTemplate local:PartyMemberPage}" />
+    </TabBar>
+
+
+
 
 
 </Shell>
