@@ -63,7 +63,7 @@ namespace Kamobi.Views
                     LoadingPopup loading2 = new LoadingPopup();
                     Navigation.ShowPopup(loading2);
                     JsonNode returnData2 = await App.socket.sendRequest("acceptPartyRequest", data, 20000);
-                    loading.Dismiss(null);
+                    loading2.Dismiss(null);
                     if (returnData2 == null)
                     {
                         Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
