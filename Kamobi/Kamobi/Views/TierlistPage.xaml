@@ -62,7 +62,7 @@
                     </Frame.GestureRecognizers>
                 </Frame>-->
 
-                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+                <!--<ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
                     <StackLayout Orientation="Horizontal" Spacing="15">
 
                         <Frame Style="{StaticResource PartyCategory}" Margin="15,0,0,15">
@@ -110,7 +110,8 @@
 
                         
                     </StackLayout>
-                </ScrollView>
+                </ScrollView>-->
+                
                 <StackLayout Orientation="Vertical" VerticalOptions="Fill">
                     <Button Text="Finish" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="FinishButton_Clicked"/>
                 </StackLayout>

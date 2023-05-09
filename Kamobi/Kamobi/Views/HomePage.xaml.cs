@@ -21,14 +21,14 @@ namespace Kamobi.Views
             
             InitializeComponent();
             BindingContext = App.CollectionVM;
-            App.CollectionVM.PopularRestaurants.Add(new PopularRestaurant
-            {
+            //App.CollectionVM.PopularRestaurants.Add(new PopularRestaurant
+            //{
 
-                id = 0,
-                title = "McDonalds",
-                link = "https://mcdonalds.hr/o-nama/novosti/11-ponuda-uzitak-koji-vrijedi-vise/",
-                imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
-            });
+            //    id = 0,
+            //    title = "McDonalds",
+            //    link = "https://mcdonalds.hr/o-nama/novosti/11-ponuda-uzitak-koji-vrijedi-vise/",
+            //    imgSource = "https://mcdonalds.hr/media/McD_1_1_WEB_Slider_Mobile_mobile.gif"
+            //});
         }
         
     }
