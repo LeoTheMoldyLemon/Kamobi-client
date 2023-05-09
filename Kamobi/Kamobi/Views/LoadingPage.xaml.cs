@@ -62,7 +62,7 @@ namespace Kamobi.Views
                 if ((bool)await Navigation.ShowPopupAsync(new YesNoPopup(data["username"] + " has invited you to their KamopParty! Would you like to join?"))) {
                     LoadingPopup loading2 = new LoadingPopup();
                     Navigation.ShowPopup(loading2);
-                    JsonNode returnData2 = await App.socket.sendRequest("sendPartyRequest", data, 20000);
+                    JsonNode returnData2 = await App.socket.sendRequest("acceptPartyRequest", data, 20000);
                     loading.Dismiss(null);
                     if (returnData2 == null)
                     {
