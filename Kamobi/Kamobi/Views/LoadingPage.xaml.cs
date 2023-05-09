@@ -55,6 +55,7 @@ namespace Kamobi.Views
             {
 
                 var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString());
+                Console.WriteLine(dataString);
                 App.CollectionVM.MemberList = new ThreadSafeObservableCollection<Friend>();
                 Console.WriteLine(data.ToJsonString());
                 if ((bool)await Navigation.ShowPopupAsync(new YesNoPopup(data["username"] + " has invited you to their KamopParty! Would you like to join?"))) {

@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,10 +25,13 @@ namespace Kamobi.Views
         private async void InviteButton_Clicked(object sender, EventArgs e)
         {
             Friend target = (Friend)((Button)sender).CommandParameter;
+            var rawlocation = await Geolocation.GetLastKnownLocationAsync();
             LoadingPopup loading = new LoadingPopup();
             Navigation.ShowPopup(loading);
             var data = JsonNode.Parse("{}");
             data["id"] = target.id;
+            data["location"] = rawlocation.Latitude + "," + rawlocation.Longitude;
+
             JsonNode returnData = await App.socket.sendRequest("sendPartyRequest", data, 20000);
             loading.Dismiss(null);
             if (returnData == null)
