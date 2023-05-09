@@ -20,7 +20,6 @@ namespace Kamobi.Views
         {
             InitializeComponent();
             BindingContext = App.User;
-            Console.WriteLine("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" + App.User.username);
         }
 
 

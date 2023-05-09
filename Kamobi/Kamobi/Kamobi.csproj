@@ -41,6 +41,9 @@
     <Compile Update="Views\ChangePhoneNumberSMSPage.xaml.cs">
       <DependentUpon>ChangePhoneNumberSMSPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\PartyMemberPage.xaml.cs">
+      <DependentUpon>PartyMemberPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\YesNoPopup.xaml.cs">
       <DependentUpon>YesNoPopup.xaml</DependentUpon>
     </Compile>

@@ -10,5 +10,6 @@ namespace Kamobi.Models
         public string id { get; set; }
         public string username { get; set; }
         public string displayname { get; set; }
+        public bool leader { get; set; }
     }
 }

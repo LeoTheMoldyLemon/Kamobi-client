@@ -33,6 +33,50 @@ namespace Kamobi.Views
                 return;
             }
             loading.Dismiss(null);
+            App.socket.setupListener("partyMemberUpdate", (dataString) =>
+            {
+
+                var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString()).AsArray();
+                App.CollectionVM.MemberList = new ThreadSafeObservableCollection<Friend>();
+                foreach (JsonNode datanode in data)
+                {
+                    Console.WriteLine(datanode.ToJsonString());
+                    App.CollectionVM.MemberList.Add(new Friend
+                    {
+                        id = (string)datanode["id"],
+                        username = (string)datanode["username"],
+                        displayname = ((string)datanode["username"]).Substring(0, ((string)datanode["username"]).Length - 5),
+                        leader=(bool)datanode["leader"]
+                    });
+                    
+                }
+            });
+            App.socket.setupListener("partyRequest", async (dataString) =>
+            {
+
+                var data = JsonArray.Parse(JsonArray.Parse(dataString.ToString())[0].ToString());
+                App.CollectionVM.MemberList = new ThreadSafeObservableCollection<Friend>();
+                Console.WriteLine(data.ToJsonString());
+                if ((bool)await Navigation.ShowPopupAsync(new YesNoPopup(data["username"] + " has invited you to their KamopParty! Would you like to join?"))) {
+                    LoadingPopup loading2 = new LoadingPopup();
+                    Navigation.ShowPopup(loading2);
+                    JsonNode returnData2 = await App.socket.sendRequest("sendPartyRequest", data, 20000);
+                    loading.Dismiss(null);
+                    if (returnData2 == null)
+                    {
+                        Navigation.ShowPopup(new InfoPopup("Server response timed out. Please try again later."));
+                        return;
+                    }
+                    if (!(bool)returnData2["success"])
+                    {
+                        Navigation.ShowPopup(new InfoPopup((string)returnData2["error"]["description"]));
+                        return;
+                    }
+                    await Shell.Current.GoToAsync("//PartyMemberPage");
+                }
+
+                
+            });
             App.socket.setupListener("friendsListUpdate", (dataString) =>
             {
                 

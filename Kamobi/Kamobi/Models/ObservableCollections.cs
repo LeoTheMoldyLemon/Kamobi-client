@@ -19,6 +19,8 @@ namespace Kamobi.Models
         private ThreadSafeObservableCollection<Review> LocalReviews;
         private ThreadSafeObservableCollection<Friend> LocalFriendsList;
         private ThreadSafeObservableCollection<Friend> LocalFriendRequestsList;
+        private ThreadSafeObservableCollection<Friend> LocalMemberList;
+
 
         public ObservableCollections()
         {
@@ -27,9 +29,18 @@ namespace Kamobi.Models
             Reviews = new ThreadSafeObservableCollection<Review>();
             FriendsList = new ThreadSafeObservableCollection<Friend>();
             FriendRequestsList = new ThreadSafeObservableCollection<Friend>();
-
+            MemberList = new ThreadSafeObservableCollection<Friend>();
 
             AddData();
+        }
+        public ThreadSafeObservableCollection<Friend> MemberList
+        {
+            get { return LocalMemberList; }
+            set
+            {
+                LocalMemberList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("MemberList"));
+            }
         }
         public ThreadSafeObservableCollection<Friend> FriendRequestsList
         {
