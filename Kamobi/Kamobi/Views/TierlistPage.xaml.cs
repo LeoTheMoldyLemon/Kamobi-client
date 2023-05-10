@@ -32,5 +32,10 @@ namespace Kamobi.Views
            
             ((StackLayout)(sender as Element).Parent).Children.Add((Frame)e.Data.Properties["Element"]);
         }
+
+        private async void LeonardaWaiting_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//WaitingPage");
+        }
     }
 }

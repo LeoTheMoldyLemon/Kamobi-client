@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kamobi.Views.WaitingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="You are waiting for others to complete their tierlist" Style="{StaticResource Smalltitle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image Source="@drawable/hourglass"/>
+            <Button Text="Skip" Style="{StaticResource BasicButton}" Clicked="LeonardaResult_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

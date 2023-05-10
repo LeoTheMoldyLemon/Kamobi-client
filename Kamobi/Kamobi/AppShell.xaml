@@ -60,15 +60,29 @@
     </TabBar>
 
     <TabBar>
+        <ShellContent Title="Result" Route="ResultPage" ContentTemplate="{DataTemplate local:ResultPage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Title="Distance" Route="DistancePage" ContentTemplate="{DataTemplate local:DistancePage}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Title="Filter" Route="FilterPage" ContentTemplate="{DataTemplate local:FilterPage}" />
+    </TabBar>
+
+    <TabBar>
         <ShellContent Title="Tierlist" Route="TierlistPage" ContentTemplate="{DataTemplate local:TierlistPage}" />
     </TabBar>
 
     <TabBar>
-        <ShellContent  Route="PartyMemberPage" ContentTemplate="{DataTemplate local:PartyMemberPage}" />
+        <ShellContent Title="Waiting" Route="WaitingPage" ContentTemplate="{DataTemplate local:WaitingPage}" />
     </TabBar>
 
 
-
-
+    <TabBar>
+        <ShellContent  Route="PartyMemberPage" ContentTemplate="{DataTemplate local:PartyMemberPage}" />
+    </TabBar>
+    
 
 </Shell>

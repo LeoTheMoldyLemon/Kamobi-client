@@ -48,5 +48,9 @@ namespace Kamobi.Views
             return;
         }
 
+        private async void LeonardaDistance_Clicked(object sender, EventArgs e) /*remove kasnije*/
+        {
+            await Shell.Current.GoToAsync("//DistancePage");
+        }
     }
 }

@@ -72,7 +72,8 @@
                     
                     <StackLayout Orientation="Vertical" VerticalOptions="Fill">
                         <Button Text="Make a party" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="InviteButton_Clicked"/>
-                    </StackLayout>
+                    <Button Text="Skip" Style="{StaticResource BasicButton}" Clicked="LeonardaDistance_Clicked"/> <!--remove kasnije-->
+                </StackLayout>
 
                 </StackLayout>
         </Grid>

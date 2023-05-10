@@ -10,22 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace Kamobi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FilterPage : ContentPage
+    public partial class WaitingPage : ContentPage
     {
-        public FilterPage()
+        public WaitingPage()
         {
             InitializeComponent();
         }
 
-        private async void CloseFilter_Clicked(object sender, EventArgs e)
+        private async void LeonardaResult_Clicked(object sender, EventArgs e)
         {
             await Shell.Current.GoToAsync("//ResultPage");
-        }
-
-        private async void ApplyFilter_Clicked(object sender, EventArgs e)
-        {
-            //dodati kod za primjeniti filter
-            await Shell.Current.GoToAsync("//ResultPage"); 
         }
     }
 }

@@ -53,6 +53,10 @@
                             </StackLayout>
                         </Frame>
                     </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                        <Button Text="Finish" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="FinishButton_Clicked"/>
+                        <Button Text="Skip" Style="{StaticResource BasicButton}" Clicked="LeonardaWaiting_Clicked"/>
+                    </StackLayout>
                 </StackLayout>
 
                 <!--<Frame Style="{StaticResource PartyCategory}">
@@ -112,9 +116,7 @@
                     </StackLayout>
                 </ScrollView>-->
                 
-                <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-                    <Button Text="Finish" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="FinishButton_Clicked"/>
-                </StackLayout>
+                
 
             </StackLayout>
 
