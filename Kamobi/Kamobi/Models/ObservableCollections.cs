@@ -15,6 +15,7 @@ namespace Kamobi.Models
 
 
         private ThreadSafeObservableCollection<PopularRestaurant> LocalPopularRestaurants;
+        private ThreadSafeObservableCollection<Restaurant> LocalRestaurants;
         private ThreadSafeObservableCollection<HotDeal> LocalHotDeals;
         private ThreadSafeObservableCollection<Category> LocalCategories;
         //private ThreadSafeObservableCollection<Review> LocalReviews;
@@ -29,6 +30,7 @@ namespace Kamobi.Models
             HotDeals = new ThreadSafeObservableCollection<HotDeal>();
             Categories = new ThreadSafeObservableCollection<Category>();
             //Reviews = new ThreadSafeObservableCollection<Review>();
+            Restaurants = new ThreadSafeObservableCollection<Restaurant>();
             FriendsList = new ThreadSafeObservableCollection<Friend>();
             FriendRequestsList = new ThreadSafeObservableCollection<Friend>();
             MemberList = new ThreadSafeObservableCollection<Friend>();
@@ -69,6 +71,15 @@ namespace Kamobi.Models
             {
                 LocalPopularRestaurants = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PopularRestaurants"));
+            }
+        }
+        public ThreadSafeObservableCollection<Restaurant> Restaurants
+        {
+            get { return LocalRestaurants; }
+            set
+            {
+                LocalRestaurants = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Restaurants"));
             }
         }
         public ThreadSafeObservableCollection<HotDeal> HotDeals
@@ -134,8 +145,60 @@ namespace Kamobi.Models
 
                 id = 0,
                 title = "HOT CHALLANGE, ALI NA SUBMARINE NAČIN!",
-                link = "https://submarineburger.com/2022/10/27/hot-challange-ali-na-submarine-nacin/",
+                link = "https://submarineburger.com/",
+                imgSource = "https://lh5.googleusercontent.com/p/AF1QipOr8B9YwvkmdCnuZIRXm_iHwNsDswptFJ-9W-E=w325-h218-n-k-no"
+            });
+
+            Restaurants.Add(new Restaurant
+            {
+
+                id = 0,
+                rating = 4.5,
+                distance = 0.8,
+                score = 4.6,
+                price = 0,
+                title = "Pizza Bar Fratelli",
+                link = "https://www.google.com/maps/place/Pizza+Bar+Fratelli/@45.7922026,16.0011225,16z/data=!4m6!3m5!1s0x4765d76d33043781:0x4f13421e42cfc015!8m2!3d45.7884113!4d16.0066622!16s%2Fg%2F11rv96lj73",
+                imgSource = "https://lh5.googleusercontent.com/p/AF1QipP59p5u2w8ti9rsgM06oumCzWBtleBS9TgprMKM=w426-h240-k-no"
+            });
+
+            Restaurants.Add(new Restaurant
+            {
+
+                id = 0,
+                rating = 4.5,
+                distance = 1.2,
+                score = 3.6,
+                price = 2,
+                title = "Submarine Burger Bogovićeva",
+                link = "https://www.google.com/maps/place/Submarine+Burger+Bogovi%C4%87eva/@45.7712118,15.8041667,12z/data=!4m6!3m5!1s0x4765d6fc5415e05b:0xb63cee1b8dbbc06d!8m2!3d45.811938!4d15.9749036!16s%2Fg%2F11c30y056h",
                 imgSource = "https://submarineburger.com/wp-content/uploads/2022/10/Submarine-burger-hot-burger-ninja-contest_2-938x385.webp"
+            });
+
+            Restaurants.Add(new Restaurant
+            {
+
+                id = 0,
+                rating = 4.3,
+                distance = 0.4,
+                score = 1.6,
+                price = 2,
+                title = "McDonald's Kruge",
+                link = "https://www.google.com/maps/place/McDonald's+Kruge/@45.7958301,15.9836195,15z/data=!4m14!1m7!3m6!1s0x4765d6fc5415e05b:0xb63cee1b8dbbc06d!2sSubmarine+Burger+Bogovi%C4%87eva!8m2!3d45.811938!4d15.9749036!16s%2Fg%2F11c30y056h!3m5!1s0x4765d64306eea911:0x3d042a1e4966c1dc!8m2!3d45.7958138!4d15.9918038!16s%2Fg%2F11bx5v0y2s",
+                imgSource = "https://submarineburger.com/wp-content/uploads/2022/10/Submarine-burger-hot-burger-ninja-contest_2-938x385.webp"
+            });
+
+            Restaurants.Add(new Restaurant
+            {
+
+                id = 0,
+                rating = 4.4,
+                distance = 0.4,
+                score = 1.7,
+                price = 2,
+                title = "McDonald's Felix (Heinzelova)",
+                link = "https://www.google.com/maps/place/McDonald's+Felix+(Heinzelova)/@45.7907158,15.9947191,14.44z/data=!4m16!1m9!3m8!1s0x4765d76d33043781:0x4f13421e42cfc015!2sPizza+Bar+Fratelli!8m2!3d45.7884113!4d16.0066622!9m1!1b1!16s%2Fg%2F11rv96lj73!3m5!1s0x4765d636e93b595f:0x4358a2d30906e65!8m2!3d45.8030989!4d16.0108818!16s%2Fg%2F1260j1_54",
+                imgSource = "https://lh5.googleusercontent.com/p/AF1QipPAzuabn1zQRdsMQkh0rEpZdrGEsDV5zYs9gSAl=w408-h272-k-no"
             });
 
             HotDeals.Add(new HotDeal
