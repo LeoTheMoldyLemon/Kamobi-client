@@ -3,61 +3,135 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.TierlistPage">
     <StackLayout>
-        <Grid>
-            <StackLayout>
-                <Frame BackgroundColor="{StaticResource Secondary}" Margin="0,106,0,0" HeightRequest="500" HasShadow="False"/>
-            </StackLayout>
-
-            <StackLayout>
-                <StackLayout Margin="0,30,0,0">
+        <StackLayout Margin="0,30,0,0">
                     <Frame HeightRequest="40" WidthRequest="100" HasShadow="False" BackgroundColor="Transparent">
                         <Image Source="@drawable/KamobiLogoUski" Aspect="AspectFit"/>
                     </Frame>
                 </StackLayout>
-
-                <StackLayout Margin="15,0,15,15">
-                    <StackLayout Orientation="Vertical" Spacing="15">
-                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
-                            <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
-                                    <Image Source="@drawable/love" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+        <StackLayout Margin="0">
+            <Frame BackgroundColor="{StaticResource Secondary}" HeightRequest="470" Margin="0,0,0,0" Padding="0" HasShadow="False">
+                <StackLayout Orientation="Vertical">
+                <StackLayout Margin="15,15,15,15">
+                        <Grid>
+                            <StackLayout Orientation="Vertical" Spacing="15">
+                                <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="85" Margin="0">
+                                    <ScrollView Orientation="Horizontal" HeightRequest="100" Padding="0" HorizontalScrollBarVisibility="Always">
+                                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="47, 0, 0, 0">
+                                            <!--<Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                                <Image Source="@drawable/love" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                            </Frame>-->
+                                            <StackLayout.GestureRecognizers>
+                                                <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </ScrollView>
                                 </Frame>
-                                <StackLayout.GestureRecognizers>
-                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-
-                            </StackLayout>
-                        </Frame>
-                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
-                            <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
-                                    <Image Source="@drawable/like" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="85" Margin="0">
+                                    <ScrollView Orientation="Horizontal" HeightRequest="100" Padding="0" HorizontalScrollBarVisibility="Always">
+                                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="47, 0, 0, 0">
+                                            <!--<Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                                <Image Source="@drawable/like" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                            </Frame>-->
+                                            <StackLayout.GestureRecognizers>
+                                                <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </ScrollView>
                                 </Frame>
-                                <StackLayout.GestureRecognizers>
-                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-
-                            </StackLayout>
-                        </Frame>
-
-                        <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="105" Margin="0">
-                            <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
-                                    <Image Source="@drawable/dislike" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                <Frame BackgroundColor="{StaticResource BaseColor}" CornerRadius="20" Padding="7" HeightRequest="85" Margin="0">
+                                    <ScrollView Orientation="Horizontal" HeightRequest="100" Padding="0" HorizontalScrollBarVisibility="Always">
+                                        <StackLayout Orientation="Horizontal" Spacing="15" Margin="47, 0, 0, 0">
+                                            <!--<Frame BackgroundColor="{StaticResource Secondary}" CornerRadius="50" HorizontalOptions="Center" VerticalOptions="StartAndExpand"  Padding="0" Margin="0" HeightRequest="40" WidthRequest="40">
+                                                <Image Source="@drawable/dislike" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                                            </Frame>-->
+                                            <StackLayout.GestureRecognizers>
+                                                <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </ScrollView>
                                 </Frame>
-                                
-                                <StackLayout.GestureRecognizers>
-                                    <DropGestureRecognizer AllowDrop="True" Drop="DropGestureRecognizer_Drop"></DropGestureRecognizer>
-                                </StackLayout.GestureRecognizers>
-
                             </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" VerticalOptions="Fill">
-                        <Button Text="Finish" Style="{StaticResource BasicButton}" Margin="30" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Clicked="FinishButton_Clicked"/>
-                        <Button Text="Skip" Style="{StaticResource BasicButton}" Clicked="LeonardaWaiting_Clicked"/>
-                    </StackLayout>
+                            <Frame BackgroundColor="{StaticResource Secondary}" Margin="7,7,0,0" CornerRadius="50" HorizontalOptions="Start" VerticalOptions="StartAndExpand"  Padding="0" HeightRequest="40" WidthRequest="40">
+                                <Image Source="@drawable/love" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                            </Frame>
+                            <Frame BackgroundColor="{StaticResource Secondary}" Margin="7,122,0,0" CornerRadius="50" HorizontalOptions="Start" VerticalOptions="StartAndExpand"  Padding="0" HeightRequest="40" WidthRequest="40">
+                                <Image Source="@drawable/like" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                            </Frame>
+                            <Frame BackgroundColor="{StaticResource Secondary}" Margin="7,236,0,0" CornerRadius="50" HorizontalOptions="Start" VerticalOptions="StartAndExpand"  Padding="0" HeightRequest="40" WidthRequest="40">
+                                <Image Source="@drawable/dislike" HeightRequest="30" Margin="5" Aspect="AspectFit"/>
+                            </Frame>
+                        </Grid>
+                    
                 </StackLayout>
+                    <ScrollView Orientation="Horizontal" HeightRequest="100" Padding="0" HorizontalScrollBarVisibility="Always">
+                        <StackLayout Margin="0,0,0,0" Spacing="15" Orientation="Horizontal" Padding="0" BindableLayout.ItemsSource="{Binding Categories}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Style="{StaticResource PartyCategory}">
+                                        <Image Source="{Binding imgSource}" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                        <Frame.GestureRecognizers>
+                                            <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                        </Frame.GestureRecognizers>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                    <!--<ScrollView HeightRequest="80" Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
+                        <StackLayout Orientation="Horizontal" Spacing="15">
+
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/mexican.png" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/pizza.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/pasta.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/sandwich.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/steak.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/streetfood.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <Frame Style="{StaticResource PartyCategory}">
+                                <Image Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
+                                <Frame.GestureRecognizers>
+                                    <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                    </ScrollView>-->
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Finish" Style="{StaticResource BasicButton}" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Clicked="FinishButton_Clicked"/>
+                <Button Text="Skip" Style="{StaticResource BasicButton}" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" Clicked="LeonardaWaiting_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+        
 
                 <!--<Frame Style="{StaticResource PartyCategory}">
                     <ImageButton Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
@@ -65,62 +139,6 @@
                         <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
                     </Frame.GestureRecognizers>
                 </Frame>-->
-
-                <!--<ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always">
-                    <StackLayout Orientation="Horizontal" Spacing="15">
-
-                        <Frame Style="{StaticResource PartyCategory}" Margin="15,0,0,15">
-                            <Image Source="@drawable/mexican.png" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/pizza.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/pasta.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/sandwich.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/steak.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/streetfood.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-                        <Frame Style="{StaticResource PartyCategory}">
-                            <Image Source="@drawable/dessert.png" Aspect="AspectFit" BackgroundColor="Transparent"/>
-                            <Frame.GestureRecognizers>
-                                <DragGestureRecognizer CanDrag="True" DragStarting="DragGestureRecognizer_DragStarting"/>
-                            </Frame.GestureRecognizers>
-                        </Frame>
-
-                        
-                    </StackLayout>
-                </ScrollView>-->
                 
-                
-
-            </StackLayout>
-
-        </Grid>
-
     </StackLayout>
 </ContentPage>

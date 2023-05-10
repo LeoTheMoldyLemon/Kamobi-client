@@ -16,6 +16,7 @@ namespace Kamobi.Views
         public TierlistPage()
         {
             InitializeComponent();
+            BindingContext = App.CollectionVM;
         }
         private void DragGestureRecognizer_DragStarting(object sender, DragStartingEventArgs e)
         {
