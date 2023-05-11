@@ -129,6 +129,25 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource BaseColor}"/>
                 <Setter Property="HasShadow" Value="False"/>
             </Style>
+
+            <Style x:Key="RestaurantFrame" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="150"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BaseColor}"/>
+            </Style>
+
+            <Style x:Key="RestaurantImageFrame" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="135"/>
+                <Setter Property="WidthRequest" Value="135"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="7"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
             
         </ResourceDictionary>        
     </Application.Resources>

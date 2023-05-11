@@ -2,11 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Kamobi.Views.ResultPage">
-    <ContentPage.Content>
-        <StackLayout>
+    <ScrollView>
+        <Grid>
+        <StackLayout Margin="0,10,0,0">
             <Label Text="Recomended for you" Style="{StaticResource Title}"/>
+            <StackLayout BindableLayout.ItemsSource="{Binding Restaurants}" >
+                <BindableLayout.ItemTemplate >
+                    <DataTemplate >
+                        <StackLayout Orientation="Vertical" Margin="15,0,15,15">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding OpenLinkCommand}"/>
+                                </StackLayout.GestureRecognizers>
+                                <Frame Style="{StaticResource RestaurantFrame}">
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <Frame Style="{StaticResource RestaurantImageFrame}">
+                                            <Image Source="{Binding imgSource}" HorizontalOptions="Center" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding title}" Style="{StaticResource Smalltitle}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                                            <Label Text="Distance"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
             <Button Text="Filter" Style="{StaticResource BasicButton}" Clicked="FilterButton_Clicked"/>
             <Button Text="Go back to home page" Style="{StaticResource BasicButton}" Clicked="BackButton_Clicked"/>
         </StackLayout>
-    </ContentPage.Content>
+        </Grid>
+    </ScrollView>
 </ContentPage>

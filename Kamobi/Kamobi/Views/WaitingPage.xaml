@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="You are waiting for others to complete their tierlist" Style="{StaticResource Smalltitle}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Image Source="@drawable/hourglass"/>
+            <Image Source="@drawable/hourglass" />
             <Button Text="Skip" Style="{StaticResource BasicButton}" Clicked="LeonardaResult_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
